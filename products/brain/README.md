@@ -1,6 +1,5 @@
+<!-- Generated from catalog.json by tools/build_readmes.py. Do not edit by hand. -->
 # Brain
-
-Generated from `catalog.json` by `tools/build_readmes.py`. Do not edit by hand.
 
 ## Documents
 

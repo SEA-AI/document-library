@@ -18,9 +18,8 @@ def render(catalog: dict, product: str) -> str:
     name = catalog["products"][product]
     entries = sorted((e for e in catalog["files"] if product in e["products"]), key=lambda e: e["title"].lower())
     lines = [
+        "<!-- Generated from catalog.json by tools/build_readmes.py. Do not edit by hand. -->",
         f"# {name}",
-        "",
-        "Generated from `catalog.json` by `tools/build_readmes.py`. Do not edit by hand.",
         "",
         "## Documents",
         "",
