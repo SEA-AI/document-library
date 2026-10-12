@@ -14,28 +14,61 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parent.parent
 
 
+DESKTOP_OS = {"WIN_": "Windows", "MAC_": "macOS", "LINUX_": "Linux"}  # file name prefix -> system
+
+
+def section(e: dict) -> str:
+    """Which part of the product page lists a file."""
+    if e["title"].lower().endswith(".oscar"):
+        return "software"
+    if e.get("release", "").startswith("desktop-"):
+        return "desktop"
+    if "-cad-" in e.get("release", ""):
+        return "cad"
+    return "documents"
+
+
 def render(catalog: dict, product: str) -> str:
+    """Sections in fixed order: software releases, SEA.AI Desktop, 3D CAD models, documents."""
     name = catalog["products"][product]
-    entries = sorted((e for e in catalog["files"] if product in e["products"]), key=lambda e: e["title"].lower())
-    lines = [
-        "<!-- Generated from catalog.json by tools/build_readmes.py. Do not edit by hand. -->",
-        f"# {name}",
-        "",
-        "## Documents",
-        "",
-        "| Document | Type |",
-        "|---|---|",
-    ]
-    for e in entries:
+    base = f"https://github.com/{catalog['repository']}/releases"
+    entries = [e for e in catalog["files"] if product in e["products"]]
+
+    def link(e: dict) -> str:
         if "path" in e:
-            lines.append(f"| [{e['title']}]({quote('../../' + e['path'])}) | {e['products'][product]} |")
-    lines += ["", "## Software and CAD", "", "| File | Type | Release |", "|---|---|---|"]
-    for e in entries:
-        if "release" in e:
-            release = catalog["releases"][e["release"]]["title"]
-            base = f"https://github.com/{catalog['repository']}/releases"
-            download = f"{base}/download/{e['release']}/{quote(e['asset'])}"
-            lines.append(f"| [{e['title']}]({download}) | {e['products'][product]} | [{release}]({base}/tag/{e['release']}) |")
+            return f"[{e['title']}]({quote('../../' + e['path'])})"
+        return f"[{e['title']}]({base}/download/{e['release']}/{quote(e['asset'])})"
+
+    def release(e: dict) -> str:
+        return f"[{catalog['releases'][e['release']]['title']}]({base}/tag/{e['release']})"
+
+    def files(kind: str) -> list[dict]:
+        return [e for e in entries if section(e) == kind]
+
+    lines = ["<!-- Generated from catalog.json by tools/build_readmes.py. Do not edit by hand. -->", f"# {name}"]
+
+    software = sorted(files("software"), key=lambda e: ("(legacy)" in release(e), e["title"].lower()))
+    if software:
+        lines += ["", "## Software releases", "", "| File | Release |", "|---|---|"]
+        lines += [f"| {link(e)} | {release(e)} |" for e in software]
+
+    order = list(DESKTOP_OS)
+    os_of = lambda e: next((p for p in order if e["title"].startswith(p)), "")  # noqa: E731
+    desktop = sorted(files("desktop"), key=lambda e: (order.index(os_of(e)) if os_of(e) else len(order), e["title"]))
+    if desktop:
+        lines += ["", "## SEA.AI Desktop", "", "| Operating system | File | Release |", "|---|---|---|"]
+        lines += [f"| {DESKTOP_OS.get(os_of(e), 'Other')} | {link(e)} | {release(e)} |" for e in desktop]
+
+    cad = sorted(files("cad"), key=lambda e: e["title"].lower())
+    if cad:
+        lines += ["", "## 3D CAD models", "", "| File | Release |", "|---|---|"]
+        lines += [f"| {link(e)} | {release(e)} |" for e in cad]
+
+    documents = sorted(files("documents"), key=lambda e: e["title"].lower())
+    if documents:
+        lines += ["", "## Documents", "", "| Document | Type |", "|---|---|"]
+        lines += [f"| {link(e)} | {e['products'][product]} |" for e in documents]
+
     return "\n".join(lines) + "\n"
 
 

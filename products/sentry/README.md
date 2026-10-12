@@ -1,6 +1,26 @@
 <!-- Generated from catalog.json by tools/build_readmes.py. Do not edit by hand. -->
 # Sentry
 
+## Software releases
+
+| File | Release |
+|---|---|
+| [SEA-AI_Sentry_4.4-6.oscar](https://github.com/SEA-AI/document-library/releases/download/sentry-software-4.4-6/SEA-AI_Sentry_4.4-6.oscar) | [Sentry system software 4.4-6](https://github.com/SEA-AI/document-library/releases/tag/sentry-software-4.4-6) |
+
+## SEA.AI Desktop
+
+| Operating system | File | Release |
+|---|---|---|
+| Windows | [WIN_SEA.AI Desktop-1.2.4.exe](https://github.com/SEA-AI/document-library/releases/download/desktop-1.2.4/WIN_SEA.AI.Desktop-1.2.4.exe) | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
+| macOS | [MAC_SEA.AI Desktop-1.2.4-arm64.dmg](https://github.com/SEA-AI/document-library/releases/download/desktop-1.2.4/MAC_SEA.AI.Desktop-1.2.4-arm64.dmg) | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
+
+## 3D CAD models
+
+| File | Release |
+|---|---|
+| [Sentry Gen2 3D CAD.zip](https://github.com/SEA-AI/document-library/releases/download/sentry-cad-2026.10/Sentry.Gen2.3D.CAD.zip) | [Sentry CAD data 2026.10](https://github.com/SEA-AI/document-library/releases/tag/sentry-cad-2026.10) |
+| [Sentry Joystick 3D CAD.zip](https://github.com/SEA-AI/document-library/releases/download/sentry-cad-2026.10/Sentry.Joystick.3D.CAD.zip) | [Sentry CAD data 2026.10](https://github.com/SEA-AI/document-library/releases/tag/sentry-cad-2026.10) |
+
 ## Documents
 
 | Document | Type |
@@ -18,13 +38,3 @@
 | [Sentry Power Harness A02233.pdf](../../products/sentry/documents/Sentry%20Power%20Harness%20A02233.pdf) | Support |
 | [Sentry Software Update Guideline.pdf](../../products/sentry/documents/Sentry%20Software%20Update%20Guideline.pdf) | Guides |
 | [User Guide Sentry_4.0_english.pdf](../../products/sentry/documents/User%20Guide%20Sentry_4.0_english.pdf) | Guides |
-
-## Software and CAD
-
-| File | Type | Release |
-|---|---|---|
-| [MAC_SEA.AI Desktop-1.2.4-arm64.dmg](https://github.com/SEA-AI/document-library/releases/download/desktop-1.2.4/MAC_SEA.AI.Desktop-1.2.4-arm64.dmg) | Info | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
-| [SEA-AI_Sentry_4.4-6.oscar](https://github.com/SEA-AI/document-library/releases/download/sentry-software-4.4-6/SEA-AI_Sentry_4.4-6.oscar) | Info | [Sentry system software 4.4-6](https://github.com/SEA-AI/document-library/releases/tag/sentry-software-4.4-6) |
-| [Sentry Gen2 3D CAD.zip](https://github.com/SEA-AI/document-library/releases/download/sentry-cad-2026.10/Sentry.Gen2.3D.CAD.zip) | Help | [Sentry CAD data 2026.10](https://github.com/SEA-AI/document-library/releases/tag/sentry-cad-2026.10) |
-| [Sentry Joystick 3D CAD.zip](https://github.com/SEA-AI/document-library/releases/download/sentry-cad-2026.10/Sentry.Joystick.3D.CAD.zip) | Support | [Sentry CAD data 2026.10](https://github.com/SEA-AI/document-library/releases/tag/sentry-cad-2026.10) |
-| [WIN_SEA.AI Desktop-1.2.4.exe](https://github.com/SEA-AI/document-library/releases/download/desktop-1.2.4/WIN_SEA.AI.Desktop-1.2.4.exe) | Info | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
