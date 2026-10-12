@@ -56,23 +56,6 @@
   </script>
 
   <!-- ═══════════════════════════════════════════════════════
-       Matomo — fill in YOUR_MATOMO_URL and YOUR_SITE_ID
-  ════════════════════════════════════════════════════════════ -->
-  <script>
-    var _paq = window._paq = window._paq || [];
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u = "https://YOUR_MATOMO_URL/";   /* ← replace */
-      _paq.push(['setTrackerUrl', u + 'matomo.php']);
-      _paq.push(['setSiteId', 'YOUR_SITE_ID']);  /* ← replace with integer */
-      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-      g.async = true; g.src = u + 'matomo.js';
-      s.parentNode.insertBefore(g, s);
-    })();
-  </script>
-
-  <!-- ═══════════════════════════════════════════════════════
        Fonts — Barlow Semi Condensed
   ════════════════════════════════════════════════════════════ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -3397,11 +3380,6 @@
         '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#CB0D00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>' +
         '<h3 style="font-size:24px;font-weight:600;color:#ffffff;margin:0;">Enquiry received</h3>' +
         '<p style="font-size:15px;color:rgba(255,255,255,0.7);margin:0;line-height:1.6;">Our security team will be in touch within 1–2 business days. All information is treated as confidential.</p>';
-
-      /* Matomo goal tracking */
-      if (window._paq) {
-        window._paq.push(['trackGoal', 1]); /* Goal ID 1 = contact form submission */
-      }
     }
 
     /* ── Smooth scroll for anchor links on mobile (belt-and-suspenders) ── */
