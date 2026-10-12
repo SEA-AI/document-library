@@ -192,6 +192,24 @@
       "sha256": "a98240ed0e9aff168a67eb0f56f5bf5eebf7be7a2b9bb447a1eed0376d1cb7a2"
     },
     {
+      "title": "User Guide Offshore_Competition v7 EN.pdf",
+      "products": {
+        "competition": "Info"
+      },
+      "path": "products/competition/documents/User Guide Offshore_Competition v7 EN.pdf",
+      "size": 6427188,
+      "sha256": "0b622083a6c24b46172d4dea1c7f6d2e7d9c8696d9127cb935375cc1973bf729"
+    },
+    {
+      "title": "User Guide Offshore_Competition v7 FR.pdf",
+      "products": {
+        "competition": "Info"
+      },
+      "path": "products/competition/documents/User Guide Offshore_Competition v7 FR.pdf",
+      "size": 6446232,
+      "sha256": "dcb27c137bef2dfadba3000f2594640b39a7f50986ab03ee7b771b26508b0ad6"
+    },
+    {
       "title": "Offshore 320 & 640 Data Harness A02440.pdf",
       "products": {
         "offshore": "Info"
@@ -352,6 +370,24 @@
       "path": "products/offshore/documents/Sailing System Software 7.3.0 Update Information and Guideline.pdf",
       "size": 314554,
       "sha256": "516f84eb8db1218fb776e7830bba3e9a470474e2a7bd04603f637f0a20ba03de"
+    },
+    {
+      "title": "User Guide Offshore_Competition v7 EN.pdf",
+      "products": {
+        "offshore": "Support"
+      },
+      "path": "products/offshore/documents/User Guide Offshore_Competition v7 EN.pdf",
+      "size": 6427188,
+      "sha256": "0b622083a6c24b46172d4dea1c7f6d2e7d9c8696d9127cb935375cc1973bf729"
+    },
+    {
+      "title": "User Guide Offshore_Competition v7 FR.pdf",
+      "products": {
+        "offshore": "Info"
+      },
+      "path": "products/offshore/documents/User Guide Offshore_Competition v7 FR.pdf",
+      "size": 6446232,
+      "sha256": "dcb27c137bef2dfadba3000f2594640b39a7f50986ab03ee7b771b26508b0ad6"
     },
     {
       "title": "260612_Sentry - Specsheet.pdf",
@@ -550,26 +586,6 @@
       "path": "products/watchkeeper/documents/Watchkeeper_2D_Drawing.pdf",
       "size": 3484579,
       "sha256": "fef952d5c7d3e769333847718352dc9b7efa96ece975afcb7cf55d5f1a0b834f"
-    },
-    {
-      "title": "User Guide Offshore_Competition v7 EN.pdf",
-      "products": {
-        "offshore": "Support",
-        "competition": "Info"
-      },
-      "path": "shared/documents/User Guide Offshore_Competition v7 EN.pdf",
-      "size": 6427188,
-      "sha256": "0b622083a6c24b46172d4dea1c7f6d2e7d9c8696d9127cb935375cc1973bf729"
-    },
-    {
-      "title": "User Guide Offshore_Competition v7 FR.pdf",
-      "products": {
-        "offshore": "Info",
-        "competition": "Info"
-      },
-      "path": "shared/documents/User Guide Offshore_Competition v7 FR.pdf",
-      "size": 6446232,
-      "sha256": "dcb27c137bef2dfadba3000f2594640b39a7f50986ab03ee7b771b26508b0ad6"
     },
     {
       "title": "SEA-AI_Brain_3.13-4.oscar",

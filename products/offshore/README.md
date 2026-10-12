@@ -23,8 +23,8 @@
 | [Sailing System Software 7.3.0 Update Information and Guideline.pdf](../../products/offshore/documents/Sailing%20System%20Software%207.3.0%20Update%20Information%20and%20Guideline.pdf) | Support |
 | [SEA.AI Offshore 320_640 Electrical drawing-4.pdf](../../products/offshore/documents/SEA.AI%20Offshore%20320_640%20Electrical%20drawing-4.pdf) | Support |
 | [SEA.AI Offshore One Electrical drawing-4.pdf](../../products/offshore/documents/SEA.AI%20Offshore%20One%20Electrical%20drawing-4.pdf) | Support |
-| [User Guide Offshore_Competition v7 EN.pdf](../../shared/documents/User%20Guide%20Offshore_Competition%20v7%20EN.pdf) | Support |
-| [User Guide Offshore_Competition v7 FR.pdf](../../shared/documents/User%20Guide%20Offshore_Competition%20v7%20FR.pdf) | Info |
+| [User Guide Offshore_Competition v7 EN.pdf](../../products/offshore/documents/User%20Guide%20Offshore_Competition%20v7%20EN.pdf) | Support |
+| [User Guide Offshore_Competition v7 FR.pdf](../../products/offshore/documents/User%20Guide%20Offshore_Competition%20v7%20FR.pdf) | Info |
 
 ## Software and CAD
 

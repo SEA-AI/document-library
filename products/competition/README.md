@@ -14,8 +14,8 @@
 | [COMPETITON 2D (VU & brackets).pdf](../../products/competition/documents/COMPETITON%202D%20%28VU%20%26%20brackets%29.pdf) | Info |
 | [SEA.AI Competition 320_640 Electric drawing (Deutsch connector).pdf](../../products/competition/documents/SEA.AI%20Competition%20320_640%20Electric%20drawing%20%28Deutsch%20connector%29.pdf) | Info |
 | [SEA.AI Competition 320_640 Electrical drawing.pdf](../../products/competition/documents/SEA.AI%20Competition%20320_640%20Electrical%20drawing.pdf) | Info |
-| [User Guide Offshore_Competition v7 EN.pdf](../../shared/documents/User%20Guide%20Offshore_Competition%20v7%20EN.pdf) | Info |
-| [User Guide Offshore_Competition v7 FR.pdf](../../shared/documents/User%20Guide%20Offshore_Competition%20v7%20FR.pdf) | Info |
+| [User Guide Offshore_Competition v7 EN.pdf](../../products/competition/documents/User%20Guide%20Offshore_Competition%20v7%20EN.pdf) | Info |
+| [User Guide Offshore_Competition v7 FR.pdf](../../products/competition/documents/User%20Guide%20Offshore_Competition%20v7%20FR.pdf) | Info |
 
 ## Software and CAD
 
