@@ -1,6 +1,7 @@
 name: Validate catalog
 
-# Blocks a pull request when catalog.json, the documents and the releases disagree.
+# Blocks a pull request when catalog.json, the documents and the releases disagree,
+# or when the website no longer works for an anonymous visitor.
 
 on:
   pull_request:
@@ -26,3 +27,15 @@ jobs:
         run: python tools/validate_catalog.py --releases
       - name: Product READMEs up to date
         run: python tools/build_readmes.py --check
+
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests==2.34.2 playwright==1.62.0
+      - run: python -m playwright install --with-deps chromium
+      - name: Website works for an anonymous visitor
+        run: python tools/check_site.py
