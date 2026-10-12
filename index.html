@@ -2546,17 +2546,42 @@
     // catalog.json indexes every file in this repo, shaped here like the manifest the page expects.
     // Documents are files on this site, so PDFs open in the browser; software and CAD are
     // release assets, which download.
-    var DOCUMENT_TYPES = ['Support', 'Guides', 'Help', 'Info'];
+    // Categories in display order (ids as in catalog.json; same order as the product pages).
+    var CATEGORIES = [
+      { id: 'software',   label: 'Software releases' },
+      { id: 'desktop',    label: 'Desktop application' },
+      { id: 'cad',        label: 'CAD' },
+      { id: 'guides',     label: 'Guides' },
+      { id: 'wiring',     label: 'Wiring diagrams' },
+      { id: 'datasheets', label: 'Datasheets' }
+    ];
+    window.CATEGORY_LABELS = {};
+    CATEGORIES.forEach(function (c) { window.CATEGORY_LABELS[c.id] = c.label; });
     var VIEWABLE = { pdf: true, jpg: true, jpeg: true, png: true, gif: true, webp: true, txt: true };
+    var DESKTOP_OS = ['WIN_', 'MAC_', 'LINUX_'];  // installer order: Windows, macOS, Linux
     function catalogToManifest(catalog) {
       var downloads = 'https://github.com/' + catalog.repository + '/releases/download/';
       var manifest = { products: {} };
+      // Current versions before legacy ones, installers by operating system, then by name
+      function sortKey(file) {
+        var release = catalog.releases[file.release] || {};
+        var legacy = (release.title || '').indexOf('(legacy)') >= 0 ? 1 : 0;
+        var os = DESKTOP_OS.findIndex(function (p) { return file.title.indexOf(p) === 0; });
+        return [legacy, os < 0 ? DESKTOP_OS.length : os, file.title.toLowerCase()];
+      }
+      function compare(a, b) {
+        for (var i = 0; i < 3; i++) {
+          if (a.key[i] < b.key[i]) return -1;
+          if (a.key[i] > b.key[i]) return 1;
+        }
+        return 0;
+      }
       Object.keys(catalog.products).forEach(function (productId) {
         var types = {};
-        DOCUMENT_TYPES.forEach(function (t) { types[t] = { count: 0, items: [] }; });
+        CATEGORIES.forEach(function (c) { types[c.id] = { count: 0, items: [] }; });
         catalog.files.forEach(function (file) {
           var type = file.products[productId];
-          if (!type) return;
+          if (!types[type]) return;
           var extension = file.title.indexOf('.') >= 0 ? file.title.split('.').pop().toLowerCase() : '';
           types[type].items.push({
             name: file.title,
@@ -2564,13 +2589,12 @@
                            : downloads + file.release + '/' + encodeURIComponent(file.asset),
             extension: extension,
             viewable: !!file.path && VIEWABLE[extension] === true,
-            size: file.size
+            size: file.size,
+            key: sortKey(file)
           });
           types[type].count++;
         });
-        DOCUMENT_TYPES.forEach(function (t) {
-          types[t].items.sort(function (a, b) { return a.name.toLowerCase().localeCompare(b.name.toLowerCase()); });
-        });
+        CATEGORIES.forEach(function (c) { types[c.id].items.sort(compare); });
         manifest.products[productId] = { name: catalog.products[productId], document_types: types };
       });
       return manifest;
@@ -2753,21 +2777,13 @@
           // If manifest is loaded, use actual file counts; otherwise use defaults from CONTENT
           if (MANIFEST && MANIFEST.products && MANIFEST.products[p.id]) {
             var productManifest = MANIFEST.products[p.id];
-            // The manifest decides which doc types exist; content.js lists can be stale and hide files.
-            var typeOrder = ['Support', 'Guides', 'Help', 'Info'];
-            var rank = function (label) {
-              var i = typeOrder.indexOf(label);
-              return i < 0 ? typeOrder.length : i;
-            };
-            var labels = Object.keys(productManifest.document_types).sort(function (a, b) {
-              return rank(a) - rank(b);
-            });
-            docTypesHTML = labels.map(function (label) {
-              var docTypeData = productManifest.document_types[label] || {};
+            // The catalog decides which files exist; content.js lists can be stale and hide files.
+            docTypesHTML = CATEGORIES.map(function (category) {
+              var docTypeData = productManifest.document_types[category.id] || {};
               var actualCount = docTypeData.count || 0;
-              var href = actualCount > 0 ? '#' + p.id + '_' + label.toLowerCase() : '#';
-              return '<a href="' + href + '" class="doc-type-link" data-product="' + p.id + '" data-type="' + label.toLowerCase() + '">' + 
-                     label + ' <span class="doc-count">(' + actualCount + ')</span></a>';
+              var href = actualCount > 0 ? '#' + p.id + '_' + category.id : '#';
+              return '<a href="' + href + '" class="doc-type-link" data-product="' + p.id + '" data-type="' + category.id + '">' +
+                     category.label + ' <span class="doc-count">(' + actualCount + ')</span></a>';
             }).join('');
           } else {
             // Fallback to content.js counts
@@ -2823,9 +2839,7 @@
           var productId = this.getAttribute('data-product');
           var docType = this.getAttribute('data-type');
           if (productId && docType && MANIFEST.products[productId]) {
-            // Capitalize first letter to match manifest keys (Support, Guides, Info)
-            var docTypeKey = docType.charAt(0).toUpperCase() + docType.slice(1);
-            var docTypeData = MANIFEST.products[productId].document_types[docTypeKey];
+            var docTypeData = MANIFEST.products[productId].document_types[docType];
             if (docTypeData && docTypeData.items) {
               // Show modal with all files
               showFileListModal(productId, docType, docTypeData);
@@ -3107,7 +3121,7 @@
     if (!MANIFEST || !MANIFEST.products || !MANIFEST.products[productId]) return;
     
     var productName = MANIFEST.products[productId].name;
-    title.textContent = productName + ' → ' + capitalizeFirst(docType);
+    title.textContent = productName + ' → ' + ((window.CATEGORY_LABELS || {})[docType] || capitalizeFirst(docType));
     
     // Build file list HTML
     var listHTML = '<ul class="file-list">';

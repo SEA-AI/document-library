@@ -23,13 +23,17 @@ You can also open your product's page here:
 
 ## What you find here
 
-- **Documents:** user guides, installation manuals, drawings and specifications, as PDF. Open
-  them in your browser or download them.
-- **System software updates** (`.oscar` files) for your SEA.AI system.
-- **SEA.AI Desktop** for Windows and macOS.
-- **3D CAD data.**
+Each product page groups its files the same way:
 
-Software and CAD files are on the [Releases](../../releases) page, one release per version.
+- **Software releases:** system software updates (`.oscar` files) for your SEA.AI system.
+- **Desktop application:** SEA.AI Desktop for Windows and macOS.
+- **CAD:** 2D drawings (PDF) and 3D models.
+- **Guides:** user guides, installation manuals, and update, integration and configuration guides.
+- **Wiring diagrams:** harness, interconnect, electrical and wiring diagrams.
+- **Datasheets:** product specifications.
+
+Documents (PDF) open in your browser or download. Software and 3D models are on the
+[Releases](../../releases) page, one release per version.
 
 ## Check a download
 

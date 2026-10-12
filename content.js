@@ -38,10 +38,12 @@ var CONTENT = {
         h3:    'Watchkeeper',
         p:     'Compact fixed-mount EO/IR system for navigation safety and close-range detection.',
         docTypes: [
-          { label: 'Support',  count: 4 },
-          { label: 'Guides',   count: 1 },
-          { label: 'Help',     count: 2 },
-          { label: 'Info',     count: 8 }
+          { label: 'Software releases',   count: 1 },
+          { label: 'Desktop application', count: 2 },
+          { label: 'CAD',                 count: 3 },
+          { label: 'Guides',              count: 3 },
+          { label: 'Wiring diagrams',     count: 3 },
+          { label: 'Datasheets',          count: 2 }
         ]
       },
       {
@@ -49,10 +51,12 @@ var CONTENT = {
         h3:    'Sentry',
         p:     'Full-perimeter EO/IR surveillance with AI auto-track and optical zoom capabilities.',
         docTypes: [
-          { label: 'Support',  count: 6 },
-          { label: 'Guides',   count: 4 },
-          { label: 'Help',     count: 2 },
-          { label: 'Info',     count: 7 }
+          { label: 'Software releases',   count: 1 },
+          { label: 'Desktop application', count: 2 },
+          { label: 'CAD',                 count: 4 },
+          { label: 'Guides',              count: 6 },
+          { label: 'Wiring diagrams',     count: 4 },
+          { label: 'Datasheets',          count: 1 }
         ]
       },
       {
@@ -60,9 +64,12 @@ var CONTENT = {
         h3:    'Brain',
         p:     'Advanced analytics and processing platform for real-time operational intelligence.',
         docTypes: [
-          { label: 'Support',  count: 4 },
-          { label: 'Guides',   count: 2 },
-          { label: 'Info',     count: 7 }
+          { label: 'Software releases',   count: 1 },
+          { label: 'Desktop application', count: 2 },
+          { label: 'CAD',                 count: 1 },
+          { label: 'Guides',              count: 2 },
+          { label: 'Wiring diagrams',     count: 3 },
+          { label: 'Datasheets',          count: 1 }
         ]
       },
       {
@@ -70,8 +77,12 @@ var CONTENT = {
         h3:    'Competition',
         p:     'Competitive analysis and benchmarking tools for system evaluation.',
         docTypes: [
-          { label: 'Support',  count: 2 },
-          { label: 'Info',     count: 14 }
+          { label: 'Software releases',   count: 2 },
+          { label: 'Desktop application', count: 2 },
+          { label: 'CAD',                 count: 2 },
+          { label: 'Guides',              count: 3 },
+          { label: 'Wiring diagrams',     count: 6 },
+          { label: 'Datasheets',          count: 0 }
         ]
       },
       {
@@ -79,8 +90,12 @@ var CONTENT = {
         h3:    'Offshore',
         p:     'Marine and offshore operations platform for extended deployment scenarios.',
         docTypes: [
-          { label: 'Support',  count: 5 },
-          { label: 'Info',     count: 20 }
+          { label: 'Software releases',   count: 1 },
+          { label: 'Desktop application', count: 2 },
+          { label: 'CAD',                 count: 4 },
+          { label: 'Guides',              count: 5 },
+          { label: 'Wiring diagrams',     count: 12 },
+          { label: 'Datasheets',          count: 0 }
         ]
       }
     ]

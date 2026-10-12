@@ -50,7 +50,7 @@
     {
       "title": "Brain Gen 1 Processing Unit.pdf",
       "products": {
-        "brain": "Guides"
+        "brain": "cad"
       },
       "path": "products/brain/documents/Brain Gen 1 Processing Unit.pdf",
       "size": 157989,
@@ -59,7 +59,7 @@
     {
       "title": "Brain Gen1 Data Harness F03146.pdf",
       "products": {
-        "brain": "Support"
+        "brain": "wiring"
       },
       "path": "products/brain/documents/Brain Gen1 Data Harness F03146.pdf",
       "size": 118956,
@@ -68,7 +68,7 @@
     {
       "title": "Brain Gen1 Interconnect Diagram.pdf",
       "products": {
-        "brain": "Info"
+        "brain": "wiring"
       },
       "path": "products/brain/documents/Brain Gen1 Interconnect Diagram.pdf",
       "size": 200350,
@@ -77,7 +77,7 @@
     {
       "title": "Brain Gen1 Power Harness A02921.pdf",
       "products": {
-        "brain": "Support"
+        "brain": "wiring"
       },
       "path": "products/brain/documents/Brain Gen1 Power Harness A02921.pdf",
       "size": 132890,
@@ -86,7 +86,7 @@
     {
       "title": "Brain Installation Manual.pdf",
       "products": {
-        "brain": "Support"
+        "brain": "guides"
       },
       "path": "products/brain/documents/Brain Installation Manual.pdf",
       "size": 3604608,
@@ -95,7 +95,7 @@
     {
       "title": "Brain Quick User Guide.pdf",
       "products": {
-        "brain": "Guides"
+        "brain": "guides"
       },
       "path": "products/brain/documents/Brain Quick User Guide.pdf",
       "size": 1202837,
@@ -104,7 +104,7 @@
     {
       "title": "SEA.AI - Brain - Tech Sheet.pdf",
       "products": {
-        "brain": "Info"
+        "brain": "datasheets"
       },
       "path": "products/brain/documents/SEA.AI - Brain - Tech Sheet.pdf",
       "size": 357671,
@@ -113,7 +113,7 @@
     {
       "title": "COMPETITON 2D (VU & brackets).pdf",
       "products": {
-        "competition": "Info"
+        "competition": "cad"
       },
       "path": "products/competition/documents/COMPETITON 2D (VU & brackets).pdf",
       "size": 879850,
@@ -122,7 +122,7 @@
     {
       "title": "Competition 320 & 640 Data Harness A02360.pdf",
       "products": {
-        "competition": "Info"
+        "competition": "wiring"
       },
       "path": "products/competition/documents/Competition 320 & 640 Data Harness A02360.pdf",
       "size": 134364,
@@ -131,7 +131,7 @@
     {
       "title": "Competition 320 & 640 Data Harness A03146.pdf",
       "products": {
-        "competition": "Info"
+        "competition": "wiring"
       },
       "path": "products/competition/documents/Competition 320 & 640 Data Harness A03146.pdf",
       "size": 118621,
@@ -140,7 +140,7 @@
     {
       "title": "Competition 320 & 640 Installation Manual.pdf",
       "products": {
-        "competition": "Info"
+        "competition": "guides"
       },
       "path": "products/competition/documents/Competition 320 & 640 Installation Manual.pdf",
       "size": 5676084,
@@ -149,7 +149,7 @@
     {
       "title": "Competition 320 & 640 Interconnect Diagram.pdf",
       "products": {
-        "competition": "Info"
+        "competition": "wiring"
       },
       "path": "products/competition/documents/Competition 320 & 640 Interconnect Diagram.pdf",
       "size": 205701,
@@ -158,7 +158,7 @@
     {
       "title": "Competition 320 & 640 Power Harness A02410.pdf",
       "products": {
-        "competition": "Info"
+        "competition": "wiring"
       },
       "path": "products/competition/documents/Competition 320 & 640 Power Harness A02410.pdf",
       "size": 129904,
@@ -167,7 +167,7 @@
     {
       "title": "Competition 320 & 640 Processing Unit.pdf",
       "products": {
-        "competition": "Info"
+        "competition": "cad"
       },
       "path": "products/competition/documents/Competition 320 & 640 Processing Unit.pdf",
       "size": 358528,
@@ -176,7 +176,7 @@
     {
       "title": "SEA.AI Competition 320_640 Electric drawing (Deutsch connector).pdf",
       "products": {
-        "competition": "Info"
+        "competition": "wiring"
       },
       "path": "products/competition/documents/SEA.AI Competition 320_640 Electric drawing (Deutsch connector).pdf",
       "size": 327271,
@@ -185,7 +185,7 @@
     {
       "title": "SEA.AI Competition 320_640 Electrical drawing.pdf",
       "products": {
-        "competition": "Info"
+        "competition": "wiring"
       },
       "path": "products/competition/documents/SEA.AI Competition 320_640 Electrical drawing.pdf",
       "size": 445233,
@@ -194,7 +194,7 @@
     {
       "title": "User Guide Offshore_Competition v7 EN.pdf",
       "products": {
-        "competition": "Info"
+        "competition": "guides"
       },
       "path": "products/competition/documents/User Guide Offshore_Competition v7 EN.pdf",
       "size": 6427188,
@@ -203,7 +203,7 @@
     {
       "title": "User Guide Offshore_Competition v7 FR.pdf",
       "products": {
-        "competition": "Info"
+        "competition": "guides"
       },
       "path": "products/competition/documents/User Guide Offshore_Competition v7 FR.pdf",
       "size": 6446232,
@@ -212,7 +212,7 @@
     {
       "title": "Offshore 320 & 640 Data Harness A02440.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "wiring"
       },
       "path": "products/offshore/documents/Offshore 320 & 640 Data Harness A02440.pdf",
       "size": 135034,
@@ -221,7 +221,7 @@
     {
       "title": "Offshore 320 & 640 Data Harness F03146.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "wiring"
       },
       "path": "products/offshore/documents/Offshore 320 & 640 Data Harness F03146.pdf",
       "size": 221093,
@@ -230,7 +230,7 @@
     {
       "title": "Offshore 320 & 640 Installation Manual.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "guides"
       },
       "path": "products/offshore/documents/Offshore 320 & 640 Installation Manual.pdf",
       "size": 5271310,
@@ -239,7 +239,7 @@
     {
       "title": "Offshore 320 & 640 Interconnect Diagram.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "wiring"
       },
       "path": "products/offshore/documents/Offshore 320 & 640 Interconnect Diagram.pdf",
       "size": 206111,
@@ -248,7 +248,7 @@
     {
       "title": "Offshore 320 & 640 Power Harness A02681.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "wiring"
       },
       "path": "products/offshore/documents/Offshore 320 & 640 Power Harness A02681.pdf",
       "size": 129957,
@@ -257,7 +257,7 @@
     {
       "title": "Offshore 320 & 640 Processing Unit.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "cad"
       },
       "path": "products/offshore/documents/Offshore 320 & 640 Processing Unit.pdf",
       "size": 358499,
@@ -266,7 +266,7 @@
     {
       "title": "Offshore One Data Harness A02680.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "wiring"
       },
       "path": "products/offshore/documents/Offshore One Data Harness A02680.pdf",
       "size": 121486,
@@ -275,7 +275,7 @@
     {
       "title": "Offshore One External Buzzer Wiring Diagram.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "wiring"
       },
       "path": "products/offshore/documents/Offshore One External Buzzer Wiring Diagram.pdf",
       "size": 106535,
@@ -284,7 +284,7 @@
     {
       "title": "Offshore One Installation Manual.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "guides"
       },
       "path": "products/offshore/documents/Offshore One Installation Manual.pdf",
       "size": 3774136,
@@ -293,7 +293,7 @@
     {
       "title": "Offshore One Interconnect Diagram.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "wiring"
       },
       "path": "products/offshore/documents/Offshore One Interconnect Diagram.pdf",
       "size": 204377,
@@ -302,7 +302,7 @@
     {
       "title": "Offshore One NMEA 2000 Integration.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "wiring"
       },
       "path": "products/offshore/documents/Offshore One NMEA 2000 Integration.pdf",
       "size": 114121,
@@ -311,7 +311,7 @@
     {
       "title": "Offshore One Power Harness A02678.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "wiring"
       },
       "path": "products/offshore/documents/Offshore One Power Harness A02678.pdf",
       "size": 181817,
@@ -320,7 +320,7 @@
     {
       "title": "Offshore One Y-Splitter Harness A02740.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "wiring"
       },
       "path": "products/offshore/documents/Offshore One Y-Splitter Harness A02740.pdf",
       "size": 193639,
@@ -329,7 +329,7 @@
     {
       "title": "Offshore Vision Unit 2D Drawing.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "cad"
       },
       "path": "products/offshore/documents/Offshore Vision Unit 2D Drawing.pdf",
       "size": 733097,
@@ -338,7 +338,7 @@
     {
       "title": "Offshore Vision Unit Bracket 2D Drawing.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "cad"
       },
       "path": "products/offshore/documents/Offshore Vision Unit Bracket 2D Drawing.pdf",
       "size": 89731,
@@ -347,7 +347,7 @@
     {
       "title": "SEA.AI Offshore 320_640 Electrical drawing-4.pdf",
       "products": {
-        "offshore": "Support"
+        "offshore": "wiring"
       },
       "path": "products/offshore/documents/SEA.AI Offshore 320_640 Electrical drawing-4.pdf",
       "size": 425650,
@@ -356,7 +356,7 @@
     {
       "title": "SEA.AI Offshore One Electrical drawing-4.pdf",
       "products": {
-        "offshore": "Support"
+        "offshore": "wiring"
       },
       "path": "products/offshore/documents/SEA.AI Offshore One Electrical drawing-4.pdf",
       "size": 279059,
@@ -365,7 +365,7 @@
     {
       "title": "Sailing System Software 7.3.0 Update Information and Guideline.pdf",
       "products": {
-        "offshore": "Support"
+        "offshore": "guides"
       },
       "path": "products/offshore/documents/Sailing System Software 7.3.0 Update Information and Guideline.pdf",
       "size": 314554,
@@ -374,7 +374,7 @@
     {
       "title": "User Guide Offshore_Competition v7 EN.pdf",
       "products": {
-        "offshore": "Support"
+        "offshore": "guides"
       },
       "path": "products/offshore/documents/User Guide Offshore_Competition v7 EN.pdf",
       "size": 6427188,
@@ -383,7 +383,7 @@
     {
       "title": "User Guide Offshore_Competition v7 FR.pdf",
       "products": {
-        "offshore": "Info"
+        "offshore": "guides"
       },
       "path": "products/offshore/documents/User Guide Offshore_Competition v7 FR.pdf",
       "size": 6446232,
@@ -392,7 +392,7 @@
     {
       "title": "260612_Sentry - Specsheet.pdf",
       "products": {
-        "sentry": "Info"
+        "sentry": "datasheets"
       },
       "path": "products/sentry/documents/260612_Sentry - Specsheet.pdf",
       "size": 289321,
@@ -401,7 +401,7 @@
     {
       "title": "SEA.AI and TimeZero Integration Guideline.pdf",
       "products": {
-        "sentry": "Guides"
+        "sentry": "guides"
       },
       "path": "products/sentry/documents/SEA.AI and TimeZero Integration Guideline.pdf",
       "size": 1957685,
@@ -410,7 +410,7 @@
     {
       "title": "Sentry Comissioning Checklist.pdf",
       "products": {
-        "sentry": "Help"
+        "sentry": "guides"
       },
       "path": "products/sentry/documents/Sentry Comissioning Checklist.pdf",
       "size": 213143,
@@ -419,7 +419,7 @@
     {
       "title": "Sentry Data Harness A02232.pdf",
       "products": {
-        "sentry": "Info"
+        "sentry": "wiring"
       },
       "path": "products/sentry/documents/Sentry Data Harness A02232.pdf",
       "size": 91766,
@@ -428,7 +428,7 @@
     {
       "title": "Sentry Gen2 2D Drawing.pdf",
       "products": {
-        "sentry": "Support"
+        "sentry": "cad"
       },
       "path": "products/sentry/documents/Sentry Gen2 2D Drawing.pdf",
       "size": 1789604,
@@ -437,7 +437,7 @@
     {
       "title": "Sentry Ignore Mask Guideline.pdf",
       "products": {
-        "sentry": "Guides"
+        "sentry": "guides"
       },
       "path": "products/sentry/documents/Sentry Ignore Mask Guideline.pdf",
       "size": 340704,
@@ -446,7 +446,7 @@
     {
       "title": "Sentry Installation Manual.pdf",
       "products": {
-        "sentry": "Support"
+        "sentry": "guides"
       },
       "path": "products/sentry/documents/Sentry Installation Manual.pdf",
       "size": 2776409,
@@ -455,7 +455,7 @@
     {
       "title": "Sentry Interconnect Diagram.pdf",
       "products": {
-        "sentry": "Info"
+        "sentry": "wiring"
       },
       "path": "products/sentry/documents/Sentry Interconnect Diagram.pdf",
       "size": 157382,
@@ -464,7 +464,7 @@
     {
       "title": "Sentry Joystick Drawing.pdf",
       "products": {
-        "sentry": "Support"
+        "sentry": "cad"
       },
       "path": "products/sentry/documents/Sentry Joystick Drawing.pdf",
       "size": 314047,
@@ -473,7 +473,7 @@
     {
       "title": "Sentry Joystick Harness A02875.pdf",
       "products": {
-        "sentry": "Support"
+        "sentry": "wiring"
       },
       "path": "products/sentry/documents/Sentry Joystick Harness A02875.pdf",
       "size": 88654,
@@ -482,7 +482,7 @@
     {
       "title": "Sentry Power Harness A02233.pdf",
       "products": {
-        "sentry": "Support"
+        "sentry": "wiring"
       },
       "path": "products/sentry/documents/Sentry Power Harness A02233.pdf",
       "size": 87980,
@@ -491,7 +491,7 @@
     {
       "title": "Sentry Software Update Guideline.pdf",
       "products": {
-        "sentry": "Guides"
+        "sentry": "guides"
       },
       "path": "products/sentry/documents/Sentry Software Update Guideline.pdf",
       "size": 276565,
@@ -500,7 +500,7 @@
     {
       "title": "User Guide Sentry_4.0_english.pdf",
       "products": {
-        "sentry": "Guides"
+        "sentry": "guides"
       },
       "path": "products/sentry/documents/User Guide Sentry_4.0_english.pdf",
       "size": 6414992,
@@ -509,7 +509,7 @@
     {
       "title": "Specs_Watchkeeper_Motor.pdf",
       "products": {
-        "watchkeeper": "Info"
+        "watchkeeper": "datasheets"
       },
       "path": "products/watchkeeper/documents/Specs_Watchkeeper_Motor.pdf",
       "size": 363942,
@@ -518,7 +518,7 @@
     {
       "title": "Specs_Watchkeeper_Sailing.pdf",
       "products": {
-        "watchkeeper": "Info"
+        "watchkeeper": "datasheets"
       },
       "path": "products/watchkeeper/documents/Specs_Watchkeeper_Sailing.pdf",
       "size": 384173,
@@ -527,7 +527,7 @@
     {
       "title": "User Guide Watchkeeper Series_1.2.pdf",
       "products": {
-        "watchkeeper": "Guides"
+        "watchkeeper": "guides"
       },
       "path": "products/watchkeeper/documents/User Guide Watchkeeper Series_1.2.pdf",
       "size": 1974641,
@@ -536,7 +536,7 @@
     {
       "title": "Watchkeeper Data Harness A04140.pdf",
       "products": {
-        "watchkeeper": "Help"
+        "watchkeeper": "wiring"
       },
       "path": "products/watchkeeper/documents/Watchkeeper Data Harness A04140.pdf",
       "size": 181618,
@@ -545,7 +545,7 @@
     {
       "title": "Watchkeeper Installation Manual.pdf",
       "products": {
-        "watchkeeper": "Support"
+        "watchkeeper": "guides"
       },
       "path": "products/watchkeeper/documents/Watchkeeper Installation Manual.pdf",
       "size": 11075204,
@@ -554,7 +554,7 @@
     {
       "title": "Watchkeeper Interconnect Diagram.pdf",
       "products": {
-        "watchkeeper": "Support"
+        "watchkeeper": "wiring"
       },
       "path": "products/watchkeeper/documents/Watchkeeper Interconnect Diagram.pdf",
       "size": 318296,
@@ -563,7 +563,7 @@
     {
       "title": "Watchkeeper Obstruction Mask.pdf",
       "products": {
-        "watchkeeper": "Info"
+        "watchkeeper": "guides"
       },
       "path": "products/watchkeeper/documents/Watchkeeper Obstruction Mask.pdf",
       "size": 927407,
@@ -572,7 +572,7 @@
     {
       "title": "Watchkeeper Power Harness A04150.pdf",
       "products": {
-        "watchkeeper": "Help"
+        "watchkeeper": "wiring"
       },
       "path": "products/watchkeeper/documents/Watchkeeper Power Harness A04150.pdf",
       "size": 194088,
@@ -581,7 +581,7 @@
     {
       "title": "Watchkeeper_2D_Drawing.pdf",
       "products": {
-        "watchkeeper": "Support"
+        "watchkeeper": "cad"
       },
       "path": "products/watchkeeper/documents/Watchkeeper_2D_Drawing.pdf",
       "size": 3484579,
@@ -590,7 +590,7 @@
     {
       "title": "SEA-AI_Brain_3.13-4.oscar",
       "products": {
-        "brain": "Support"
+        "brain": "software"
       },
       "release": "brain-software-3.13-4",
       "asset": "SEA-AI_Brain_3.13-4.oscar",
@@ -600,11 +600,11 @@
     {
       "title": "MAC_SEA.AI Desktop-1.2.4-arm64.dmg",
       "products": {
-        "sentry": "Info",
-        "watchkeeper": "Info",
-        "brain": "Info",
-        "offshore": "Info",
-        "competition": "Info"
+        "sentry": "desktop",
+        "watchkeeper": "desktop",
+        "brain": "desktop",
+        "offshore": "desktop",
+        "competition": "desktop"
       },
       "release": "desktop-1.2.4",
       "asset": "MAC_SEA.AI.Desktop-1.2.4-arm64.dmg",
@@ -614,11 +614,11 @@
     {
       "title": "WIN_SEA.AI Desktop-1.2.4.exe",
       "products": {
-        "sentry": "Info",
-        "watchkeeper": "Info",
-        "brain": "Info",
-        "offshore": "Info",
-        "competition": "Info"
+        "sentry": "desktop",
+        "watchkeeper": "desktop",
+        "brain": "desktop",
+        "offshore": "desktop",
+        "competition": "desktop"
       },
       "release": "desktop-1.2.4",
       "asset": "WIN_SEA.AI.Desktop-1.2.4.exe",
@@ -628,7 +628,7 @@
     {
       "title": "Offshore 3D CAD.zip",
       "products": {
-        "offshore": "Info"
+        "offshore": "cad"
       },
       "release": "offshore-cad-2026.10",
       "asset": "Offshore.3D.CAD.zip",
@@ -638,7 +638,7 @@
     {
       "title": "SEA-AI_Sailing_7.3.2.oscar",
       "products": {
-        "competition": "Support"
+        "competition": "software"
       },
       "release": "sailing-software-7.3.2",
       "asset": "SEA-AI_Sailing_7.3.2.oscar",
@@ -648,8 +648,8 @@
     {
       "title": "SEA-AI_Sailing_8.0.1.oscar",
       "products": {
-        "offshore": "Support",
-        "competition": "Support"
+        "offshore": "software",
+        "competition": "software"
       },
       "release": "sailing-software-8.0.1",
       "asset": "SEA-AI_Sailing_8.0.1.oscar",
@@ -659,7 +659,7 @@
     {
       "title": "Sentry Gen2 3D CAD.zip",
       "products": {
-        "sentry": "Help"
+        "sentry": "cad"
       },
       "release": "sentry-cad-2026.10",
       "asset": "Sentry.Gen2.3D.CAD.zip",
@@ -669,7 +669,7 @@
     {
       "title": "Sentry Joystick 3D CAD.zip",
       "products": {
-        "sentry": "Support"
+        "sentry": "cad"
       },
       "release": "sentry-cad-2026.10",
       "asset": "Sentry.Joystick.3D.CAD.zip",
@@ -679,7 +679,7 @@
     {
       "title": "SEA-AI_Sentry_4.4-6.oscar",
       "products": {
-        "sentry": "Info"
+        "sentry": "software"
       },
       "release": "sentry-software-4.4-6",
       "asset": "SEA-AI_Sentry_4.4-6.oscar",
@@ -689,7 +689,7 @@
     {
       "title": "v10_cam_assy_outer_shape.stp",
       "products": {
-        "watchkeeper": "Info"
+        "watchkeeper": "cad"
       },
       "release": "watchkeeper-cad-2026.10",
       "asset": "v10_cam_assy_outer_shape.stp",
@@ -699,7 +699,7 @@
     {
       "title": "Watchkeeper 3D CAD.zip",
       "products": {
-        "watchkeeper": "Support"
+        "watchkeeper": "cad"
       },
       "release": "watchkeeper-cad-2026.10",
       "asset": "Watchkeeper.3D.CAD.zip",
@@ -709,7 +709,7 @@
     {
       "title": "SEA-AI_WK_4.4-6.oscar",
       "products": {
-        "watchkeeper": "Info"
+        "watchkeeper": "software"
       },
       "release": "watchkeeper-software-4.4-6",
       "asset": "SEA-AI_WK_4.4-6.oscar",

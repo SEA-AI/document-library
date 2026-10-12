@@ -3,6 +3,8 @@
 Checks:
   - catalog.json matches schema/catalog.schema.json
   - every product and release a file names is declared; every release holds a file
+  - categories fit the file: .oscar in software, desktop-* releases in desktop, *-cad-* releases
+    in cad; documents never in software or desktop
   - documents sit where the layout says: products/<id>/documents/ for one product,
     shared/documents/ for several; the file name equals the title
   - every document exists, matches its size and sha256, and is under 100 MB (git limit)
@@ -37,6 +39,18 @@ def expected_path(entry: dict) -> str:
     return f"{folder}/{entry['title']}"
 
 
+def expected_category(entry: dict) -> str | None:
+    """The category a release file must have, from its type and release; None for documents."""
+    if entry["title"].lower().endswith(".oscar"):
+        return "software"
+    release = entry.get("release", "")
+    if release.startswith("desktop-"):
+        return "desktop"
+    if "-cad-" in release:
+        return "cad"
+    return None
+
+
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as f:
@@ -64,6 +78,12 @@ def check_catalog(catalog: dict) -> list[str]:
         for product in entry["products"]:
             if product not in catalog["products"]:
                 errors.append(f"{name}: unknown product '{product}'")
+        expected = expected_category(entry)
+        for product, category in entry["products"].items():
+            if expected and category != expected:
+                errors.append(f"{name}: category on {product} should be '{expected}', is '{category}'")
+            if "path" in entry and category in ("software", "desktop"):
+                errors.append(f"{name}: documents cannot be in '{category}'")
         if "release" in entry:
             used_releases.add(entry["release"])
             if entry["release"] not in catalog["releases"]:

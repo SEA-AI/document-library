@@ -41,10 +41,10 @@
             "pattern": "^[^#?%/\\\\<>\"\\s][^#?%/\\\\<>\"]*[^#?%/\\\\<>\"\\s]$"
           },
           "products": {
-            "description": "Product id -> document type on that product's page.",
+            "description": "Product id -> category on that product's page: software releases, desktop application, CAD (2D drawings, 3D models), guides, wiring diagrams, datasheets.",
             "type": "object",
             "minProperties": 1,
-            "additionalProperties": { "enum": ["Support", "Guides", "Help", "Info"] }
+            "additionalProperties": { "enum": ["software", "desktop", "cad", "guides", "wiring", "datasheets"] }
           },
           "path": { "description": "Documents: path in this repo.", "type": "string" },
           "release": { "description": "Software and CAD: release tag holding the file.", "type": "string" },
