@@ -9,7 +9,7 @@ Checks:
   - every file in a documents folder is listed in the catalog
   - no product lists two files with the same title
   - with --releases: every release exists on GitHub with an asset labelled with each title,
-    of the catalog size (uses GITHUB_TOKEN if set)
+    of the catalog size and stored under the catalog's asset name (uses GITHUB_TOKEN if set)
 
 Usage:
     pip install jsonschema
@@ -114,17 +114,21 @@ def check_releases(catalog: dict) -> list[str]:
         url = f"https://api.github.com/repos/{catalog['repository']}/releases/tags/{tag}"
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=30) as resp:
-                assets = {(a.get("label") or a["name"]): a["size"] for a in json.load(resp)["assets"]}
+                assets = {(a.get("label") or a["name"]): a for a in json.load(resp)["assets"]}
         except urllib.error.HTTPError as exc:
             errors.append(f"release '{tag}': GitHub returned {exc.code}")
             continue
         for entry in catalog["files"]:
             if entry.get("release") != tag:
                 continue
-            if entry["title"] not in assets:
+            asset = assets.get(entry["title"])
+            if asset is None:
                 errors.append(f"release '{tag}': no asset labelled '{entry['title']}'")
-            elif assets[entry["title"]] != entry["size"]:
-                errors.append(f"release '{tag}': '{entry['title']}' is {assets[entry['title']]} bytes, catalog says {entry['size']}")
+                continue
+            if asset["size"] != entry["size"]:
+                errors.append(f"release '{tag}': '{entry['title']}' is {asset['size']} bytes, catalog says {entry['size']}")
+            if asset["name"] != entry["asset"]:
+                errors.append(f"release '{tag}': '{entry['title']}' is stored as asset '{asset['name']}', catalog says '{entry['asset']}'")
     return errors
 
 

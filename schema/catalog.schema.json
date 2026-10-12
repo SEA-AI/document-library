@@ -38,7 +38,7 @@
           "title": {
             "description": "File name shown to visitors. For release files, also the asset label.",
             "type": "string",
-            "pattern": "^[^#?%/\\\\\\s][^#?%/\\\\]*[^#?%/\\\\\\s]$"
+            "pattern": "^[^#?%/\\\\<>\"\\s][^#?%/\\\\<>\"]*[^#?%/\\\\<>\"\\s]$"
           },
           "products": {
             "description": "Product id -> document type on that product's page.",
@@ -48,12 +48,17 @@
           },
           "path": { "description": "Documents: path in this repo.", "type": "string" },
           "release": { "description": "Software and CAD: release tag holding the file.", "type": "string" },
+          "asset": {
+            "description": "Asset name GitHub stored (it rewrites spaces to dots); the download URL uses it.",
+            "type": "string",
+            "pattern": "^[^\\s/#?%]+$"
+          },
           "size": { "type": "integer", "minimum": 1 },
           "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
         },
         "oneOf": [
           { "required": ["path"], "not": { "required": ["release"] } },
-          { "required": ["release"], "not": { "required": ["path"] } }
+          { "required": ["release", "asset"], "not": { "required": ["path"] } }
         ]
       }
     }

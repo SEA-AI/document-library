@@ -8,7 +8,9 @@ collision avoidance assistant for the crew.
 
 ## Find your files
 
-Open your product's page. It lists every document and software file for that product.
+Browse everything on the document library website: https://sea-ai.github.io/document-library/
+
+Or open your product's page here. It lists every document and software file for that product.
 
 | Product | Page |
 |---|---|
@@ -39,7 +41,12 @@ For help, contact [support email or URL].
 
 `catalog.json` lists every published file: its title, the products that show it, its document
 type on each product's page (`Support`, `Guides`, `Help`, `Info`), where it is stored, its size
-and its SHA-256. The SEA.AI document library site is built from it.
+and its SHA-256. Release files also record the asset name GitHub stored (`asset`), since GitHub
+rewrites spaces to dots; `tools/validate_catalog.py --releases` reports the right value.
+
+**The website** is `index.html`, `content.js` and `assets/`, served by GitHub Pages from the
+root of `develop`. The page reads `catalog.json` directly, so a merged change to the catalog is
+live within minutes. Page text is in `content.js`; layout, style and behaviour in `index.html`.
 
 **Add or replace a document:** put the PDF in `products/<product>/documents/` (or
 `shared/documents/` if several products use it), add or update its entry in `catalog.json`, run

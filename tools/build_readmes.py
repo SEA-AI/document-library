@@ -34,8 +34,9 @@ def render(catalog: dict, product: str) -> str:
     for e in entries:
         if "release" in e:
             release = catalog["releases"][e["release"]]["title"]
-            url = f"https://github.com/{catalog['repository']}/releases/tag/{e['release']}"
-            lines.append(f"| {e['title']} | {e['products'][product]} | [{release}]({url}) |")
+            base = f"https://github.com/{catalog['repository']}/releases"
+            download = f"{base}/download/{e['release']}/{quote(e['asset'])}"
+            lines.append(f"| [{e['title']}]({download}) | {e['products'][product]} | [{release}]({base}/tag/{e['release']}) |")
     return "\n".join(lines) + "\n"
 
 

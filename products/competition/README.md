@@ -22,7 +22,7 @@ Generated from `catalog.json` by `tools/build_readmes.py`. Do not edit by hand.
 
 | File | Type | Release |
 |---|---|---|
-| MAC_SEA.AI Desktop-1.2.4-arm64.dmg | Info | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
-| SEA-AI_Sailing_7.3.2.oscar | Support | [Sailing system software 7.3.2](https://github.com/SEA-AI/document-library/releases/tag/sailing-software-7.3.2) |
-| SEA-AI_Sailing_8.0.1.oscar | Support | [Sailing system software 8.0.1](https://github.com/SEA-AI/document-library/releases/tag/sailing-software-8.0.1) |
-| WIN_SEA.AI Desktop-1.2.4.exe | Info | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
+| [MAC_SEA.AI Desktop-1.2.4-arm64.dmg](https://github.com/SEA-AI/document-library/releases/download/desktop-1.2.4/MAC_SEA.AI.Desktop-1.2.4-arm64.dmg) | Info | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
+| [SEA-AI_Sailing_7.3.2.oscar](https://github.com/SEA-AI/document-library/releases/download/sailing-software-7.3.2/SEA-AI_Sailing_7.3.2.oscar) | Support | [Sailing system software 7.3.2](https://github.com/SEA-AI/document-library/releases/tag/sailing-software-7.3.2) |
+| [SEA-AI_Sailing_8.0.1.oscar](https://github.com/SEA-AI/document-library/releases/download/sailing-software-8.0.1/SEA-AI_Sailing_8.0.1.oscar) | Support | [Sailing system software 8.0.1](https://github.com/SEA-AI/document-library/releases/tag/sailing-software-8.0.1) |
+| [WIN_SEA.AI Desktop-1.2.4.exe](https://github.com/SEA-AI/document-library/releases/download/desktop-1.2.4/WIN_SEA.AI.Desktop-1.2.4.exe) | Info | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |

@@ -577,6 +577,7 @@
         "brain": "Support"
       },
       "release": "brain-software-3.13-4",
+      "asset": "SEA-AI_Brain_3.13-4.oscar",
       "size": 129530104,
       "sha256": "8a4b7447216a0a6b583702ab6ab1b2af3bd4807667f1076370d3b18ea561529c"
     },
@@ -590,6 +591,7 @@
         "competition": "Info"
       },
       "release": "desktop-1.2.4",
+      "asset": "MAC_SEA.AI.Desktop-1.2.4-arm64.dmg",
       "size": 129965107,
       "sha256": "a119a7219f7f8ed6c781446befee437e699295f4c355926685d8d3982d641256"
     },
@@ -603,6 +605,7 @@
         "competition": "Info"
       },
       "release": "desktop-1.2.4",
+      "asset": "WIN_SEA.AI.Desktop-1.2.4.exe",
       "size": 101872648,
       "sha256": "d1d7f4f232a208344bef5c71b85910f306a10610de4f4e6d434361ceb5eb4fc6"
     },
@@ -612,6 +615,7 @@
         "offshore": "Info"
       },
       "release": "offshore-cad-2026.10",
+      "asset": "Offshore.3D.CAD.zip",
       "size": 13184504,
       "sha256": "801b578f3ef397b0c6a543bd406d46e709f61f7aebb6f5c37398bc4fefb93fb3"
     },
@@ -621,6 +625,7 @@
         "competition": "Support"
       },
       "release": "sailing-software-7.3.2",
+      "asset": "SEA-AI_Sailing_7.3.2.oscar",
       "size": 88032488,
       "sha256": "993bd2720f8e9e02cde21d9f9a1bf097d5a75f31d1161c51cff32c46f3ba899a"
     },
@@ -631,6 +636,7 @@
         "competition": "Support"
       },
       "release": "sailing-software-8.0.1",
+      "asset": "SEA-AI_Sailing_8.0.1.oscar",
       "size": 103391096,
       "sha256": "9a0a033fda83a57b11184e810b42ac6c18c812122abeb7a509dbcbab73733959"
     },
@@ -640,6 +646,7 @@
         "sentry": "Help"
       },
       "release": "sentry-cad-2026.10",
+      "asset": "Sentry.Gen2.3D.CAD.zip",
       "size": 16085171,
       "sha256": "88f0bf4db903c87aac7de5c6923b6166c8c53c1b15ad43dd43cd04f6d12f2f30"
     },
@@ -649,6 +656,7 @@
         "sentry": "Support"
       },
       "release": "sentry-cad-2026.10",
+      "asset": "Sentry.Joystick.3D.CAD.zip",
       "size": 1911273,
       "sha256": "427a8489924b5d8c1d5b01ba00bf3b13300e9a960b53564cf0c82a92e4abd00f"
     },
@@ -658,6 +666,7 @@
         "sentry": "Info"
       },
       "release": "sentry-software-4.4-6",
+      "asset": "SEA-AI_Sentry_4.4-6.oscar",
       "size": 129819768,
       "sha256": "07344758b85ecdca96405978126a046f62f4733d364812ad7f5a35d3764e7507"
     },
@@ -667,6 +676,7 @@
         "watchkeeper": "Info"
       },
       "release": "watchkeeper-cad-2026.10",
+      "asset": "v10_cam_assy_outer_shape.stp",
       "size": 42050646,
       "sha256": "29a95a5b161fde398ec3cbf03db9bc5b723818ba45c8ced1f5928de2a1d91c45"
     },
@@ -676,6 +686,7 @@
         "watchkeeper": "Support"
       },
       "release": "watchkeeper-cad-2026.10",
+      "asset": "Watchkeeper.3D.CAD.zip",
       "size": 12696997,
       "sha256": "5730268d2b2b6902e7b71849969fc0868522867b8354bb65a00beb532ce69545"
     },
@@ -685,6 +696,7 @@
         "watchkeeper": "Info"
       },
       "release": "watchkeeper-software-4.4-6",
+      "asset": "SEA-AI_WK_4.4-6.oscar",
       "size": 142048456,
       "sha256": "4d7bddcd9f066e96b8b18882aeeb3f3bc4d88c98213acda09c1ef75604df9f9f"
     }

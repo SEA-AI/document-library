@@ -1,0 +1,3579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════════════
+       SEO — Primary
+  ════════════════════════════════════════════════════════════ -->
+  <title>SEA.AI Product Documentation</title>
+  <meta name="description" content="Technical documentation and support resources for SEA.AI products including Watchkeeper, Sentry, and Brain. Find guides, specs, and integration documentation." />
+  <meta name="keywords" content="SEA.AI documentation, product guides, technical support, Watchkeeper specs, Sentry documentation, integration guides" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://sea-ai.github.io/document-library/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SEA.AI Docs" />
+  <meta property="og:title" content="SEA.AI Product Documentation" />
+  <meta property="og:description" content="Technical documentation and support resources for SEA.AI products. Browse guides, specifications, and integration documentation." />
+  <meta property="og:url" content="https://sea-ai.github.io/document-library/" />
+  <meta property="og:image" content="https://sea.ai/logo.svg" />
+  <meta name="twitter:image" content="https://sea.ai/logo.svg" />
+  <meta property="og:locale" content="en_GB" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SEA.AI Product Documentation" />
+  <meta name="twitter:description" content="Technical documentation and support resources for SEA.AI products." />
+
+  <!-- ═══════════════════════════════════════════════════════
+       GEO + Structured data (JSON-LD)
+  ════════════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SEA.AI",
+    "url": "https://sea-ai.github.io/document-library/",
+    "parentOrganization": { "@type": "Organization", "name": "SEA.AI", "url": "https://sea.ai/" },
+    "logo": "https://sea.ai/logo.svg",
+    "description": "SEA.AI Product Documentation Library. Technical guides, specifications, and support resources for SEA.AI products including Watchkeeper, Sentry, and Brain.",
+    "foundingDate": "2018",
+    "areaServed": "Worldwide",
+    "sameAs": ["https://sea.ai/"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "SEA.AI Product Documentation",
+    "description": "Central hub for all SEA.AI product documentation, technical guides, specifications, and support materials.",
+    "url": "https://sea-ai.github.io/document-library/"
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════
+       Matomo — fill in YOUR_MATOMO_URL and YOUR_SITE_ID
+  ════════════════════════════════════════════════════════════ -->
+  <script>
+    var _paq = window._paq = window._paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u = "https://YOUR_MATOMO_URL/";   /* ← replace */
+      _paq.push(['setTrackerUrl', u + 'matomo.php']);
+      _paq.push(['setSiteId', 'YOUR_SITE_ID']);  /* ← replace with integer */
+      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+      g.async = true; g.src = u + 'matomo.js';
+      s.parentNode.insertBefore(g, s);
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════
+       Fonts — Barlow Semi Condensed
+  ════════════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ──────────────────────────────────────────────────────
+       BRAND TOKENS
+    ────────────────────────────────────────────────────── */
+    :root {
+      --red:        #CB0D00;
+      --sky-grey:   #7B9194;
+      --fog-white:  #DFDED9;
+      --black:      #000000;
+      --white:      #FFFFFF;
+
+      /* Institutional dark — Security & Defence palette */
+      --inst-1:     #111111;   /* deepest — nav, footer */
+      --inst-2:     #111111;   /* primary dark surface */
+      --inst-3:     #111111;   /* alternating dark block */
+      --inst-4:     #222222;   /* cards / callouts on dark */
+      --content-2:  #5A5F68;   /* body text on white sections */
+
+      --font: 'Barlow Semi Condensed', 'Arial Narrow', Arial, sans-serif;
+
+      --wrap: 1240px;
+      --gutter: clamp(20px, 4vw, 48px);
+
+      --ease: all 0.25s ease;
+    }
+
+    /* ──────────────────────────────────────────────────────
+       RESET & BASE
+    ────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font);
+      background: var(--inst-2);
+      color: var(--white);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, video { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    button { font-family: var(--font); cursor: pointer; }
+
+    /* ──────────────────────────────────────────────────────
+       LAYOUT UTILITIES
+    ────────────────────────────────────────────────────── */
+    .wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+    .divider {
+      border: 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+
+    /* ──────────────────────────────────────────────────────
+       TYPOGRAPHY
+    ────────────────────────────────────────────────────── */
+    .label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--fog-white);
+    }
+    /* White-background sections: label in red. Dark-background sections: label in grey (default). */
+    .usp .label,
+    .reel-section .label,
+    .features .label,
+    .deployments .label,
+    .why .label,
+    .contact .label {
+      color: var(--red);
+    }
+    h1 {
+      font-size: clamp(38px, 5.5vw, 76px);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -.01em;
+    }
+    h2 {
+      font-size: clamp(26px, 3.2vw, 46px);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -.01em;
+    }
+    h3 {
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .lead {
+      font-size: clamp(16px, 1.5vw, 19px);
+      font-weight: 400;
+      color: var(--fog-white);
+      line-height: 1.6;
+    }
+
+    /* ──────────────────────────────────────────────────────
+       BUTTONS
+    ────────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 13px 26px;
+      border: none;
+      cursor: pointer;
+      transition: var(--ease);
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    /* All CTAs: red-filled, squared */
+    .btn-primary,
+    .btn-red {
+      background: var(--red);
+      color: var(--white);
+    }
+    .btn-primary:hover,
+    .btn-red:hover {
+      background: #a00a00;
+      color: var(--white);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,.35);
+    }
+    .btn-ghost:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    /* ──────────────────────────────────────────────────────
+       TOP RULE (brand "Mission Pure" style)
+    ────────────────────────────────────────────────────── */
+    .top-rule {
+      height: 3px;
+      background: var(--red);
+      width: 100%;
+    }
+
+    /* ──────────────────────────────────────────────────────
+       NAV
+    ────────────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--inst-1);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 24px;
+    }
+    .nav .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+      flex-shrink: 0;
+    }
+    .nav .brand img {
+      height: 22px;
+      width: auto;
+      display: block;
+    }
+    .nav .brand .sector {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--white);
+      opacity: .45;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      opacity: .7;
+      transition: var(--ease);
+    }
+    .nav-links a:hover { opacity: 1; color: var(--red); }
+    .nav .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+    .nav .back-link {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      opacity: .45;
+      transition: var(--ease);
+    }
+    .nav .back-link:hover { opacity: .9; }
+
+    /* Mobile nav strip — replaces hamburger */
+    .mobile-nav-strip {
+      display: none;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: var(--inst-1);
+    }
+    .mobile-nav-strip::-webkit-scrollbar { display: none; }
+    .mobile-nav-strip ul {
+      display: flex;
+      white-space: nowrap;
+      padding: 0 var(--gutter);
+      gap: 0;
+    }
+    .mobile-nav-strip ul a {
+      display: inline-block;
+      padding: 12px 18px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .mobile-nav-strip ul a:hover,
+    .mobile-nav-strip ul a:focus {
+      color: var(--white);
+      border-bottom-color: var(--white);
+    }
+    .mobile-nav-strip ul a.back {
+      color: rgba(255,255,255,.35);
+      border-right: 1px solid rgba(255,255,255,.1);
+      margin-right: 8px;
+    }
+
+    /* ──────────────────────────────────────────────────────
+       HERO
+    ────────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: clamp(560px, 85vh, 800px);
+      display: flex;
+      align-items: flex-end;
+      padding: 96px 0 72px;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 0;
+    }
+    /* Placeholder when no media */
+    .hero-placeholder {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #000000 0%, #0d0d0d 60%, #111111 100%);
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.80) 0%, rgba(0,0,0,.50) 45%, rgba(0,0,0,.15) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.0) 40%, rgba(0,0,0,.65) 100%);
+    }
+    .hero-copyright {
+      position: absolute;
+      bottom: 10px;
+      right: 14px;
+      z-index: 3;
+      font-size: 10px;
+      color: rgba(255,255,255,.55);
+      letter-spacing: .04em;
+      pointer-events: none;
+    }
+    .hero .wrap { position: relative; z-index: 2; width: 100%; }
+    .hero-inner { max-width: 720px; }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--red);
+      border: 1px solid rgba(203,13,0,.45);
+      background: rgba(0,0,0,.65);
+      padding: 8px 14px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(6px);
+    }
+    .hero-kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--red);
+      flex-shrink: 0;
+      box-shadow: 0 0 8px rgba(203,13,0,.9);
+    }
+    .hero h1 {
+      color: var(--white);
+      margin-bottom: 22px;
+      max-width: 18ch;
+      text-shadow: 0 2px 20px rgba(0,0,0,.6);
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--red);
+    }
+    .hero .lead {
+      max-width: 58ch;
+      margin-bottom: 38px;
+      text-shadow: 0 1px 8px rgba(0,0,0,.6);
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.18);
+    }
+    .hero-stat small {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--sky-grey);
+      margin-bottom: 4px;
+    }
+    .hero-stat span {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    /* ──────────────────────────────────────────────────────
+       SECTION SHARED STYLES
+    ────────────────────────────────────────────────────── */
+    .section-head {
+      margin-bottom: 52px;
+    }
+    .section-head .label {
+      margin-bottom: 14px;
+    }
+    .section-head h2 {
+      max-width: 24ch;
+      margin-bottom: 16px;
+    }
+    .section-head .lead {
+      max-width: 62ch;
+    }
+
+    /* ──────────────────────────────────────────────────────
+       USP PILLARS
+    ────────────────────────────────────────────────────── */
+    /* USP — white content section, dark titles */
+    .usp {
+      padding: 96px 0;
+      background: var(--white);
+      color: var(--inst-1);
+    }
+    .usp .section-head h2 { color: var(--inst-1); }
+    .usp .section-head h2 em { font-style: normal; color: var(--red); }
+    .usp .section-head .lead { color: var(--inst-1); opacity: 1; }
+
+    .usp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(0,0,0,.08);
+    }
+    .usp-cell {
+      background: var(--white);
+      padding: 40px 32px;
+      border-top: 3px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+    .usp-cell:hover { border-top-color: var(--red); }
+    .usp-cell .icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 20px;
+      opacity: .5;
+    }
+    .usp-cell h3 { color: var(--inst-1); margin-bottom: 14px; }
+    .usp-cell p { font-size: 15px; color: var(--content-2); opacity: 1; line-height: 1.6; margin-bottom: 20px; }
+    .usp-cell ul { padding-left: 0; }
+    .usp-cell ul li {
+      font-size: 14px;
+      color: var(--content-2);
+      padding: 5px 0;
+      padding-left: 16px;
+      position: relative;
+      border-bottom: 1px solid rgba(0,0,0,.07);
+    }
+    .usp-cell ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-weight: 700;
+    }
+    .usp-cell ul li:last-child { border-bottom: 0; }
+
+    /* ──────────────────────────────────────────────────────
+       APPLICATIONS / MISSIONS
+    ────────────────────────────────────────────────────── */
+    /* Missions — inst dark surface */
+    .missions {
+      padding: 96px 0;
+      background: var(--inst-2);
+    }
+
+    /* Video reel section */
+    .reel-section {
+      background: var(--white);
+      border-top: 3px solid var(--red);
+      padding-top: 72px;
+      padding-bottom: 72px;
+    }
+    .reel-head {
+      margin-bottom: 48px;
+    }
+    .reel-head h2 {
+      color: var(--inst-1);
+      margin-top: 14px;
+    }
+    .reel-head h2 em {
+      font-style: normal;
+      color: var(--red);
+    }
+    .reel-video {
+      width: 100%;
+      display: block;
+      max-height: 75vh;
+      object-fit: cover;
+    }
+    .reel-video-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .reel-video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .missions .section-head h2 { color: var(--white); }
+    .missions .section-head h2 em { font-style: normal; color: var(--red); }
+    .missions .section-head .lead { color: var(--fog-white); white-space: nowrap; }
+
+    .missions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .mission-card {
+      background: var(--white);
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+      transition: var(--ease);
+    }
+    .mission-card:hover { background: #f4f4f4; }
+    .mission-card:hover .mission-img-placeholder { opacity: .85; }
+
+    .mission-img-placeholder {
+      height: 180px;
+      background: #111111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.25);
+      transition: var(--ease);
+      /* Replace with: background-image: url('mission-X.jpg'); background-size: cover; */
+    }
+    .mission-card video,
+    .mission-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .mission-body { padding: 28px 28px 32px; }
+    .mission-body .label { margin-bottom: 10px; color: var(--red); }
+    .mission-body h3 { color: var(--inst-1); margin-bottom: 12px; }
+    .mission-body p { font-size: 14px; color: var(--inst-1); opacity: 1; line-height: 1.65; }
+    .mission-body ul { margin: 0; padding-left: 18px; }
+    .mission-body ul li { font-size: 14px; color: var(--inst-1); line-height: 1.65; margin-bottom: 6px; }
+    .mission-body ul li:last-child { margin-bottom: 0; }
+
+    /* Two column layout for Safety/Defence split (mirrors the wireframe) */
+    .missions-split {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.08);
+      margin-bottom: 1px;
+    }
+    .missions-col-label {
+      padding: 20px 28px;
+      background: #0c0c0c;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .missions-col-label h3 {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    /* ──────────────────────────────────────────────────────
+       TECHNOLOGY
+    ────────────────────────────────────────────────────── */
+    .technology {
+      padding: 96px 0;
+      background: var(--white);
+    }
+    .technology .section-head h2 { color: var(--inst-1); }
+    .technology .section-head h2 em { font-style: normal; color: var(--red); }
+    .technology .section-head .lead { color: var(--content-2); opacity: 1; max-width: 100%; }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .tech-media {
+      position: relative;
+      background: rgba(0,0,0,.08);
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .tech-media img,
+    .tech-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .tech-placeholder-text {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.2);
+    }
+    .tech-tag {
+      display: none;
+    }
+    .tech-content p {
+      font-size: 15px;
+      color: var(--content-2);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      opacity: 1;
+    }
+    .stack-list {
+      border-top: 1px solid rgba(0,0,0,.1);
+    }
+    .stack-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(0,0,0,.07);
+      align-items: start;
+    }
+    .stack-row dt {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--sky-grey);
+      padding-top: 2px;
+    }
+    .stack-row dd {
+      font-size: 14px;
+      color: var(--inst-1);
+      line-height: 1.6;
+    }
+
+    /* ──────────────────────────────────────────────────────
+       FEATURES — accordion + media
+    ────────────────────────────────────────────────────── */
+    .features {
+      background: var(--white);
+      padding: 96px 0;
+    }
+    .features .section-head { margin-bottom: 56px; }
+    .features .section-head h2 { color: var(--inst-1); }
+    .features .section-head h2 em { font-style: normal; color: var(--red); }
+
+    .features-layout {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* Accordion list */
+    .feat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .feat-item {
+      border-top: 1px solid rgba(0,0,0,.1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .feat-item:last-child { border-bottom: 1px solid rgba(0,0,0,.1); }
+    .feat-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px 0;
+    }
+    .feat-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      color: var(--sky-grey);
+      flex-shrink: 0;
+      min-width: 28px;
+    }
+    .feat-title {
+      font-size: clamp(16px, 1.6vw, 20px);
+      font-weight: 600;
+      color: var(--inst-1);
+      flex: 1;
+      transition: color .2s ease;
+    }
+    .feat-arrow {
+      font-size: 18px;
+      color: rgba(0,0,0,.3);
+      transition: transform .25s ease, color .2s ease;
+      line-height: 1;
+    }
+    .feat-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+    }
+    .feat-body-inner {
+      padding: 0 0 24px;
+      font-size: 14px;
+      color: var(--inst-1);
+      line-height: 1.7;
+    }
+    /* Progress bar */
+    .feat-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background: var(--red);
+      transition: width .0s;
+    }
+
+    /* Active state */
+    .feat-item.is-active .feat-title { color: var(--red); }
+    .feat-item.is-active .feat-arrow { transform: rotate(45deg); color: var(--red); }
+    .feat-item.is-active .feat-body  { max-height: 200px; }
+    .feat-item.is-active .feat-bar   { width: 100%; transition: width 6s linear; }
+
+    /* Media panel */
+    .feat-media {
+      position: sticky;
+      top: 96px;
+      background: var(--inst-4);
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+    .feat-media-slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+    }
+    .feat-media-slide.is-active { display: block; }
+    .feat-media-slide video,
+    .feat-media-slide iframe,
+    .feat-media-slide img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .feat-media-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: rgba(255,255,255,.2);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .feat-media-placeholder svg { opacity: .25; }
+    .feat-tag-overlay {
+      display: none;
+    }
+
+    .feat-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(0,0,0,.1);
+    }
+    .feat-cta p {
+      font-size: 15px;
+      color: var(--inst-1);
+      line-height: 1.65;
+      max-width: 55ch;
+      margin: 0;
+    }
+    .feat-cta .btn { flex-shrink: 0; }
+
+    @media (max-width: 900px) {
+      .feat-cta { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .features-layout { grid-template-columns: 1fr; }
+      .feat-media { position: relative; top: 0; }
+    }
+
+    /* ──────────────────────────────────────────────────────
+       INTEGRATION — product spec sheets
+    ────────────────────────────────────────────────────── */
+    .integration {
+      background: var(--inst-2);
+      padding: 96px 0 0;
+    }
+    .integration .section-head h2 { color: var(--white); }
+    .integration .section-head h2 em { font-style: normal; color: var(--red); }
+
+    /* Two-column product layout */
+    .products-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      background: var(--inst-2);
+      margin-bottom: 64px;
+    }
+    .product-col {
+      background: var(--inst-4);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Image area */
+    .product-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--inst-4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .product-img img,
+    .product-img video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .product-img-placeholder {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.18);
+    }
+
+    /* Spec body */
+    .product-body {
+      padding: 40px 48px 48px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+    }
+    .product-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .product-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+    .product-tag + .product-tag::before {
+      content: "·";
+      margin-right: 6px;
+      color: rgba(0,0,0,.2);
+    }
+    .product-title {
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 500;
+      letter-spacing: -.01em;
+      text-transform: uppercase;
+      color: var(--inst-1);
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+    .product-blurb {
+      font-size: 14px;
+      color: var(--inst-1);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+
+    /* Spec table */
+    .spec-table-wrap {
+      background: rgba(0,0,0,.03);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .spec-table tr {
+      border-bottom: 1px solid rgba(0,0,0,.07);
+    }
+    .spec-table tr:last-child { border-bottom: none; }
+    .spec-table td {
+      padding: 11px 16px;
+      font-size: 13px;
+      line-height: 1.4;
+      vertical-align: top;
+    }
+    .spec-table td:first-child {
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--inst-1);
+      width: 44%;
+    }
+    .spec-table td:last-child {
+      color: var(--inst-1);
+      text-align: right;
+      font-weight: 400;
+    }
+    .spec-table tr.spec-group td {
+      padding-top: 18px;
+      padding-bottom: 6px;
+      border-bottom: none;
+      color: var(--inst-1);
+    }
+    .spec-table tr.spec-sub td:first-child {
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--inst-1);
+      font-size: 12px;
+      padding-left: 26px;
+    }
+    .spec-table tr:not(.spec-group) td:last-child {
+      font-size: 12px;
+    }
+    .spec-table tr.spec-sub td:last-child {
+      font-size: 12px;
+      color: var(--inst-1);
+    }
+
+    /* Datasheet link — slim outlined CTA */
+    .datasheet-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--sky-grey);
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 8px;
+      padding: 8px 16px;
+      transition: var(--ease);
+      margin-top: auto;
+      background: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .datasheet-link:hover {
+      color: var(--inst-1);
+      border-color: var(--inst-1);
+      background: rgba(0,0,0,.04);
+    }
+    .product-footnote {
+      font-size: 11px;
+      color: var(--inst-1);
+      margin-top: -26px;
+      margin-bottom: 16px;
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    /* API strip */
+    .api-strip {
+      background: var(--inst-2);
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .api-strip-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 80px;
+      align-items: center;
+      padding: 72px 0;
+    }
+    .api-copy .label { margin-bottom: 14px; color: var(--fog-white); }
+    .api-copy h3 {
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .api-copy h3 em { font-style: normal; color: var(--red); }
+    .api-copy p {
+      font-size: 15px;
+      color: var(--fog-white);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .api-caps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .api-cap {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--fog-white);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 6px 12px;
+    }
+    /* API output visual */
+    .api-visual {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,.08);
+      border-top: 3px solid var(--red);
+    }
+    .api-visual-header {
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(0,0,0,.07);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--sky-grey);
+    }
+    .api-output-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 13px 20px;
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .api-output-row:last-child { border-bottom: none; }
+    .api-output-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--inst-1);
+    }
+    .api-output-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+    .api-output-type {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--sky-grey);
+      background: rgba(0,0,0,.04);
+      border: 1px solid rgba(0,0,0,.12);
+      padding: 3px 8px;
+      white-space: nowrap;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .products-split      { grid-template-columns: 1fr; }
+      .api-strip-inner     { grid-template-columns: 1fr; gap: 36px; padding: 56px 0; }
+    }
+    @media (max-width: 600px) {
+      .product-body        { padding: 28px 20px 36px; }
+      .integration         { padding-top: 56px; }
+    }
+
+    /* ──────────────────────────────────────────────────────
+       ADVANTAGE
+    ────────────────────────────────────────────────────── */
+    .why {
+      padding: 96px 0;
+      background: var(--white);
+    }
+    .why .section-head h2 { color: var(--inst-1); }
+    .why .section-head h2 em { font-style: normal; color: var(--red); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(0,0,0,.07);
+      margin-bottom: 72px;
+    }
+    .why-cell {
+      background: var(--white);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+    }
+    .why-cell .num {
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .why-cell h3 {
+      color: var(--inst-1);
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+    .why-cell p {
+      font-size: 14px;
+      color: var(--inst-1);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .why-cell .tagline {
+      margin-top: 24px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--inst-1);
+      border-top: 2px solid var(--red);
+      padding-top: 12px;
+    }
+
+    /* ──────────────────────────────────────────────────────
+       SOLUTIONS
+    ────────────────────────────────────────────────────── */
+    .solutions {
+      background: #111111;
+      padding: 96px 0;
+    }
+    .solutions .section-head { margin-bottom: 48px; }
+    .solutions .section-head .label { color: var(--fog-white); }
+    .solutions .section-head h2 { color: var(--white); }
+    .solutions .section-head h2 em { font-style: normal; color: var(--red); }
+    .solutions .section-head .lead { color: var(--white); max-width: 100%; }
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .solution-card {
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      border-top: 3px solid var(--red);
+      overflow: hidden;
+    }
+    .solution-card .sol-media {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #111;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .solution-card .sol-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .solution-card .sol-body {
+      padding: 36px 36px 40px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      background: var(--white);
+    }
+    .solution-card .sol-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+    .solution-card h3 {
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 500;
+      color: var(--inst-1);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .solution-card p {
+      font-size: 14px;
+      color: var(--inst-1);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .solution-card .sol-tag {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+.solutions-cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+    @media (max-width: 640px) {
+      .solutions-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ──────────────────────────────────────────────────────
+       DEPLOYMENTS / EVIDENCE
+    ────────────────────────────────────────────────────── */
+    /* Deployments — white content section */
+    .deployments {
+      padding: 96px 0;
+      background: var(--white);
+    }
+    .deployments .section-head h2 { color: var(--inst-1); }
+    .deployments .section-head .lead { color: var(--content-2); }
+
+    .deployments-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(0,0,0,.07);
+    }
+    .deploy-card {
+      background: var(--white);
+      padding: 36px 32px;
+    }
+    .deploy-card .label { margin-bottom: 12px; }
+    .deploy-card strong {
+      display: block;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--inst-1);
+      margin-bottom: 10px;
+    }
+    .deploy-card p {
+      font-size: 14px;
+      color: var(--content-2);
+      line-height: 1.65;
+    }
+
+
+
+    /* ──────────────────────────────────────────────────────
+       FAQ
+    ────────────────────────────────────────────────────── */
+    /* FAQ — inst dark */
+    .faq {
+      padding: 96px 0;
+      background: var(--inst-3);
+    }
+    .faq .section-head h2 { color: var(--white); }
+    .faq .section-head h2 em { font-style: normal; color: var(--red); }
+    .faq .section-head h2 em { font-style: normal; color: var(--red); }
+
+    .faq-list {
+      max-width: 820px;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 0;
+      text-align: left;
+      color: var(--white);
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--red); }
+    .faq-q:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 4px;
+    }
+    .faq-icon {
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--red);
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+      line-height: 1;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-answer p {
+      font-size: 15px;
+      color: var(--white);
+      opacity: 1;
+      line-height: 1.7;
+      padding-bottom: 24px;
+    }
+    .faq-answer p a {
+      color: var(--white);
+      text-decoration: underline;
+      text-decoration-color: var(--red);
+      text-underline-offset: 3px;
+    }
+    .faq-answer p a:hover { opacity: .75; }
+
+    /* ──────────────────────────────────────────────────────
+       CONTACT
+    ────────────────────────────────────────────────────── */
+    /* Contact — white content section */
+    .contact {
+      padding: 96px 0;
+      background: var(--white);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-info .label { margin-bottom: 20px; }
+    .contact-info h2 { color: var(--inst-1); margin-bottom: 22px; }
+    .contact-info p {
+      font-size: 15px;
+      color: var(--inst-1);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .contact-details { border-top: 1px solid rgba(0,0,0,.1); }
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(0,0,0,.07);
+    }
+    .contact-row strong {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--sky-grey);
+    }
+    .contact-row span, .contact-row a {
+      font-size: 15px;
+      color: var(--inst-1);
+    }
+    .contact-row a:hover { color: var(--red); }
+
+    /* Form */
+    .contact-form-wrap { }
+    .field-error { display: none; font-size: 12px; color: var(--red); margin-top: 5px; }
+    input.is-invalid, textarea.is-invalid, .cs-search.is-invalid { border-color: var(--red) !important; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+    input:not([type="checkbox"]), textarea {
+      font-family: var(--font);
+      font-size: 14px;
+      color: var(--inst-1);
+      background: #f5f5f5;
+      border: 1px solid rgba(0,0,0,.12);
+      padding: 12px 14px;
+      border-radius: 0;
+      width: 100%;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    input:not([type="checkbox"])::placeholder, textarea::placeholder { color: rgba(0,0,0,.3); }
+    input:not([type="checkbox"]):focus, textarea:focus {
+      outline: none;
+      border-color: var(--red);
+    }
+    /* Custom select dropdown */
+    .cs-wrap { position: relative; }
+    .cs-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-family: var(--font);
+      font-size: 14px;
+      color: var(--inst-1);
+      background: #f5f5f5;
+      border: 1px solid rgba(0,0,0,.12);
+      padding: 12px 14px;
+      border-radius: 0;
+      cursor: pointer;
+      text-align: left;
+      transition: border-color .2s;
+    }
+    .cs-btn.is-placeholder .cs-label { color: rgba(0,0,0,.3); }
+    .cs-btn:focus, .cs-btn.is-open { outline: none; border-color: var(--red); }
+    .cs-chevron { flex-shrink: 0; transition: transform .2s ease; }
+    .cs-btn.is-open .cs-chevron { transform: rotate(180deg); }
+    .cs-list {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0; right: 0;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.14);
+      border: 1px solid rgba(0,0,0,.10);
+      max-height: 240px;
+      overflow-y: auto;
+      z-index: 200;
+      padding: 6px 0;
+      list-style: none;
+      margin: 0;
+    }
+    .cs-list.is-open { display: block; }
+    .cs-option {
+      padding: 11px 16px;
+      font-size: 14px;
+      color: var(--inst-1);
+      cursor: pointer;
+      transition: background .1s;
+    }
+    .cs-option:hover { background: #f5f5f5; }
+    .cs-option.is-selected { font-weight: 600; color: var(--red); }
+    .cs-list::-webkit-scrollbar { width: 4px; }
+    .cs-list::-webkit-scrollbar-track { background: transparent; }
+    .cs-list::-webkit-scrollbar-thumb { background: rgba(0,0,0,.15); border-radius: 2px; }
+    .cs-btn.is-invalid { border-color: var(--red); }
+    .cs-search-wrap { position: relative; display: flex; align-items: center; }
+    .cs-search-wrap .cs-chevron { position: absolute; right: 14px; pointer-events: none; flex-shrink: 0; }
+    .cs-search {
+      width: 100%;
+      padding: 12px 36px 12px 14px;
+      font-family: var(--font);
+      font-size: 14px;
+      color: var(--inst-1);
+      background: #f5f5f5;
+      border: 1px solid rgba(0,0,0,.12);
+      border-radius: 0;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .cs-search::placeholder { color: rgba(0,0,0,.3); }
+    .cs-search:focus, .cs-search.is-open { border-color: var(--red); }
+    .cs-search.is-invalid { border-color: var(--red); }
+    .cs-no-results { padding: 10px 16px; font-size: 13px; color: rgba(0,0,0,.4); }
+    textarea { resize: vertical; min-height: 110px; }
+    .consent-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .consent-row input[type="checkbox"] {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      accent-color: var(--red);
+    }
+    .consent-row label {
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: none;
+      color: var(--inst-1);
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .consent-row label a { color: var(--black); border-bottom: 1px solid rgba(0,0,0,.3); }
+    .form-submit .btn { width: 100%; justify-content: center; }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--inst-1);
+      margin-top: 14px;
+    }
+
+    /* ──────────────────────────────────────────────────────
+       FOOTER
+    ────────────────────────────────────────────────────── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 56px 0 40px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(2, 1fr);
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      color: var(--white);
+      line-height: 1.65;
+      max-width: 38ch;
+      margin-top: 14px;
+    }
+    .footer-brand .footer-sector {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--white);
+      opacity: .45;
+      margin-top: 4px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.5);
+      transition: border-color .2s, color .2s;
+      flex-shrink: 0;
+    }
+    .footer-social a:hover { border-color: var(--white); color: var(--white); }
+    .footer-social svg { width: 14px; height: 14px; fill: currentColor; }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--red);
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-col ul a {
+      font-size: 15px;
+      color: var(--white);
+      transition: opacity 0.2s;
+    }
+    .footer-col ul a:hover { opacity: .7; }
+    .footer-main-cta {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 11px;
+      padding: 9px 18px;
+      white-space: nowrap;
+      align-self: flex-start;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-bottom p {
+      font-size: 12px;
+      color: var(--white);
+      opacity: .45;
+    }
+    .footer-bottom a {
+      font-size: 12px;
+      color: var(--white);
+      opacity: .45;
+    }
+    .footer-bottom a:hover { opacity: 1; }
+
+    /* ──────────────────────────────────────────────────────
+       SKIP LINK (accessibility)
+    ────────────────────────────────────────────────────── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: var(--red);
+      color: var(--white);
+      padding: 8px 16px;
+      font-size: 13px;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 4px; }
+
+    /* ──────────────────────────────────────────────────────
+       RESPONSIVE — Tablet (≤900px)
+    ────────────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav-links, .nav .back-link { display: none; }
+      .mobile-nav-strip { display: block; }
+
+      .usp-grid { grid-template-columns: 1fr; gap: 1px; }
+      .missions-grid { grid-template-columns: 1fr 1fr; }
+      .tech-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .deployments-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ──────────────────────────────────────────────────────
+       RESPONSIVE — Mobile (≤600px)
+    ────────────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .hero { padding: 72px 0 52px; }
+      .hero-stats { gap: 24px; margin-top: 40px; }
+      .missions-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .usp-cell { padding: 28px 20px; }
+      .deploy-card { padding: 26px 20px; }
+      .missions-split { grid-template-columns: 1fr; }
+      .section-head { margin-bottom: 36px; }
+      .tech-media { height: 240px; }
+    }
+
+    /* ──────────────────────────────────────────────────────
+       DATASHEET MODAL
+    ────────────────────────────────────────────────────── */
+    .ds-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.72);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .ds-overlay.is-open { display: flex; }
+    .ds-modal {
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 40px;
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      color: var(--white);
+    }
+    .ds-modal-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,.4);
+      font-size: 22px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px 8px;
+      transition: var(--ease);
+    }
+    .ds-modal-close:hover { color: var(--white); }
+    .ds-modal h3 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: var(--white);
+      letter-spacing: -.01em;
+    }
+    .ds-modal p {
+      font-size: 14px;
+      color: var(--white);
+      margin-bottom: 28px;
+      line-height: 1.6;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .ds-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .ds-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .ds-field label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+    }
+    .ds-field input {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 14px;
+      color: var(--white);
+      font-family: var(--font);
+      transition: var(--ease);
+      outline: none;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .ds-field input:focus {
+      border-color: var(--red);
+      background: rgba(255,255,255,.09);
+    }
+    .ds-field input::placeholder { color: rgba(255,255,255,.25); }
+    .ds-submit {
+      width: 100%;
+      margin-top: 8px;
+      padding: 13px;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--ease);
+    }
+    .ds-submit:hover { background: #a00a00; }
+    .ds-submit:disabled { opacity: .5; cursor: not-allowed; }
+    .ds-success {
+      display: none;
+      text-align: center;
+      padding: 20px 0 10px;
+    }
+    .ds-success svg { margin-bottom: 16px; }
+    .ds-success h3 { margin-bottom: 8px; }
+    .ds-success p { margin-bottom: 0; }
+    .ds-error {
+      display: none;
+      font-size: 12px;
+      color: #ff6b6b;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* ──────────────────────────────────────────────────────
+       PRINT / REDUCED MOTION
+    ────────────────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+      html { scroll-behavior: auto; }
+    }
+    /* ──────────────────────────────────────────────────────
+       DOCUMENT LIBRARY — Product Styles
+    ────────────────────────────────────────────────────── */
+    .doc-types-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .doc-type-link {
+      color: var(--red);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 0, 0, 0.1);
+      transition: var(--ease);
+    }
+
+    .doc-type-link:hover {
+      color: var(--white);
+      background-color: rgba(255, 0, 0, 0.1);
+      padding-left: 8px;
+    }
+
+    .doc-count {
+      opacity: 0.6;
+      font-size: 13px;
+    }
+
+    /* ──────────────────────────────────────────────────────
+       DOCUMENT LIBRARY — Hide Defence-Specific Sections
+    ────────────────────────────────────────────────────── */
+    #usps, #applications, #technology, .reel-section, #features, 
+    #solutions, #why, #deployments, #trusted, #faq, #contact {
+      display: none !important;
+    }
+
+    /* Hide API strip in integration section */
+    .api-strip {
+      display: none !important;
+    }
+
+    /* Remove hero stats if not needed */
+    .hero-stats {
+      display: none !important;
+    }
+
+    /* ──────────────────────────────────────────────────────
+       FILE LIST MODAL
+    ────────────────────────────────────────────────────── */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: modalFadeIn 0.2s ease;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(2px);
+    }
+    .modal-content {
+      position: relative;
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      width: 90%;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      animation: modalSlideUp 0.3s ease;
+    }
+    @keyframes modalSlideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      background: #f9f9f9;
+    }
+    .modal-header h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--inst-1);
+      margin: 0;
+    }
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: var(--inst-1);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    .modal-close:hover {
+      opacity: 1;
+    }
+    .modal-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
+    }
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      background: #f9f9f9;
+    }
+
+    /* File list styling */
+    .file-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .file-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+    .file-item:hover {
+      background: rgba(203, 13, 0, 0.05);
+    }
+    .file-item.nested {
+      margin-left: 24px;
+      padding: 10px 12px;
+    }
+    .file-icon {
+      width: 18px;
+      height: 18px;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+    .file-link {
+      color: var(--red);
+      text-decoration: none;
+      font-weight: 500;
+      flex: 1;
+      word-break: break-word;
+    }
+    .file-link:hover {
+      text-decoration: underline;
+    }
+    .file-size {
+      font-size: 12px;
+      color: #999;
+      flex-shrink: 0;
+    }
+
+    /* Category styling */
+    .category-item {
+      margin: 16px 0;
+      padding: 0;
+    }
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(203, 13, 0, 0.08);
+      border-radius: 4px;
+      font-weight: 600;
+      color: var(--inst-1);
+    }
+    .folder-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+    .category-name {
+      flex: 1;
+    }
+    .file-count {
+      font-size: 12px;
+      color: #666;
+      font-weight: normal;
+    }
+    .category-files {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+    }
+
+    /* Empty state */
+    .empty-state {
+      padding: 32px 16px;
+      text-align: center;
+      color: #999;
+      font-size: 14px;
+    }
+
+  </style>
+
+  <!-- Content config — all page copy lives here -->
+  <script src="content.js"></script>
+</head>
+
+<body>
+  <!-- Skip nav for screen readers -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ════════════════════════════════════════════════════
+       TOP RULE — brand "Mission Pure"
+  ═════════════════════════════════════════════════════════ -->
+  <div class="top-rule" role="presentation" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════════════════════
+       NAV
+  ═════════════════════════════════════════════════════════ -->
+  <header class="nav" role="banner">
+    <div class="wrap">
+      <div class="bar">
+        <a href="https://sea-ai.github.io/document-library/" class="brand" aria-label="SEA.AI Documentation — home">
+          <img src="assets/logos/logo-white.svg" alt="SEA.AI" />
+          <span class="sector" data-c="nav.sector"></span>
+        </a>
+
+        <nav aria-label="Primary navigation">
+          <ul class="nav-links" role="list"></ul>
+        </nav>
+
+        <div class="right">
+          <a href="https://www.sea.ai/" class="btn btn-ghost">Return to SEA.AI</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile nav strip (visible ≤900px — replaces hamburger) -->
+    <nav class="mobile-nav-strip" aria-label="Mobile navigation">
+      <ul role="list"></ul>
+    </nav>
+  </header>
+
+  <!-- ════════════════════════════════════════════════════
+       HERO
+  ═════════════════════════════════════════════════════════ -->
+  <main id="main-content">
+    <section class="hero" id="hero" aria-label="Hero — Maritime Security AI">
+
+      <img class="hero-media" src="assets/images/SYOS_Sentry_portrait.webp" alt="SEA.AI Sentry on SYOS uncrewed surface vessel" fetchpriority="high" decoding="async" />
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <p class="hero-copyright" aria-label="Image copyright" data-c="hero.copyright"></p>
+
+      <div class="wrap">
+        <div class="hero-inner">
+
+          <h1 data-c="hero.h1"></h1>
+
+          <p class="lead" data-c="hero.lead"></p>
+
+          <div class="hero-stats" role="list" aria-label="Key figures"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         USP PILLARS
+    ═════════════════════════════════════════════════════════ -->
+    <section class="usp" id="usps" aria-labelledby="usp-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="label" data-c="usp.label"></span>
+          <h2 id="usp-heading" data-c="usp.h2"></h2>
+          <p class="lead" data-c="usp.lead"></p>
+        </div>
+
+        <div class="usp-grid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         MISSIONS / APPLICATIONS
+    ═════════════════════════════════════════════════════════ -->
+    <section class="missions" id="applications" aria-labelledby="missions-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="label" data-c="missions.label"></span>
+          <h2 id="missions-heading" data-c="missions.h2"></h2>
+          <p class="lead" data-c="missions.lead"></p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="missions-grid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         TECHNOLOGY
+    ═════════════════════════════════════════════════════════ -->
+
+    <!-- ════════════════════════════════════════════════════
+         VIDEO REEL
+    ═════════════════════════════════════════════════════════ -->
+    <section class="reel-section">
+      <div class="wrap reel-head">
+        <span class="label" data-c="reel.label"></span>
+        <h2 data-c="reel.h2"></h2>
+      </div>
+      <div class="wrap">
+        <div class="reel-video-wrap">
+          <iframe id="reel-iframe" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         INTEGRATION — on-shelf products + API
+    ═════════════════════════════════════════════════════════ -->
+    <section class="integration" id="integration" aria-labelledby="integration-heading">
+
+      <!-- Header -->
+      <div class="wrap">
+        <div class="section-head">
+          <span class="label" data-c="products.label"></span>
+          <h2 id="integration-heading" data-c="products.h2"></h2>
+        </div>
+      </div>
+
+      <!-- Product columns — rendered from CONTENT.products.items -->
+      <div class="wrap">
+        <div class="products-split" role="list"></div>
+      </div>
+
+      <!-- API strip -->
+      <div class="api-strip">
+        <div class="wrap">
+          <div class="api-strip-inner">
+            <div class="api-copy">
+              <span class="label" data-c="integration.api.label"></span>
+              <h3 data-c="integration.api.h3"></h3>
+              <p data-c="integration.api.p"></p>
+            </div>
+
+            <!-- API output rows rendered from CONTENT.integration.api.outputs -->
+            <div class="api-visual" aria-label="SEA.AI API output capabilities">
+              <div class="api-visual-header" data-c="integration.api.visualHeader"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         FEATURES — product capabilities accordion
+    ═════════════════════════════════════════════════════════ -->
+    <section class="features" id="features" aria-labelledby="features-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="label" data-c="features.label"></span>
+          <h2 id="features-heading" data-c="features.h2"></h2>
+        </div>
+
+        <div class="features-layout">
+          <!-- Accordion list — rendered from CONTENT.features.items -->
+          <div class="feat-list" role="list"></div>
+
+          <!-- Media panel — rendered from CONTENT.features.items -->
+          <div class="feat-media" aria-live="polite" aria-label="Feature demonstration"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         SOLUTIONS — customisable use cases
+    ═════════════════════════════════════════════════════════ -->
+    <section class="solutions" id="solutions" aria-labelledby="solutions-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="label" data-c="solutions.label"></span>
+          <h2 id="solutions-heading" data-c="solutions.h2"></h2>
+          <p class="lead" data-c="solutions.lead"></p>
+        </div>
+        <div class="solutions-grid" role="list"></div>
+        <div class="solutions-cta">
+          <a href="#contact" class="btn btn-primary" data-c="solutions.cta"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         ADVANTAGE
+    ═════════════════════════════════════════════════════════ -->
+    <section class="why" id="why" aria-labelledby="why-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="label" data-c="advantage.label"></span>
+          <h2 id="why-heading" data-c="advantage.h2"></h2>
+        </div>
+
+        <!-- Advantage cells rendered from CONTENT.advantage.items -->
+        <div class="why-grid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         DEPLOYMENTS / EVIDENCE
+    ═════════════════════════════════════════════════════════ -->
+
+
+
+    <!-- ════════════════════════════════════════════════════
+         CONTACT
+    ═════════════════════════════════════════════════════════ -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="wrap">
+        <div class="contact-grid">
+
+          <!-- Left: info -->
+          <div class="contact-info">
+            <span class="label" data-c="contact.label"></span>
+            <h2 id="contact-heading" data-c="contact.h2"></h2>
+            <p data-c="contact.p"></p>
+          </div>
+
+          <!-- Right: form -->
+          <div class="contact-form-wrap">
+            <!--
+              TODO: Connect action to Microsoft Dynamics 365 CRM endpoint.
+              Recommended: use Power Automate HTTP trigger or Dynamics 365 Marketing form embed.
+            -->
+            <form
+              id="contact-form"
+              novalidate
+              aria-label="Security enquiry form"
+              onsubmit="handleFormSubmit(event)"
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="f-first">First name <span aria-hidden="true">*</span></label>
+                  <input
+                    type="text"
+                    id="f-first"
+                    name="firstName"
+                    autocomplete="given-name"
+                    required
+                    aria-required="true"
+                    placeholder="Jane"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="f-last">Last name <span aria-hidden="true">*</span></label>
+                  <input
+                    type="text"
+                    id="f-last"
+                    name="lastName"
+                    autocomplete="family-name"
+                    required
+                    aria-required="true"
+                    placeholder="Smith"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="f-org">Organisation <span aria-hidden="true">*</span></label>
+                  <input
+                    type="text"
+                    id="f-org"
+                    name="organisation"
+                    autocomplete="organization"
+                    required
+                    aria-required="true"
+                    placeholder="Ministry of Defence"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="csb-country">Country <span aria-hidden="true">*</span></label>
+                  <div class="cs-wrap" id="csw-country">
+                    <div class="cs-search-wrap">
+                      <input type="text" class="cs-search" id="csb-country"
+                             placeholder="Type to search country…"
+                             autocomplete="off"
+                             aria-haspopup="listbox" aria-expanded="false" aria-autocomplete="list" />
+                      <svg class="cs-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <ul class="cs-list" role="listbox" aria-label="Country"></ul>
+                  </div>
+                  <input type="hidden" id="f-country" name="country" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="f-email">Work email <span aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="f-email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                  placeholder="j.smith@organisation.gov"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="csb-role">Role / sector</label>
+                <div class="cs-wrap" id="csw-role">
+                  <button type="button" class="cs-btn is-placeholder" id="csb-role"
+                          aria-haspopup="listbox" aria-expanded="false">
+                    <span class="cs-label">Select your role</span>
+                    <svg class="cs-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <ul class="cs-list" role="listbox" aria-label="Role / sector"></ul>
+                </div>
+                <input type="hidden" id="f-role" name="role" />
+              </div>
+
+              <div class="form-group">
+                <label for="f-message">Message</label>
+                <textarea
+                  id="f-message"
+                  name="message"
+                  placeholder="Describe your mission or enquiry…"
+                ></textarea>
+              </div>
+
+              <div class="consent-row">
+                <input
+                  type="checkbox"
+                  id="f-consent"
+                  name="consent"
+                  required
+                  aria-required="true"
+                />
+                <label for="f-consent" data-c="contact.consent"></label>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn btn-red" data-c="contact.submitBtn"></button>
+              </div>
+
+              <p class="form-note" data-c="contact.formNote"></p>
+
+              <!-- Success/error message (shown via JS) -->
+              <div id="form-feedback" role="alert" aria-live="polite" style="display:none; margin-top:16px; padding:14px; font-size:14px;"></div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         FAQ
+    ═════════════════════════════════════════════════════════ -->
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="label" data-c="faq.label"></span>
+          <h2 id="faq-heading" data-c="faq.h2"></h2>
+        </div>
+
+        <!-- FAQ items rendered from CONTENT.faq.items -->
+        <div class="faq-list" role="list"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ════════════════════════════════════════════════════
+       FILE LIST MODAL — Document browser for document types
+  ═════════════════════════════════════════════════════════ -->
+  <div id="file-list-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true" style="display:none;">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal-title">Documents</h2>
+        <button class="modal-close" aria-label="Close modal" onclick="closeFileListModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="file-list-container"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="closeFileListModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════
+       FOOTER
+  ═════════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="wrap">
+      <!-- footer-top: brand col stays; link cols rendered from CONTENT.footer.cols -->
+      <div class="footer-top" id="footer-top">
+        <div class="footer-brand">
+          <a href="https://sea-ai.github.io/document-library/" aria-label="SEA.AI Documentation" style="display:inline-flex;flex-direction:column;gap:4px;">
+            <img src="assets/logos/logo-white.svg" alt="SEA.AI" style="height:20px;width:auto;opacity:.85;" />
+            <span class="footer-sector">Docs</span>
+          </a>
+          <p data-c="footer.brandP"></p>
+          <a href="https://www.sea.ai" class="btn-ghost footer-main-cta">Go to Main Site</a>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/sea-ai/" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@sea-ai" aria-label="YouTube" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sea.ai.official/" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/sea.ai.official/" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12c0 3.259.015 3.668.072 4.948.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24c3.259 0 3.668-.015 4.948-.072 1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.689.072-4.948 0-3.259-.015-3.667-.072-4.947-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-c="footer.copyright"></p>
+        <div style="display:flex;gap:24px;">
+          <a href="https://sea.ai/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://sea.ai/imprint" target="_blank" rel="noopener">Imprint</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════
+       CONTENT RENDERER — reads from content.js CONTENT object
+  ═════════════════════════════════════════════════════════ -->
+  <script>
+  (function () {
+    var C = CONTENT;
+    var MANIFEST = null;  // Will be loaded async
+
+    // Transform manifest data structure for modal compatibility
+    function transformManifest(rawManifest) {
+      if (!rawManifest || !rawManifest.products) return null;
+      
+      var transformed = { products: {} };
+      
+      Object.keys(rawManifest.products).forEach(function (productId) {
+        var product = rawManifest.products[productId];
+        transformed.products[productId] = {
+          name: productId.charAt(0).toUpperCase() + productId.slice(1),
+          total_files: product.total_files || 0,
+          document_types: {}
+        };
+        
+        Object.keys(product.document_types).forEach(function (docType) {
+          var docData = product.document_types[docType];
+          var items = [];
+          
+          // Support both old format (files array with filenames) and new format (items with objects)
+          if (docData.items && docData.items.length > 0) {
+            // New format: items is already an array of objects with name and url
+            items = docData.items.map(function (item) {
+              return {
+                name: item.name || item.title || 'Unknown',
+                url: item.url || item.path || '#',
+                size: item.size || 0,
+                extension: item.extension,          // Preserve extension for file type detection
+                viewable: item.viewable,             // Preserve viewable property for link behavior
+                folder_link: item.folder_link       // Preserve folder_link if present
+              };
+            });
+          } else if (docData.files && docData.files.length > 0) {
+            // Old format: files is array of filenames, convert to items
+            items = docData.files.map(function (fileName) {
+              return {
+                name: fileName,
+                path: '/docs/files/' + productId + '/' + docType + '/' + fileName,
+                size: 0
+              };
+            });
+          }
+          
+          transformed.products[productId].document_types[docType] = {
+            count: docData.count || 0,
+            files: docData.files || [],
+            total_count: docData.count || 0,
+            items: items
+          };
+        });
+      });
+      
+      return transformed;
+    }
+
+    // catalog.json indexes every file in this repo, shaped here like the manifest the page expects.
+    // Documents are files on this site, so PDFs open in the browser; software and CAD are
+    // release assets, which download.
+    var DOCUMENT_TYPES = ['Support', 'Guides', 'Help', 'Info'];
+    var VIEWABLE = { pdf: true, jpg: true, jpeg: true, png: true, gif: true, webp: true, txt: true };
+    function catalogToManifest(catalog) {
+      var downloads = 'https://github.com/' + catalog.repository + '/releases/download/';
+      var manifest = { products: {} };
+      Object.keys(catalog.products).forEach(function (productId) {
+        var types = {};
+        DOCUMENT_TYPES.forEach(function (t) { types[t] = { count: 0, items: [] }; });
+        catalog.files.forEach(function (file) {
+          var type = file.products[productId];
+          if (!type) return;
+          var extension = file.title.indexOf('.') >= 0 ? file.title.split('.').pop().toLowerCase() : '';
+          types[type].items.push({
+            name: file.title,
+            url: file.path ? file.path.split('/').map(encodeURIComponent).join('/')
+                           : downloads + file.release + '/' + encodeURIComponent(file.asset),
+            extension: extension,
+            viewable: !!file.path && VIEWABLE[extension] === true,
+            size: file.size
+          });
+          types[type].count++;
+        });
+        DOCUMENT_TYPES.forEach(function (t) {
+          types[t].items.sort(function (a, b) { return a.name.toLowerCase().localeCompare(b.name.toLowerCase()); });
+        });
+        manifest.products[productId] = { name: catalog.products[productId], document_types: types };
+      });
+      return manifest;
+    }
+
+    // Load the catalog
+    fetch('catalog.json')
+      .then(function (response) { return response.ok ? response.json() : null; })
+      .catch(function () { return null; })
+      .then(function (data) {
+        if (data) {
+          MANIFEST = transformManifest(catalogToManifest(data));
+          window.MANIFEST = MANIFEST;  // Store globally for modal functions
+          // Re-render products if manifest loaded
+          if (MANIFEST) renderProducts();
+        }
+      });
+
+    /* ── Utility: get value from CONTENT by dot-path ── */
+    function get(path) {
+      return path.split('.').reduce(function (o, k) { return o && o[k]; }, C);
+    }
+
+    /* ── 1. Hydrate all [data-c] elements ── */
+    function hydrate() {
+      document.querySelectorAll('[data-c]').forEach(function (el) {
+        var val = get(el.getAttribute('data-c'));
+        if (val != null) el.innerHTML = val;
+      });
+    }
+
+    /* ── 2. Nav links (desktop + mobile) ── */
+    function renderNav() {
+      var links = C.nav.links;
+      var $ul = document.querySelector('.nav-links');
+      if ($ul) {
+        $ul.innerHTML = links.map(function (l) {
+          return '<li><a href="' + l.href + '">' + l.label + '</a></li>';
+        }).join('');
+      }
+      var $mob = document.querySelector('.mobile-nav-strip ul');
+      if ($mob) {
+        $mob.innerHTML =
+          links.map(function (l) {
+            return '<li><a href="' + l.href + '">' + l.label + '</a></li>';
+          }).join('');
+      }
+    }
+
+    /* ── 3. Hero stats ── */
+    function renderHeroStats() {
+      var $stats = document.querySelector('.hero-stats');
+      if (!$stats || !C.hero.stats) return;
+      $stats.innerHTML = C.hero.stats.map(function (s) {
+        return '<div class="hero-stat" role="listitem"><small>' + s.label + '</small><span>' + s.value + '</span></div>';
+      }).join('');
+    }
+
+    /* ── 4. USP grid ── */
+    var USP_ICONS = [
+      '<svg class="icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><circle cx="18" cy="18" r="17" stroke="#CB0D00" stroke-width="1.5"/><path d="M9 18h18M18 9v18" stroke="#CB0D00" stroke-width="1.5" stroke-linecap="round"/></svg>',
+      '<svg class="icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><rect x="4" y="4" width="28" height="28" rx="2" stroke="#CB0D00" stroke-width="1.5"/><path d="M4 14h28M14 4v28" stroke="#CB0D00" stroke-width="1.5" stroke-linecap="round"/></svg>',
+      '<svg class="icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4v28M4 18h28" stroke="#CB0D00" stroke-width="1.5" stroke-linecap="round"/><circle cx="18" cy="18" r="7" stroke="#CB0D00" stroke-width="1.5"/></svg>'
+    ];
+    function renderUSP() {
+      var $grid = document.querySelector('.usp-grid');
+      if (!$grid || !C.usp || !C.usp.items) return;
+      $grid.innerHTML = C.usp.items.map(function (item, i) {
+        return '<article class="usp-cell" role="listitem">' +
+          (USP_ICONS[i] || '') +
+          '<h3>' + item.h3 + '</h3>' +
+          '<p>' + item.p + '</p>' +
+          '<ul>' + item.bullets.map(function (b) { return '<li>' + b + '</li>'; }).join('') + '</ul>' +
+          '</article>';
+      }).join('');
+    }
+
+    /* ── 5. Missions grid ── */
+    function renderMissions() {
+      var $grid = document.querySelector('.missions-grid');
+      if (!$grid || !C.missions || !C.missions.items) return;
+      $grid.innerHTML = C.missions.items.map(function (m) {
+        var media = m.img
+          ? '<img src="' + m.img + '" alt="' + m.imgAlt + '" loading="lazy" />'
+          : '<div class="mission-img-placeholder" aria-label="' + m.imgAlt + ' — image placeholder">Image / Video</div>';
+        var body = m.bullets
+          ? '<ul>' + m.bullets.map(function(b){ return '<li>' + b + '</li>'; }).join('') + '</ul>'
+          : '<p>' + m.p + '</p>';
+        return '<article class="mission-card" role="listitem">' +
+          media +
+          '<div class="mission-body">' +
+          '<span class="label">' + m.label + '</span>' +
+          '<h3>' + m.h3 + '</h3>' +
+          body +
+          '</div></article>';
+      }).join('');
+    }
+
+    /* ── 6. Technology image + stack ── */
+    function renderTech() {
+      if (!C.technology) return;
+      var $img = document.getElementById('tech-media-img');
+      if ($img) { $img.src = C.technology.imgSrc; $img.alt = C.technology.imgAlt; }
+      var $dl = document.querySelector('.stack-list');
+      if (!$dl || !C.technology.stack) return;
+      $dl.innerHTML = C.technology.stack.map(function (row) {
+        return '<div class="stack-row"><dt>' + row.dt + '</dt><dd>' + row.dd + '</dd></div>';
+      }).join('');
+    }
+
+    /* ── 7. Reel iframe — lazy-load on scroll into view ── */
+    function renderReel() {
+      var $iframe = document.getElementById('reel-iframe');
+      if (!$iframe || !C.reel || !C.reel.vimeoId) return;
+      var reelSrc = 'https://player.vimeo.com/video/' + C.reel.vimeoId + '?background=1&autoplay=1&loop=1&muted=1';
+      if ('IntersectionObserver' in window) {
+        var reelObserver = new IntersectionObserver(function(entries) {
+          if (entries[0].isIntersecting) {
+            $iframe.src = reelSrc;
+            reelObserver.disconnect();
+          }
+        }, { threshold: 0.1 });
+        reelObserver.observe($iframe);
+      } else {
+        $iframe.src = reelSrc; /* fallback for old browsers */
+      }
+    }
+
+    /* ── 8. Features accordion + media ── */
+    var MOB_SVG = '<svg viewBox="0 0 48 48" width="48" height="48" fill="none"><circle cx="24" cy="16" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M14 38c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="24" cy="38" r="8" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/></svg>';
+    function renderFeatures() {
+      var $list  = document.querySelector('.feat-list');
+      var $media = document.querySelector('.feat-media');
+      if (!$list || !$media || !C.features || !C.features.items) return;
+
+      $list.innerHTML = C.features.items.map(function (f, i) {
+        return '<div class="feat-item' + (i === 0 ? ' is-active' : '') + '" role="listitem" data-feat="' + i + '" onclick="switchFeat(this)">' +
+          '<div class="feat-item-header">' +
+          '<span class="feat-num">' + f.num + '</span>' +
+          '<span class="feat-title">' + f.title + '</span>' +
+          '<span class="feat-arrow" aria-hidden="true">+</span>' +
+          '</div>' +
+          '<div class="feat-body"><div class="feat-body-inner">' + f.body + '</div></div>' +
+          '<span class="feat-bar"></span>' +
+          '</div>';
+      }).join('');
+
+      $media.innerHTML = C.features.items.map(function (f, i) {
+        var isActive = i === 0;
+        var mediaHTML = f.media.type === 'vimeo'
+          ? '<iframe ' + (isActive ? 'src="https://player.vimeo.com/video/' + f.media.id + '?background=1&autoplay=1&loop=1&muted=1"' : 'data-src="https://player.vimeo.com/video/' + f.media.id + '?background=1&autoplay=1&loop=1&muted=1"') + ' frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>'
+          : f.media.type === 'image'
+          ? '<img src="' + f.media.src + '" alt="' + f.tag + '" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" decoding="async" />'
+          : '<div class="feat-media-placeholder">' + MOB_SVG + f.media.label + '</div>';
+        return '<div class="feat-media-slide' + (isActive ? ' is-active' : '') + '" data-slide="' + i + '">' +
+          mediaHTML +
+          '<span class="feat-tag-overlay">' + f.tag + '</span>' +
+          '</div>';
+      }).join('');
+    }
+
+    /* ── 9. Products ── */
+    var DL_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
+    function renderProducts() {
+      var $split = document.querySelector('.products-split');
+      if (!$split) return;
+      
+      // Check if using new simplified structure (CONTENT.products) or old (CONTENT.integration.products)
+      var products = C.products && C.products.items ? C.products.items : 
+                     (C.integration && C.integration.products ? C.integration.products : []);
+      
+      if (products.length === 0) return;
+      
+      // Check if this is the new simplified structure
+      if (C.products && C.products.items && C.products.items[0].docTypes) {
+        // New document library products structure
+        $split.innerHTML = products.map(function (p) {
+          var docTypesHTML;
+          
+          // If manifest is loaded, use actual file counts; otherwise use defaults from CONTENT
+          if (MANIFEST && MANIFEST.products && MANIFEST.products[p.id]) {
+            var productManifest = MANIFEST.products[p.id];
+            // The manifest decides which doc types exist; content.js lists can be stale and hide files.
+            var typeOrder = ['Support', 'Guides', 'Help', 'Info'];
+            var rank = function (label) {
+              var i = typeOrder.indexOf(label);
+              return i < 0 ? typeOrder.length : i;
+            };
+            var labels = Object.keys(productManifest.document_types).sort(function (a, b) {
+              return rank(a) - rank(b);
+            });
+            docTypesHTML = labels.map(function (label) {
+              var docTypeData = productManifest.document_types[label] || {};
+              var actualCount = docTypeData.count || 0;
+              var href = actualCount > 0 ? '#' + p.id + '_' + label.toLowerCase() : '#';
+              return '<a href="' + href + '" class="doc-type-link" data-product="' + p.id + '" data-type="' + label.toLowerCase() + '">' + 
+                     label + ' <span class="doc-count">(' + actualCount + ')</span></a>';
+            }).join('');
+          } else {
+            // Fallback to content.js counts
+            docTypesHTML = p.docTypes.map(function (dt) {
+              return '<a href="#" class="doc-type-link">' + dt.label + ' <span class="doc-count">(' + dt.count + ')</span></a>';
+            }).join('');
+          }
+          
+          return '<article class="product-col" role="listitem" id="' + p.id + '">' +
+            '<div class="product-body">' +
+            '<h3 class="product-title">' + p.h3 + '</h3>' +
+            '<p class="product-blurb">' + p.p + '</p>' +
+            '<div class="doc-types-list">' + docTypesHTML + '</div>' +
+            '</div></article>';
+        }).join('');
+      } else {
+        // Old defence site products structure (with images and specs)
+        $split.innerHTML = products.map(function (p) {
+          var tags  = p.tags.map(function (t) { return '<span class="product-tag">' + t + '</span>'; }).join('');
+          var specs = p.specs.map(function (s) {
+            if (s.group) {
+              return '<tr class="spec-group"><td>' + s.group + '</td><td></td></tr>' +
+                s.items.map(function (i) {
+                  return '<tr class="spec-sub"><td>' + i.label + '</td><td>' + i.value + '</td></tr>';
+                }).join('');
+            }
+            return '<tr><td>' + s.label + '</td><td>' + s.value + '</td></tr>';
+          }).join('');
+          var cta   = p.cta.type === 'modal'
+            ? '<button class="datasheet-link" onclick="openDatasheetModal(\'' + p.title + '\', \'' + (p.cta.fileUrl || '') + '\')">' + DL_ICON + p.cta.label + '</button>'
+            : '<a href="' + p.cta.href + '" class="datasheet-link">' + DL_ICON + p.cta.label + '</a>';
+          return '<article class="product-col" role="listitem">' +
+            '<div class="product-img"><img src="' + p.img + '" alt="' + p.imgAlt + '" loading="lazy" /></div>' +
+            '<div class="product-body">' +
+            '<div class="product-tags">' + tags + '</div>' +
+            '<h3 class="product-title">' + p.title + '</h3>' +
+            '<p class="product-blurb">' + p.blurb + '</p>' +
+            '<div class="spec-table-wrap"><table class="spec-table" aria-label="' + p.title + ' technical specifications"><tbody>' + specs + '</tbody></table></div>' +
+            (p.footnote ? '<p class="product-footnote">' + p.footnote + '</p>' : '') +
+            cta +
+            '</div></article>';
+        }).join('');
+      }
+      
+      // Add click handlers for document type links
+      document.querySelectorAll('.doc-type-link').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          if (!MANIFEST) {
+            console.warn('Manifest not loaded yet');
+            return;
+          }
+          e.preventDefault();
+          var productId = this.getAttribute('data-product');
+          var docType = this.getAttribute('data-type');
+          if (productId && docType && MANIFEST.products[productId]) {
+            // Capitalize first letter to match manifest keys (Support, Guides, Info)
+            var docTypeKey = docType.charAt(0).toUpperCase() + docType.slice(1);
+            var docTypeData = MANIFEST.products[productId].document_types[docTypeKey];
+            if (docTypeData && docTypeData.items) {
+              // Show modal with all files
+              showFileListModal(productId, docType, docTypeData);
+            }
+          }
+        });
+      });
+    }
+
+    // ── File list modal functions ──
+    // Note: Functions moved to global scope after the IIFE
+
+
+    /* ── 10. API output rows ── */
+    function renderApiOutputs() {
+      var $visual = document.querySelector('.api-visual');
+      if (!$visual || !C.integration || !C.integration.api || !C.integration.api.outputs) return;
+      var rowsHTML = C.integration.api.outputs.map(function (o) {
+        return '<div class="api-output-row">' +
+          '<span class="api-output-name"><span class="api-output-dot"></span>' + o.name + '</span>' +
+          '<span class="api-output-type">' + o.type + '</span>' +
+          '</div>';
+      }).join('');
+      $visual.insertAdjacentHTML('beforeend', rowsHTML);
+    }
+
+    /* ── 11. Advantage grid ── */
+    function renderAdvantage() {
+      var $grid = document.querySelector('.why-grid');
+      if (!$grid || !C.advantage || !C.advantage.items) return;
+      $grid.innerHTML = C.advantage.items.map(function (item) {
+        return '<article class="why-cell" role="listitem">' +
+          '<div class="num" aria-hidden="true">' + item.num + '</div>' +
+          '<h3>' + item.h3 + '</h3>' +
+          '<p>' + item.p + '</p>' +
+          (item.tagline ? '<span class="tagline">' + item.tagline + '</span>' : '') +
+          '</article>';
+      }).join('');
+    }
+
+    /* ── 12. Solutions grid ── */
+    function renderSolutions() {
+      var $grid = document.querySelector('.solutions-grid');
+      if (!$grid || !C.solutions || !C.solutions.items) return;
+      $grid.innerHTML = C.solutions.items.map(function (item, i) {
+        var media = item.img
+          ? '<div class="sol-media"><img src="' + item.img + '" alt="' + (item.imgAlt || '') + '" loading="lazy" /></div>'
+          : '<div class="sol-media"></div>';
+        return '<article class="solution-card" role="listitem">' +
+          media +
+          '<div class="sol-body">' +
+          (item.tag ? '<span class="sol-tag">' + item.tag + '</span>' : '') +
+          '<h3>' + item.h3 + '</h3>' +
+          '<p>' + item.p + '</p>' +
+          '</div>' +
+          '</article>';
+      }).join('');
+      var $cta = document.querySelector('.solutions-cta a');
+      if ($cta) $cta.textContent = C.solutions.cta || 'Discuss your mission';
+    }
+
+    /* ── 13. Deployments grid ── */
+    function renderDeployments() {
+      var $grid = document.querySelector('.deployments-grid');
+      if (!$grid || !C.deployments || !C.deployments.items) return;
+      $grid.innerHTML = C.deployments.items.map(function (d) {
+        return '<article class="deploy-card" role="listitem">' +
+          '<span class="label">' + d.label + '</span>' +
+          '<strong>' + d.strong + '</strong>' +
+          '<p>' + d.p + '</p>' +
+          '</article>';
+      }).join('');
+    }
+
+    /* ── 13. FAQ list ── */
+    function renderFAQ() {
+      var $list = document.querySelector('.faq-list');
+      if (!$list || !C.faq || !C.faq.items) return;
+      $list.innerHTML = C.faq.items.map(function (f) {
+        return '<div class="faq-item" role="listitem">' +
+          '<button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">' +
+          f.q + '<span class="faq-icon" aria-hidden="true">+</span></button>' +
+          '<div class="faq-answer" role="region"><p>' + f.a + '</p></div>' +
+          '</div>';
+      }).join('');
+    }
+
+    /* ── 14. Footer link columns ── */
+    function renderFooterCols() {
+      var $top   = document.querySelector('.footer-top');
+      var $brand = $top && $top.querySelector('.footer-brand');
+      if (!$top || !$brand) return;
+      var colsHTML = C.footer.cols.map(function (col) {
+        return '<div class="footer-col"><h4>' + col.h4 + '</h4><ul>' +
+          col.links.map(function (l) { return '<li><a href="' + l.href + '">' + l.label + '</a></li>'; }).join('') +
+          '</ul></div>';
+      }).join('');
+      $top.innerHTML = '';
+      $top.appendChild($brand);
+      $top.insertAdjacentHTML('beforeend', colsHTML);
+    }
+
+    /* ── 15. Contact role options ── */
+    function renderContactRoles() {
+      var list = document.querySelector('#csw-role .cs-list');
+      if (!list || !C.contact || !C.contact.roles) return;
+      C.contact.roles.forEach(function (role) {
+        var li = document.createElement('li');
+        li.className = 'cs-option';
+        li.setAttribute('role', 'option');
+        li.dataset.value = role;
+        li.textContent = role;
+        list.appendChild(li);
+      });
+      initCustomSelect('csw-role', 'f-role');
+    }
+
+    /* ── 15b. Contact country options ── */
+    function renderCountries() {
+      var list = document.querySelector('#csw-country .cs-list');
+      if (!list || !C.contact || !C.contact.countries) return;
+      C.contact.countries.forEach(function (country) {
+        var li = document.createElement('li');
+        li.className = 'cs-option';
+        li.setAttribute('role', 'option');
+        li.dataset.value = country;
+        li.textContent = country;
+        list.appendChild(li);
+      });
+      initSearchableSelect('csw-country', 'f-country');
+    }
+
+    /* ── Searchable select (country field) ── */
+    function initSearchableSelect(wrapId, inputId) {
+      var wrap   = document.getElementById(wrapId);
+      if (!wrap) return;
+      var input  = wrap.querySelector('.cs-search');
+      var list   = wrap.querySelector('.cs-list');
+      var hidden = document.getElementById(inputId);
+      var allOptions = Array.from(list.querySelectorAll('.cs-option'));
+      var confirmed  = ''; // last value confirmed by clicking an option
+
+      function openList() {
+        list.classList.add('is-open');
+        input.classList.add('is-open');
+        input.setAttribute('aria-expanded', 'true');
+      }
+      function closeList() {
+        list.classList.remove('is-open');
+        input.classList.remove('is-open');
+        input.setAttribute('aria-expanded', 'false');
+      }
+      function filterOptions(q) {
+        var lower = q.toLowerCase();
+        var any = false;
+        allOptions.forEach(function(opt) {
+          var match = opt.textContent.toLowerCase().indexOf(lower) !== -1;
+          opt.style.display = match ? '' : 'none';
+          if (match) any = true;
+        });
+        var noRes = list.querySelector('.cs-no-results');
+        if (!any) {
+          if (!noRes) { noRes = document.createElement('li'); noRes.className = 'cs-no-results'; noRes.textContent = 'No results'; list.appendChild(noRes); }
+          noRes.style.display = '';
+        } else if (noRes) {
+          noRes.style.display = 'none';
+        }
+      }
+
+      input.addEventListener('focus', function() { filterOptions(input.value); openList(); });
+      input.addEventListener('click', function() { filterOptions(input.value); openList(); });
+      input.addEventListener('input', function() { confirmed = ''; hidden.value = ''; filterOptions(input.value); openList(); });
+
+      list.addEventListener('mousedown', function(e) {
+        var opt = e.target.closest('.cs-option');
+        if (!opt) return;
+        e.preventDefault(); // prevent input blur before selection registers
+        confirmed = opt.dataset.value;
+        hidden.value = confirmed;
+        input.value = confirmed;
+        input.classList.remove('is-invalid', 'is-placeholder');
+        allOptions.forEach(function(o) { o.classList.remove('is-selected'); });
+        opt.classList.add('is-selected');
+        closeList();
+      });
+
+      input.addEventListener('blur', function() {
+        setTimeout(function() {
+          closeList();
+          // If user typed but didn't select a valid option, clear
+          if (!confirmed) { input.value = ''; hidden.value = ''; }
+        }, 150);
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!wrap.contains(e.target)) closeList();
+      });
+    }
+
+    /* ── Custom select logic ── */
+    function initCustomSelect(wrapId, inputId) {
+      var wrap = document.getElementById(wrapId);
+      if (!wrap) return;
+      var btn  = wrap.querySelector('.cs-btn');
+      var list = wrap.querySelector('.cs-list');
+      var lbl  = wrap.querySelector('.cs-label');
+      var hidden = document.getElementById(inputId);
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var opening = !list.classList.contains('is-open');
+        closeAllCS();
+        if (opening) {
+          list.classList.add('is-open');
+          btn.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      list.addEventListener('click', function (e) {
+        var opt = e.target.closest('.cs-option');
+        if (!opt) return;
+        hidden.value = opt.dataset.value;
+        lbl.textContent = opt.dataset.value;
+        btn.classList.remove('is-placeholder', 'is-invalid');
+        list.querySelectorAll('.cs-option').forEach(function (o) { o.classList.remove('is-selected'); });
+        opt.classList.add('is-selected');
+        closeAllCS();
+      });
+    }
+
+    function closeAllCS() {
+      document.querySelectorAll('.cs-list.is-open').forEach(function (l) { l.classList.remove('is-open'); });
+      document.querySelectorAll('.cs-btn.is-open').forEach(function (b) {
+        b.classList.remove('is-open');
+        b.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    document.addEventListener('click', closeAllCS);
+
+    /* ── 16. Modal success message ── */
+    function renderModal() {
+      var $msg = document.getElementById('ds-success-msg');
+      if ($msg) {
+        $msg.innerHTML = C.modal.successText +
+          '<a id="ds-manual-link" href="#" style="color:var(--red)">' + C.modal.successLink + '</a>.';
+      }
+    }
+
+    /* ── Run all ── */
+    hydrate();
+    renderNav();
+    renderHeroStats();
+    renderUSP();
+    renderMissions();
+    renderTech();
+    renderReel();
+    renderFeatures();
+    renderProducts();
+    renderApiOutputs();
+    renderSolutions();
+    renderAdvantage();
+    renderDeployments();
+    renderFAQ();
+    renderFooterCols();
+    renderContactRoles();
+    renderCountries();
+    renderModal();
+  })();
+
+  // ─ Modal functions (global scope for onclick handlers) ─
+  function showFileListModal(productId, docType, docTypeData) {
+    var modal = document.getElementById('file-list-modal');
+    var container = document.getElementById('file-list-container');
+    var title = document.getElementById('modal-title');
+    
+    var MANIFEST = window.MANIFEST;
+    if (!MANIFEST || !MANIFEST.products || !MANIFEST.products[productId]) return;
+    
+    var productName = MANIFEST.products[productId].name;
+    title.textContent = productName + ' → ' + capitalizeFirst(docType);
+    
+    // Build file list HTML
+    var listHTML = '<ul class="file-list">';
+    
+    if (docTypeData.items && docTypeData.items.length > 0) {
+      docTypeData.items.forEach(function (item) {
+        // New manifest format: name, url, extension, viewable
+        var itemName = item.name || item.title || 'Unknown';
+        var itemUrl = item.url || item.path || '#';
+        var itemSize = item.size ? formatFileSize(item.size) : '';
+
+        // Documents (PDF, images, text) open in a new tab; software and CAD download.
+        var linkAttrs = item.viewable ? 'target="_blank" rel="noopener"' : '';
+
+        listHTML += '<li class="file-item">' +
+          '<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>' +
+          '<a href="' + itemUrl + '" ' + linkAttrs + ' class="file-link">' + itemName + '</a>';
+        
+        if (itemSize) {
+          listHTML += '<span class="file-size">(' + itemSize + ')</span>';
+        }
+        
+        listHTML += '</li>';
+      });
+    } else {
+      listHTML += '<li class="empty-state">No documents available</li>';
+    }
+    
+    listHTML += '</ul>';
+    container.innerHTML = listHTML;
+    
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeFileListModal() {
+    var modal = document.getElementById('file-list-modal');
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function capitalizeFirst(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  function formatFileSize(bytes) {
+    if (!bytes) return '0 B';
+    var units = ['B', 'KB', 'MB', 'GB'];
+    var size = bytes;
+    var unitIdx = 0;
+    while (size >= 1024 && unitIdx < units.length - 1) {
+      size /= 1024;
+      unitIdx++;
+    }
+    return size.toFixed(1) + ' ' + units[unitIdx];
+  }
+
+  // Close modal on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeFileListModal();
+    }
+  });
+
+  // Close modal when clicking overlay
+  document.addEventListener('click', function (e) {
+    var modal = document.getElementById('file-list-modal');
+    if (e.target === modal) {
+      closeFileListModal();
+    }
+  });
+  </script>
+
+  <!-- ════════════════════════════════════════════════════
+       JAVASCRIPT
+  ═════════════════════════════════════════════════════════ -->
+  <script>
+    /* ── Features accordion ── */
+    var featTimer = null;
+
+    function switchFeat(item) {
+      var idx = parseInt(item.getAttribute('data-feat'));
+      var items = document.querySelectorAll('.feat-item');
+      var slides = document.querySelectorAll('.feat-media-slide');
+
+      /* Deactivate all, pause any videos */
+      items.forEach(function(el) {
+        el.classList.remove('is-active');
+        /* reset bar by forcing reflow */
+        var bar = el.querySelector('.feat-bar');
+        bar.style.transition = 'none';
+        bar.style.width = '0';
+        void bar.offsetWidth;
+      });
+      slides.forEach(function(sl) {
+        sl.classList.remove('is-active');
+        var v = sl.querySelector('video');
+        if (v) { v.pause(); v.currentTime = 0; }
+      });
+
+      /* Activate selected */
+      item.classList.add('is-active');
+      var activeSlide = document.querySelector('.feat-media-slide[data-slide="' + idx + '"]');
+      if (activeSlide) {
+        activeSlide.classList.add('is-active');
+        /* Load deferred Vimeo iframe on first activation */
+        var iframe = activeSlide.querySelector('iframe[data-src]');
+        if (iframe) { iframe.src = iframe.dataset.src; iframe.removeAttribute('data-src'); }
+        var v = activeSlide.querySelector('video');
+        if (v) v.play();
+      }
+
+      /* Animate progress bar */
+      var bar = item.querySelector('.feat-bar');
+      bar.style.transition = 'none';
+      bar.style.width = '0';
+      void bar.offsetWidth;
+      bar.style.transition = 'width 6s linear';
+      bar.style.width = '100%';
+
+      /* Auto-advance after 6s */
+      if (featTimer) clearTimeout(featTimer);
+      featTimer = setTimeout(function() {
+        var next = (idx + 1) % items.length;
+        switchFeat(items[next]);
+      }, 6000);
+    }
+
+    /* Kick off on load */
+    document.addEventListener('DOMContentLoaded', function() {
+      var first = document.querySelector('.feat-item.is-active');
+      if (first) {
+        first.classList.remove('is-active');
+        switchFeat(first);
+      }
+    });
+
+    /* ── FAQ accordion ── */
+    function toggleFaq(btn) {
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+
+      /* Close all */
+      document.querySelectorAll('.faq-item.open').forEach(function(i) {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+
+      /* Open clicked (if it was closed) */
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    /* ── Contact form (stub — wire to Dynamics 365 CRM) ── */
+    /* ── Inline field error helpers ── */
+    function showFieldError(anchorEl, msg) {
+      var group = anchorEl.closest('.form-group') || anchorEl.parentNode;
+      var errEl = group.querySelector('.field-error');
+      if (!errEl) {
+        errEl = document.createElement('span');
+        errEl.className = 'field-error';
+        group.appendChild(errEl);
+      }
+      errEl.textContent = msg;
+      errEl.style.display = 'block';
+      anchorEl.classList.add('is-invalid');
+    }
+    function clearFieldError(anchorEl) {
+      var group = anchorEl.closest('.form-group') || anchorEl.parentNode;
+      var errEl = group.querySelector('.field-error');
+      if (errEl) errEl.style.display = 'none';
+      anchorEl.classList.remove('is-invalid');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+
+      var form = document.getElementById('contact-form');
+      var feedback = document.getElementById('form-feedback');
+
+      /* Custom inline validation */
+      var firstName  = form.querySelector('[name="firstName"]');
+      var lastName   = form.querySelector('[name="lastName"]');
+      var org        = form.querySelector('[name="organisation"]');
+      var email      = form.querySelector('[name="email"]');
+      var consent    = form.querySelector('[name="consent"]');
+      var csSearch   = document.querySelector('#csw-country .cs-search');
+      var countryVal = document.getElementById('f-country').value;
+      var valid = true;
+
+      [firstName, lastName, org, email, csSearch, consent].forEach(function(f) { if (f) clearFieldError(f); });
+
+      if (!firstName.value.trim()) { showFieldError(firstName, 'Please enter your first name.'); valid = false; }
+      if (!lastName.value.trim())  { showFieldError(lastName,  'Please enter your last name.');  valid = false; }
+      if (!org.value.trim())       { showFieldError(org,       'Please enter your organisation.'); valid = false; }
+      if (!countryVal)             { showFieldError(csSearch,  'Please select your country.'); valid = false; }
+      if (!email.value.trim()) {
+        showFieldError(email, 'Please enter your work email.'); valid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+        showFieldError(email, 'Please enter a valid email address.'); valid = false;
+      }
+      if (!consent.checked) { showFieldError(consent, 'Please accept the privacy policy to continue.'); valid = false; }
+
+      if (!valid) return;
+
+      /* Live clearing on input */
+      [firstName, lastName, org, email].forEach(function(f) {
+        f.addEventListener('input', function() { clearFieldError(f); }, { once: true });
+      });
+      csSearch.addEventListener('input', function() { clearFieldError(csSearch); }, { once: true });
+      consent.addEventListener('change', function() { clearFieldError(consent); }, { once: true });
+
+      /* Disable submit button while sending */
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+
+      /* Contact endpoint not configured: show the fallback message instead of posting */
+      if (!CONTACT_URL) { feedback.style.display = 'block'; feedback.textContent = 'Please email us directly.'; if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send enquiry'; } return; }
+
+      var payload = {
+        firstName:    form.querySelector('[name="firstName"]').value.trim(),
+        lastName:     form.querySelector('[name="lastName"]').value.trim(),
+        organisation: form.querySelector('[name="organisation"]').value.trim(),
+        country:      form.querySelector('[name="country"]').value.trim(),
+        email:        form.querySelector('[name="email"]').value.trim(),
+        role:         form.querySelector('[name="role"]').value.trim(),
+        message:      form.querySelector('[name="message"]').value.trim()
+      };
+
+      fetch(CONTACT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function(r) {
+        if (r.ok || r.status === 202) {
+          showFormSuccess(form, feedback);
+        } else {
+          throw new Error('HTTP ' + r.status);
+        }
+      })
+      .catch(function() {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send enquiry'; }
+        feedback.style.display = 'block';
+        feedback.style.background = 'rgba(180,0,0,.2)';
+        feedback.style.borderLeft = '3px solid #CB0D00';
+        feedback.style.color = '#DFDED9';
+        feedback.textContent = 'Something went wrong. Please try again or email us directly.';
+      });
+    }
+
+    function showFormSuccess(form, feedback) {
+      /* Hide the entire form */
+      form.style.display = 'none';
+
+      /* Show success message in its place */
+      feedback.style.display = 'flex';
+      feedback.style.flexDirection = 'column';
+      feedback.style.alignItems = 'flex-start';
+      feedback.style.gap = '12px';
+      feedback.style.padding = '48px 0';
+      feedback.style.background = 'transparent';
+      feedback.style.borderLeft = 'none';
+      feedback.style.color = '#DFDED9';
+      feedback.innerHTML =
+        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#CB0D00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>' +
+        '<h3 style="font-size:24px;font-weight:600;color:#ffffff;margin:0;">Enquiry received</h3>' +
+        '<p style="font-size:15px;color:rgba(255,255,255,0.7);margin:0;line-height:1.6;">Our security team will be in touch within 1–2 business days. All information is treated as confidential.</p>';
+
+      /* Matomo goal tracking */
+      if (window._paq) {
+        window._paq.push(['trackGoal', 1]); /* Goal ID 1 = contact form submission */
+      }
+    }
+
+    /* ── Smooth scroll for anchor links on mobile (belt-and-suspenders) ── */
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
+        }
+      });
+    });
+
+    /* ── Sticky nav active link highlight ── */
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('.nav-links a');
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.getAttribute('id');
+          navLinks.forEach(function(link) {
+            var matches = link.getAttribute('href') === '#' + id;
+            link.style.opacity = matches ? '1' : '0.7';
+            link.style.color = matches ? 'var(--white)' : '';
+          });
+        }
+      });
+    }, { threshold: 0.35 });
+
+    sections.forEach(function(s) { observer.observe(s); });
+  </script>
+
+  <!-- ════════════════════════════════════════════════════
+       DATASHEET MODAL
+  ═════════════════════════════════════════════════════════ -->
+  <div class="ds-overlay" id="datasheetOverlay" role="dialog" aria-modal="true" aria-labelledby="ds-title">
+    <div class="ds-modal">
+      <button class="ds-modal-close" onclick="closeDatasheetModal()" aria-label="Close">&times;</button>
+
+      <!-- Form view -->
+      <div id="ds-form-view">
+        <h3 id="ds-title">Download Specs</h3>
+        <p>Complete the form below to access the full technical specification sheet. Your download will start automatically in a new window.</p>
+
+        <form id="datasheetForm" onsubmit="submitDatasheetForm(event)" novalidate>
+          <div class="ds-form-row">
+            <div class="ds-field">
+              <label for="ds-first">First name</label>
+              <input type="text" id="ds-first" name="firstName" placeholder="Jane" required />
+            </div>
+            <div class="ds-field">
+              <label for="ds-last">Last name</label>
+              <input type="text" id="ds-last" name="lastName" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="ds-field">
+            <label for="ds-email">Work email</label>
+            <input type="email" id="ds-email" name="email" placeholder="jane@company.com" required />
+          </div>
+          <div class="ds-field">
+            <label for="ds-company">Company</label>
+            <input type="text" id="ds-company" name="company" placeholder="Organisation name" required />
+          </div>
+          <div class="ds-error" id="ds-error">Something went wrong. Please try again.</div>
+          <button type="submit" class="ds-submit" id="ds-submit-btn">Download specs</button>
+        </form>
+      </div>
+
+      <!-- Success view -->
+      <div class="ds-success" id="ds-success-view">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+        <h3>Your download has started</h3>
+        <p id="ds-success-msg"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── Config ───────────────────────────────────────────
+    // Power Automate HTTP trigger for the contact form. Leave empty until a rotated URL is approved.
+    var CONTACT_URL = '';
+    var SHEET_URL  = 'https://script.google.com/macros/s/AKfycbwhqMZXv-0BJg1hU5trLf4Bx4mOWmis9kOGpnMbeEzGt-wHAC0_eIX1PDX2-XpI4ugvBA/exec';
+    var FILE_URL   = 'https://www.sea.ai/uploads/2026/01/Watchkeeper-Specs-2026-Motor-Online.pdf';
+    var MODAL_DOCUMENT = 'SEA.AI Watchkeeper'; // updated dynamically per product
+
+    // ── Open / close ─────────────────────────────────────
+    function openDatasheetModal(productTitle, fileUrl) {
+      MODAL_DOCUMENT = productTitle || 'SEA.AI Watchkeeper';
+      FILE_URL = fileUrl || 'https://www.sea.ai/uploads/2026/01/Watchkeeper-Specs-2026-Motor-Online.pdf';
+      document.getElementById('datasheetOverlay').classList.add('is-open');
+      document.getElementById('ds-first').focus();
+    }
+    function closeDatasheetModal() {
+      document.getElementById('datasheetOverlay').classList.remove('is-open');
+      // reset
+      document.getElementById('ds-form-view').style.display = '';
+      document.getElementById('ds-success-view').style.display = 'none';
+      document.getElementById('datasheetForm').reset();
+      document.getElementById('ds-error').style.display = 'none';
+    }
+
+    // Close on overlay click
+    document.getElementById('datasheetOverlay').addEventListener('click', function(e) {
+      if (e.target === this) closeDatasheetModal();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeDatasheetModal();
+    });
+
+    // ── Submit ───────────────────────────────────────────
+    function submitDatasheetForm(e) {
+      e.preventDefault();
+      var btn    = document.getElementById('ds-submit-btn');
+      var errEl  = document.getElementById('ds-error');
+      errEl.style.display = 'none';
+
+      // Validate all fields
+      var firstName = document.getElementById('ds-first').value.trim();
+      var lastName  = document.getElementById('ds-last').value.trim();
+      var email     = document.getElementById('ds-email').value.trim();
+      var company   = document.getElementById('ds-company').value.trim();
+      var emailOk   = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!firstName || !lastName || !email || !company) {
+        errEl.textContent = 'Please fill in all fields.';
+        errEl.style.display = 'block';
+        return;
+      }
+      if (!emailOk) {
+        errEl.textContent = 'Please enter a valid email address.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = CONTENT.modal.sending;
+
+      var payload = {
+        firstName : firstName,
+        lastName  : lastName,
+        email     : email,
+        company   : company,
+        document  : MODAL_DOCUMENT
+      };
+
+      fetch(SHEET_URL, {
+        method : 'POST',
+        mode   : 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body   : JSON.stringify(payload)
+      })
+      .then(function() {
+        onSuccess();
+      })
+      .catch(function() {
+        btn.disabled = false;
+        btn.textContent = CONTENT.modal.submit || 'Download specs';
+        errEl.textContent = 'Something went wrong. Please try again.';
+        errEl.style.display = 'block';
+      });
+    }
+
+    function onSuccess() {
+      // Open PDF in new tab — only reached after successful submission
+      window.open(FILE_URL, '_blank');
+      closeDatasheetModal();
+    }
+  </script>
+</body>
+</html>

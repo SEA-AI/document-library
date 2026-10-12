@@ -18,6 +18,6 @@ Generated from `catalog.json` by `tools/build_readmes.py`. Do not edit by hand.
 
 | File | Type | Release |
 |---|---|---|
-| MAC_SEA.AI Desktop-1.2.4-arm64.dmg | Info | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
-| SEA-AI_Brain_3.13-4.oscar | Support | [Brain system software 3.13-4](https://github.com/SEA-AI/document-library/releases/tag/brain-software-3.13-4) |
-| WIN_SEA.AI Desktop-1.2.4.exe | Info | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
+| [MAC_SEA.AI Desktop-1.2.4-arm64.dmg](https://github.com/SEA-AI/document-library/releases/download/desktop-1.2.4/MAC_SEA.AI.Desktop-1.2.4-arm64.dmg) | Info | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
+| [SEA-AI_Brain_3.13-4.oscar](https://github.com/SEA-AI/document-library/releases/download/brain-software-3.13-4/SEA-AI_Brain_3.13-4.oscar) | Support | [Brain system software 3.13-4](https://github.com/SEA-AI/document-library/releases/tag/brain-software-3.13-4) |
+| [WIN_SEA.AI Desktop-1.2.4.exe](https://github.com/SEA-AI/document-library/releases/download/desktop-1.2.4/WIN_SEA.AI.Desktop-1.2.4.exe) | Info | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
