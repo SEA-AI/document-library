@@ -6,7 +6,6 @@
 | File | Release |
 |---|---|
 | [SEA-AI_WK_4.4-6.oscar](https://github.com/SEA-AI/document-library/releases/download/watchkeeper-software-4.4-6/SEA-AI_WK_4.4-6.oscar) | [Watchkeeper system software 4.4-6](https://github.com/SEA-AI/document-library/releases/tag/watchkeeper-software-4.4-6) |
-| [SEA-AI_WK_4.4-8.oscar](https://github.com/SEA-AI/document-library/releases/download/watchkeeper-software-4.4-8/SEA-AI_WK_4.4-8.oscar) | [Watchkeeper software 4.4-8](https://github.com/SEA-AI/document-library/releases/tag/watchkeeper-software-4.4-8) |
 
 ## Desktop application
 
