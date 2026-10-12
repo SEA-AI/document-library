@@ -6,6 +6,7 @@
 | File | Release |
 |---|---|
 | [SEA-AI_Sentry_4.4-6.oscar](https://github.com/SEA-AI/document-library/releases/download/sentry-software-4.4-6/SEA-AI_Sentry_4.4-6.oscar) | [Sentry system software 4.4-6](https://github.com/SEA-AI/document-library/releases/tag/sentry-software-4.4-6) |
+| [SEA-AI_Sentry_4.4-8.oscar](https://github.com/SEA-AI/document-library/releases/download/sentry-software-4.4-8/SEA-AI_Sentry_4.4-8.oscar) | [Sentry software 4.4-8](https://github.com/SEA-AI/document-library/releases/tag/sentry-software-4.4-8) |
 
 ## Desktop application
 
