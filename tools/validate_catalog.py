@@ -5,8 +5,8 @@ Checks:
   - every product and release a file names is declared; every release holds a file
   - categories fit the file: .oscar in software, desktop-* releases in desktop, *-cad-* releases
     in cad; documents never in software or desktop
-  - documents sit where the layout says: products/<id>/documents/ for one product,
-    shared/documents/ for several; the file name equals the title
+  - each document entry names one product and sits in products/<id>/documents/ (a document for
+    several products is copied into each folder); the file name equals the title
   - every document exists, matches its size and sha256, and is under 100 MB (git limit)
   - every file in a documents folder is listed in the catalog
   - no product lists two files with the same title
@@ -30,13 +30,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 MAX_GIT_FILE = 100 * 1024 * 1024
-DOC_DIRS = ("products/*/documents", "shared/documents")
+DOC_DIRS = ("products/*/documents",)
 
 
 def expected_path(entry: dict) -> str:
-    products = list(entry["products"])
-    folder = f"products/{products[0]}/documents" if len(products) == 1 else "shared/documents"
-    return f"{folder}/{entry['title']}"
+    return f"products/{next(iter(entry['products']))}/documents/{entry['title']}"
 
 
 def expected_category(entry: dict) -> str | None:
@@ -89,6 +87,8 @@ def check_catalog(catalog: dict) -> list[str]:
             if entry["release"] not in catalog["releases"]:
                 errors.append(f"{name}: release '{entry['release']}' is not declared in releases")
             continue
+        if len(entry["products"]) != 1:
+            errors.append(f"{name}: a document entry names one product; copy the file into each product's folder")
         if entry["path"] != expected_path(entry):
             errors.append(f"{name}: path should be {expected_path(entry)}")
         path = ROOT / entry["path"]

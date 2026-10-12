@@ -23,7 +23,7 @@ You can also open your product's page here:
 
 ## What you find here
 
-Each product page groups its files the same way:
+The website and each product page group the files the same way:
 
 - **Software releases:** system software updates (`.oscar` files) for your SEA.AI system.
 - **Desktop application:** SEA.AI Desktop for Windows and macOS.
@@ -45,7 +45,7 @@ download is complete and unchanged, compute its checksum and compare it with tha
 
 ## Before you update system software
 
-If your product's documents include a software update guideline, read it first. Software marked
+If your product's Guides include a software update guide, read it first. Software marked
 "legacy" is an earlier version: ask SEA.AI support before installing it. If you are unsure which
 version fits your system, contact SEA.AI support.
 
