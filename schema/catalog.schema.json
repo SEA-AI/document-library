@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SEA.AI document library catalog",
+  "description": "Every published file: where it is stored, which products list it, and as which document type.",
+  "type": "object",
+  "required": ["repository", "products", "releases", "files"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "repository": { "type": "string", "pattern": "^[A-Za-z0-9-]+/[A-Za-z0-9._-]+$" },
+    "products": {
+      "description": "Product id -> display name. Ids are folder names under products/.",
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z]+$" },
+      "additionalProperties": { "type": "string" }
+    },
+    "releases": {
+      "description": "Release tag -> title and notes. One release per component version.",
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z]+(-[a-z]+)*-[0-9][0-9A-Za-z.-]*$" },
+      "additionalProperties": {
+        "type": "object",
+        "required": ["title", "notes"],
+        "additionalProperties": false,
+        "properties": {
+          "title": { "type": "string", "minLength": 1 },
+          "notes": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "products", "size", "sha256"],
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "description": "File name shown to visitors. For release files, also the asset label.",
+            "type": "string",
+            "pattern": "^[^#?%/\\\\\\s][^#?%/\\\\]*[^#?%/\\\\\\s]$"
+          },
+          "products": {
+            "description": "Product id -> document type on that product's page.",
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": { "enum": ["Support", "Guides", "Help", "Info"] }
+          },
+          "path": { "description": "Documents: path in this repo.", "type": "string" },
+          "release": { "description": "Software and CAD: release tag holding the file.", "type": "string" },
+          "size": { "type": "integer", "minimum": 1 },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        },
+        "oneOf": [
+          { "required": ["path"], "not": { "required": ["release"] } },
+          { "required": ["release"], "not": { "required": ["path"] } }
+        ]
+      }
+    }
+  }
+}

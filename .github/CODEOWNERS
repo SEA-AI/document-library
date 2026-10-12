@@ -1,0 +1,10 @@
+# Reviewers who must approve changes, enforced once branch protection on develop requires
+# code owner review. Replace each placeholder with a GitHub user or team, then uncomment.
+#
+# *                         @SEA-AI/<library-maintainers>
+# /products/sentry/         @<sentry-product-owner>
+# /products/watchkeeper/    @<watchkeeper-product-owner>
+# /products/brain/          @<brain-product-owner>
+# /products/offshore/       @<offshore-product-owner>
+# /products/competition/    @<competition-product-owner>
+# /catalog.json             @SEA-AI/<library-maintainers>

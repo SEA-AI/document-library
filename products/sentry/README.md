@@ -1,0 +1,31 @@
+# Sentry
+
+Generated from `catalog.json` by `tools/build_readmes.py`. Do not edit by hand.
+
+## Documents
+
+| Document | Type |
+|---|---|
+| [260612_Sentry - Specsheet.pdf](../../products/sentry/documents/260612_Sentry%20-%20Specsheet.pdf) | Info |
+| [SEA.AI and TimeZero Integration Guideline.pdf](../../products/sentry/documents/SEA.AI%20and%20TimeZero%20Integration%20Guideline.pdf) | Guides |
+| [Sentry Comissioning Checklist.pdf](../../products/sentry/documents/Sentry%20Comissioning%20Checklist.pdf) | Help |
+| [Sentry Data Harness A02232.pdf](../../products/sentry/documents/Sentry%20Data%20Harness%20A02232.pdf) | Info |
+| [Sentry Gen2 2D Drawing.pdf](../../products/sentry/documents/Sentry%20Gen2%202D%20Drawing.pdf) | Support |
+| [Sentry Ignore Mask Guideline.pdf](../../products/sentry/documents/Sentry%20Ignore%20Mask%20Guideline.pdf) | Guides |
+| [Sentry Installation Manual.pdf](../../products/sentry/documents/Sentry%20Installation%20Manual.pdf) | Support |
+| [Sentry Interconnect Diagram.pdf](../../products/sentry/documents/Sentry%20Interconnect%20Diagram.pdf) | Info |
+| [Sentry Joystick Drawing.pdf](../../products/sentry/documents/Sentry%20Joystick%20Drawing.pdf) | Support |
+| [Sentry Joystick Harness A02875.pdf](../../products/sentry/documents/Sentry%20Joystick%20Harness%20A02875.pdf) | Support |
+| [Sentry Power Harness A02233.pdf](../../products/sentry/documents/Sentry%20Power%20Harness%20A02233.pdf) | Support |
+| [Sentry Software Update Guideline.pdf](../../products/sentry/documents/Sentry%20Software%20Update%20Guideline.pdf) | Guides |
+| [User Guide Sentry_4.0_english.pdf](../../products/sentry/documents/User%20Guide%20Sentry_4.0_english.pdf) | Guides |
+
+## Software and CAD
+
+| File | Type | Release |
+|---|---|---|
+| MAC_SEA.AI Desktop-1.2.4-arm64.dmg | Info | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
+| SEA-AI_Sentry_4.4-6.oscar | Info | [Sentry system software 4.4-6](https://github.com/SEA-AI/document-library/releases/tag/sentry-software-4.4-6) |
+| Sentry Gen2 3D CAD.zip | Help | [Sentry CAD data 2026.10](https://github.com/SEA-AI/document-library/releases/tag/sentry-cad-2026.10) |
+| Sentry Joystick 3D CAD.zip | Support | [Sentry CAD data 2026.10](https://github.com/SEA-AI/document-library/releases/tag/sentry-cad-2026.10) |
+| WIN_SEA.AI Desktop-1.2.4.exe | Info | [SEA.AI Desktop 1.2.4](https://github.com/SEA-AI/document-library/releases/tag/desktop-1.2.4) |
