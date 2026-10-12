@@ -37,6 +37,10 @@
       "title": "Sentry system software 4.4-6",
       "notes": "System software update package (.oscar), version 4.4-6. For: Sentry."
     },
+    "sentry-software-4.4-8": {
+      "title": "Sentry software 4.4-8",
+      "notes": "System software update package (.oscar), version 4.4-8. For: Sentry."
+    },
     "watchkeeper-cad-2026.10": {
       "title": "Watchkeeper CAD data 2026.10",
       "notes": "Watchkeeper 3D CAD data, as published in 2026.10."
@@ -44,6 +48,10 @@
     "watchkeeper-software-4.4-6": {
       "title": "Watchkeeper system software 4.4-6",
       "notes": "System software update package (.oscar), version 4.4-6. For: Watchkeeper."
+    },
+    "watchkeeper-software-4.4-8": {
+      "title": "Watchkeeper software 4.4-8",
+      "notes": "System software update package (.oscar), version 4.4-8. For: Watchkeeper."
     }
   },
   "files": [
@@ -687,6 +695,16 @@
       "sha256": "07344758b85ecdca96405978126a046f62f4733d364812ad7f5a35d3764e7507"
     },
     {
+      "title": "SEA-AI_Sentry_4.4-8.oscar",
+      "products": {
+        "sentry": "software"
+      },
+      "release": "sentry-software-4.4-8",
+      "asset": "SEA-AI_Sentry_4.4-8.oscar",
+      "size": 129925544,
+      "sha256": "0e7391d354195c757e33da94b53b38e03234bbbd6dab96cff51fc0af5a89d36b"
+    },
+    {
       "title": "v10_cam_assy_outer_shape.stp",
       "products": {
         "watchkeeper": "cad"
@@ -715,6 +733,16 @@
       "asset": "SEA-AI_WK_4.4-6.oscar",
       "size": 142048456,
       "sha256": "4d7bddcd9f066e96b8b18882aeeb3f3bc4d88c98213acda09c1ef75604df9f9f"
+    },
+    {
+      "title": "SEA-AI_WK_4.4-8.oscar",
+      "products": {
+        "watchkeeper": "software"
+      },
+      "release": "watchkeeper-software-4.4-8",
+      "asset": "SEA-AI_WK_4.4-8.oscar",
+      "size": 142160312,
+      "sha256": "db09d4160864edaec6f1eed2bc3b653af0f712d5537702f2ee09e2940411ea6d"
     }
   ]
 }

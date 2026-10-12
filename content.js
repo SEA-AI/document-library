@@ -38,7 +38,7 @@ var CONTENT = {
         h3:    'Watchkeeper',
         p:     'Compact fixed-mount EO/IR system for navigation safety and close-range detection.',
         docTypes: [
-          { label: 'Software releases',   count: 1 },
+          { label: 'Software releases',   count: 2 },
           { label: 'Desktop application', count: 2 },
           { label: 'CAD',                 count: 3 },
           { label: 'Guides',              count: 3 },
@@ -51,7 +51,7 @@ var CONTENT = {
         h3:    'Sentry',
         p:     'Full-perimeter EO/IR surveillance with AI auto-track and optical zoom capabilities.',
         docTypes: [
-          { label: 'Software releases',   count: 1 },
+          { label: 'Software releases',   count: 2 },
           { label: 'Desktop application', count: 2 },
           { label: 'CAD',                 count: 4 },
           { label: 'Guides',              count: 6 },
