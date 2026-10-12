@@ -24,16 +24,11 @@ Unless SEA.AI has agreed otherwise in writing, you may not:
   despite this restriction;
 - remove or alter any copyright, trademark or other proprietary notice.
 
-## Trademarks
+## Warranty and liability
 
-SEA.AI, Sentry, Watchkeeper, Brain, Offshore and Competition are names and marks of SEA.AI. These
-terms grant no right to use them.
-
-## No warranty
-
-The Materials are provided "as is". To the extent permitted by law, SEA.AI gives no warranty of
-any kind regarding them, and is not liable for damage arising from their use. Any warranty for
-SEA.AI products is set out in the agreement under which you obtained them.
+The software and documents in this repository belong to your SEA.AI product. Warranty and
+liability for them are governed by the agreement under which you obtained the product. Nothing in
+these terms limits your statutory rights.
 
 ## Changes
 
