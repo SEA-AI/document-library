@@ -47,8 +47,9 @@ version fits your system, contact SEA.AI support.
 
 ## Support
 
-For help, contact SEA.AI through [www.sea.ai](https://www.sea.ai/).
+For help, contact SEA.AI support: https://www.sea.ai/contact/
 
-## Copyright
+## Copyright and terms of use
 
-© 2026 SEA.AI. All rights reserved.
+© 2026 SEA.AI. All rights reserved. The documents and software in this repository may be used only
+under the [Terms of Use](LICENSE.md).
