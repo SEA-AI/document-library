@@ -1,0 +1,140 @@
+/* SEA.AI marketing skin: matches https://www.sea.ai/document-library/
+   Loaded after the inline page styles; overrides the dark institutional theme.
+   Remove the <link> in index.html to revert to the previous look. */
+
+:root {
+  --navy:       #0B1731;   /* Night Blue */
+  --navy-text:  #000000;   /* all text on light backgrounds is Black */
+  --tile:       #DFDED9;   /* Fog White */
+  --inst-1:     var(--navy);
+  --inst-2:     var(--navy);
+  --inst-3:     var(--navy);
+  --inst-4:     var(--tile);
+  --content-2:  var(--navy-text);
+}
+
+body {
+  background: var(--white);
+  color: var(--navy-text);
+  letter-spacing: .2px;
+}
+
+/* Header: navy bar, uppercase nav, red CTA */
+.top-rule { display: none; }
+.nav {
+  background: var(--navy);
+  border-bottom: 0;
+  color: var(--white);
+}
+.nav .bar { height: 92px; }
+.nav .brand img { height: 26px; }
+.nav .brand .sector { opacity: .6; }
+.nav-links a {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .7px;
+  opacity: 1;
+}
+.nav-links a:hover { color: var(--white); text-decoration: underline; text-underline-offset: 6px; }
+.nav .right .btn-ghost {
+  background: var(--red);
+  border: 0;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .7px;
+  padding: 12px 20px 10px;
+}
+.nav .right .btn-ghost:hover { background: #a00a00; }
+.mobile-nav-strip { background: var(--navy); }
+
+/* Hero: flat navy title band, no photo */
+.hero {
+  min-height: 0;
+  background: var(--navy);
+  padding: 56px 0 64px;
+  align-items: center;
+}
+.hero-media,
+.hero-overlay,
+.hero-placeholder,
+.hero-copyright { display: none; }
+.hero-inner { max-width: none; }
+.hero h1 {
+  max-width: none;
+  font-size: clamp(38px, 4.4vw, 54px);
+  font-weight: 500;
+  letter-spacing: .2px;
+  text-shadow: none;
+  margin-bottom: 14px;
+}
+.hero h1 em { color: var(--white); }
+.hero .lead {
+  max-width: 70ch;
+  margin-bottom: 0;
+  color: var(--white);
+  text-shadow: none;
+}
+
+/* Product section: white page, grey tiles */
+.integration { background: var(--white); padding: 72px 0 24px; }
+.integration .section-head { margin-bottom: 40px; }
+.integration .section-head .label { color: var(--red); }
+.integration .section-head h2 {
+  color: var(--navy);
+  max-width: none;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+.integration .section-head h2 br { display: none; }
+.integration .section-head h2 em { color: var(--navy); }
+.integration .section-head h2 em::before { content: " "; }
+.products-split {
+  background: transparent;
+  gap: 30px;
+  margin-bottom: 72px;
+}
+.product-col { background: var(--tile); }
+.product-body { background: transparent; }
+.product-title {
+  color: var(--navy-text);
+  text-transform: none;
+  font-weight: 500;
+}
+.product-blurb { color: var(--navy-text); }
+.doc-type-link {
+  color: var(--navy-text);
+  border-bottom-color: rgba(0, 0, 0, .15);
+}
+.doc-type-link:hover {
+  color: var(--red);
+  background-color: rgba(255, 255, 255, .6);
+}
+
+/* Buttons: marketing red, 8px radius */
+.btn { font-size: 14px; letter-spacing: .7px; }
+
+/* Brand font has no Bold: Medium (500) is the heaviest weight */
+.label,
+.btn,
+.product-tag,
+.footer-col h4,
+.nav .brand .sector,
+.footer-brand .footer-sector,
+.mobile-nav-strip ul a { font-weight: 500; }
+
+/* Brand: no drop shadows */
+.modal-content { box-shadow: none; }
+
+/* Footer: navy */
+footer {
+  background: var(--navy);
+  border-top: 0;
+  color: var(--white);
+}
+
+@media (max-width: 600px) {
+  .nav .bar { height: 72px; gap: 12px; }
+  .nav .brand img { height: 20px; }
+  .nav .right .btn-ghost { font-size: 12px; padding: 10px 12px 8px; }
+}
