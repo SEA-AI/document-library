@@ -36,6 +36,8 @@ var CONTENT = {
       {
         id:    'watchkeeper',
         h3:    'Watchkeeper',
+        img:   'assets/images/products/watchkeeper.png',
+        imgAlt: 'SEA.AI Watchkeeper',
         p:     'Compact fixed-mount EO/IR system for navigation safety and close-range detection.',
         docTypes: [
           { label: 'Software releases',   count: 2 },
@@ -49,6 +51,8 @@ var CONTENT = {
       {
         id:    'sentry',
         h3:    'Sentry',
+        img:   'assets/images/products/sentry.png',
+        imgAlt: 'SEA.AI Sentry',
         p:     'Full-perimeter EO/IR surveillance with AI auto-track and optical zoom capabilities.',
         docTypes: [
           { label: 'Software releases',   count: 2 },
@@ -62,6 +66,8 @@ var CONTENT = {
       {
         id:    'brain',
         h3:    'Brain',
+        img:   'assets/images/products/brain.png',
+        imgAlt: 'SEA.AI Brain',
         p:     'Advanced analytics and processing platform for real-time operational intelligence.',
         docTypes: [
           { label: 'Software releases',   count: 1 },
@@ -75,6 +81,8 @@ var CONTENT = {
       {
         id:    'competition',
         h3:    'Competition',
+        img:   'assets/images/products/competition.png',
+        imgAlt: 'SEA.AI Competition',
         p:     'Competitive analysis and benchmarking tools for system evaluation.',
         docTypes: [
           { label: 'Software releases',   count: 2 },
@@ -88,6 +96,8 @@ var CONTENT = {
       {
         id:    'offshore',
         h3:    'Offshore',
+        img:   'assets/images/products/offshore.webp',
+        imgAlt: 'SEA.AI Offshore',
         p:     'Marine and offshore operations platform for extended deployment scenarios.',
         docTypes: [
           { label: 'Software releases',   count: 1 },

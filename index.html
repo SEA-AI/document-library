@@ -2790,6 +2790,7 @@
           }
           
           return '<article class="product-col" role="listitem" id="' + p.id + '">' +
+            (p.img ? '<div class="product-img"><img src="' + p.img + '" alt="' + p.imgAlt + '" loading="lazy" /></div>' : '') +
             '<div class="product-body">' +
             '<h3 class="product-title">' + p.h3 + '</h3>' +
             '<p class="product-blurb">' + p.p + '</p>' +

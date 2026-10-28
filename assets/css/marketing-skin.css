@@ -96,6 +96,13 @@ body {
 }
 .product-col { background: var(--tile); }
 .product-body { background: transparent; }
+.product-img {
+  aspect-ratio: auto;
+  height: 200px;
+  padding: 24px 24px 0;
+  background: transparent;
+}
+.product-img img { object-fit: contain; }
 .product-title {
   color: var(--navy-text);
   text-transform: none;
