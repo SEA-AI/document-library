@@ -1,6 +1,12 @@
 <!-- Generated from catalog.json by tools/build_readmes.py. Do not edit by hand. -->
 # Sentry
 
+## User manual
+
+[Sentry user manual](https://sea-ai.github.io/manuals/sentry/), software 4.4-4: use, installation and care.
+
+Online in: [EN](https://sea-ai.github.io/manuals/sentry/) · [DE](https://sea-ai.github.io/manuals/sentry/de.html) · [FR](https://sea-ai.github.io/manuals/sentry/fr.html) · [ES](https://sea-ai.github.io/manuals/sentry/es.html) · [PT](https://sea-ai.github.io/manuals/sentry/pt.html) · [IT](https://sea-ai.github.io/manuals/sentry/it.html) · [AR](https://sea-ai.github.io/manuals/sentry/ar.html). [Printable PDF](https://sea-ai.github.io/manuals/sentry/sentry-user-manual-4.4-4.pdf).
+
 ## Software releases
 
 | File | Release |
@@ -30,10 +36,6 @@
 |---|
 | [SEA.AI and TimeZero Integration Guideline.pdf](../../products/sentry/documents/SEA.AI%20and%20TimeZero%20Integration%20Guideline.pdf) |
 | [Sentry Comissioning Checklist.pdf](../../products/sentry/documents/Sentry%20Comissioning%20Checklist.pdf) |
-| [Sentry Ignore Mask Guideline.pdf](../../products/sentry/documents/Sentry%20Ignore%20Mask%20Guideline.pdf) |
-| [Sentry Installation Manual.pdf](../../products/sentry/documents/Sentry%20Installation%20Manual.pdf) |
-| [Sentry Software Update Guideline.pdf](../../products/sentry/documents/Sentry%20Software%20Update%20Guideline.pdf) |
-| [User Guide Sentry_4.0_english.pdf](../../products/sentry/documents/User%20Guide%20Sentry_4.0_english.pdf) |
 
 ## Wiring diagrams
 

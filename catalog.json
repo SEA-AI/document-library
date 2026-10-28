@@ -54,6 +54,40 @@
       "notes": "System software update package (.oscar), version 4.4-8. For: Watchkeeper."
     }
   },
+  "manuals": {
+    "sentry": {
+      "title": "Sentry user manual",
+      "version": "4.4-4",
+      "summary": "Use, installation and care",
+      "url": "https://sea-ai.github.io/manuals/sentry/",
+      "pdf": "https://sea-ai.github.io/manuals/sentry/sentry-user-manual-4.4-4.pdf",
+      "languages": {
+        "en": "https://sea-ai.github.io/manuals/sentry/",
+        "de": "https://sea-ai.github.io/manuals/sentry/de.html",
+        "fr": "https://sea-ai.github.io/manuals/sentry/fr.html",
+        "es": "https://sea-ai.github.io/manuals/sentry/es.html",
+        "pt": "https://sea-ai.github.io/manuals/sentry/pt.html",
+        "it": "https://sea-ai.github.io/manuals/sentry/it.html",
+        "ar": "https://sea-ai.github.io/manuals/sentry/ar.html"
+      }
+    },
+    "watchkeeper": {
+      "title": "Watchkeeper user manual",
+      "version": "4.4-4",
+      "summary": "Use, installation and care",
+      "url": "https://sea-ai.github.io/manuals/watchkeeper/",
+      "pdf": "https://sea-ai.github.io/manuals/watchkeeper/watchkeeper-user-manual-4.4-4.pdf",
+      "languages": {
+        "en": "https://sea-ai.github.io/manuals/watchkeeper/",
+        "de": "https://sea-ai.github.io/manuals/watchkeeper/de.html",
+        "fr": "https://sea-ai.github.io/manuals/watchkeeper/fr.html",
+        "es": "https://sea-ai.github.io/manuals/watchkeeper/es.html",
+        "pt": "https://sea-ai.github.io/manuals/watchkeeper/pt.html",
+        "it": "https://sea-ai.github.io/manuals/watchkeeper/it.html",
+        "ar": "https://sea-ai.github.io/manuals/watchkeeper/ar.html"
+      }
+    }
+  },
   "files": [
     {
       "title": "Brain Gen 1 Processing Unit.pdf",
@@ -443,24 +477,6 @@
       "sha256": "2a40fae944fd309f910d51805c2b6c56d19c82f5c35493e76c67744e8395dbcd"
     },
     {
-      "title": "Sentry Ignore Mask Guideline.pdf",
-      "products": {
-        "sentry": "guides"
-      },
-      "path": "products/sentry/documents/Sentry Ignore Mask Guideline.pdf",
-      "size": 340704,
-      "sha256": "b134acf039beca405e500359c9066782fc607ea885087433c277de3c7cb56a69"
-    },
-    {
-      "title": "Sentry Installation Manual.pdf",
-      "products": {
-        "sentry": "guides"
-      },
-      "path": "products/sentry/documents/Sentry Installation Manual.pdf",
-      "size": 2776409,
-      "sha256": "45148ff0e149de4bd77c702bc35da0dd3ed47acf3da2d01b674b3eba3c187c60"
-    },
-    {
       "title": "Sentry Interconnect Diagram.pdf",
       "products": {
         "sentry": "wiring"
@@ -497,24 +513,6 @@
       "sha256": "4827afe1d4648c016f1e1ec7511212bd86a643fa28254565eb37dd461edaca77"
     },
     {
-      "title": "Sentry Software Update Guideline.pdf",
-      "products": {
-        "sentry": "guides"
-      },
-      "path": "products/sentry/documents/Sentry Software Update Guideline.pdf",
-      "size": 276565,
-      "sha256": "d8e236cbcd66aef8c6e4b46a6ecd4404fadd21cd73cb9f7193de83cb8bde3fce"
-    },
-    {
-      "title": "User Guide Sentry_4.0_english.pdf",
-      "products": {
-        "sentry": "guides"
-      },
-      "path": "products/sentry/documents/User Guide Sentry_4.0_english.pdf",
-      "size": 6414992,
-      "sha256": "471bed6ee297e4b7651ba59834424b6c49da01c3918b7084cb650306ac36b604"
-    },
-    {
       "title": "Specs_Watchkeeper_Motor.pdf",
       "products": {
         "watchkeeper": "datasheets"
@@ -533,15 +531,6 @@
       "sha256": "2194ddda4840843c93e9e5368ef197d4efdf951c716e5cddb0434d64446e1fd9"
     },
     {
-      "title": "User Guide Watchkeeper Series_1.2.pdf",
-      "products": {
-        "watchkeeper": "guides"
-      },
-      "path": "products/watchkeeper/documents/User Guide Watchkeeper Series_1.2.pdf",
-      "size": 1974641,
-      "sha256": "c29bd9941fe4c64b445940061e24201d885c0a29a306a30b763d693ca09be5a1"
-    },
-    {
       "title": "Watchkeeper Data Harness A04140.pdf",
       "products": {
         "watchkeeper": "wiring"
@@ -551,15 +540,6 @@
       "sha256": "f3f7d08129d7e3f5b0303b305e4046f897d977b0c375091b7761185bdd7f22b5"
     },
     {
-      "title": "Watchkeeper Installation Manual.pdf",
-      "products": {
-        "watchkeeper": "guides"
-      },
-      "path": "products/watchkeeper/documents/Watchkeeper Installation Manual.pdf",
-      "size": 11075204,
-      "sha256": "8006949dcba7fe346f4ffd5599213dacf5320bb89aec638afce7380c3763b7d3"
-    },
-    {
       "title": "Watchkeeper Interconnect Diagram.pdf",
       "products": {
         "watchkeeper": "wiring"
@@ -567,15 +547,6 @@
       "path": "products/watchkeeper/documents/Watchkeeper Interconnect Diagram.pdf",
       "size": 318296,
       "sha256": "4a99cfb16b8e09e29f777a2b68acf9fa7cffd1b5d88c0cec86773e542c672775"
-    },
-    {
-      "title": "Watchkeeper Obstruction Mask.pdf",
-      "products": {
-        "watchkeeper": "guides"
-      },
-      "path": "products/watchkeeper/documents/Watchkeeper Obstruction Mask.pdf",
-      "size": 927407,
-      "sha256": "b5363df66677338fd5a602e5fb86b5fc22a9fd2eaae6b08bee0489a486cce5d8"
     },
     {
       "title": "Watchkeeper Power Harness A04150.pdf",

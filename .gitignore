@@ -12,3 +12,6 @@ __pycache__/
 *.pyc
 .env
 .env.*
+
+# Retired documents replaced by the online manuals, kept locally only
+archive/

@@ -1,6 +1,12 @@
 <!-- Generated from catalog.json by tools/build_readmes.py. Do not edit by hand. -->
 # Watchkeeper
 
+## User manual
+
+[Watchkeeper user manual](https://sea-ai.github.io/manuals/watchkeeper/), software 4.4-4: use, installation and care.
+
+Online in: [EN](https://sea-ai.github.io/manuals/watchkeeper/) · [DE](https://sea-ai.github.io/manuals/watchkeeper/de.html) · [FR](https://sea-ai.github.io/manuals/watchkeeper/fr.html) · [ES](https://sea-ai.github.io/manuals/watchkeeper/es.html) · [PT](https://sea-ai.github.io/manuals/watchkeeper/pt.html) · [IT](https://sea-ai.github.io/manuals/watchkeeper/it.html) · [AR](https://sea-ai.github.io/manuals/watchkeeper/ar.html). [Printable PDF](https://sea-ai.github.io/manuals/watchkeeper/watchkeeper-user-manual-4.4-4.pdf).
+
 ## Software releases
 
 | File | Release |
@@ -22,14 +28,6 @@
 | [v10_cam_assy_outer_shape.stp](https://github.com/SEA-AI/document-library/releases/download/watchkeeper-cad-2026.10/v10_cam_assy_outer_shape.stp) | 3D model |
 | [Watchkeeper 3D CAD.zip](https://github.com/SEA-AI/document-library/releases/download/watchkeeper-cad-2026.10/Watchkeeper.3D.CAD.zip) | 3D model |
 | [Watchkeeper_2D_Drawing.pdf](../../products/watchkeeper/documents/Watchkeeper_2D_Drawing.pdf) | 2D drawing |
-
-## Guides
-
-| Document |
-|---|
-| [User Guide Watchkeeper Series_1.2.pdf](../../products/watchkeeper/documents/User%20Guide%20Watchkeeper%20Series_1.2.pdf) |
-| [Watchkeeper Installation Manual.pdf](../../products/watchkeeper/documents/Watchkeeper%20Installation%20Manual.pdf) |
-| [Watchkeeper Obstruction Mask.pdf](../../products/watchkeeper/documents/Watchkeeper%20Obstruction%20Mask.pdf) |
 
 ## Wiring diagrams
 
