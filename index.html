@@ -2425,7 +2425,10 @@
     <div class="modal-overlay"></div>
     <div class="modal-content">
       <div class="modal-header">
-        <h2 id="modal-title">Documents</h2>
+        <div>
+          <p class="modal-eyebrow" id="modal-eyebrow"></p>
+          <h2 id="modal-title">Documents</h2>
+        </div>
         <button class="modal-close" aria-label="Close modal" onclick="closeFileListModal()">×</button>
       </div>
       <div class="modal-body">
@@ -2485,6 +2488,7 @@
   (function () {
     var C = CONTENT;
     var MANIFEST = null;  // Will be loaded async
+    var MANUALS = {};     // Product id -> online user manual, from catalog.json
 
     // Transform manifest data structure for modal compatibility
     function transformManifest(rawManifest) {
@@ -2554,6 +2558,14 @@
     ];
     window.CATEGORY_LABELS = {};
     CATEGORIES.forEach(function (c) { window.CATEGORY_LABELS[c.id] = c.label; });
+    // Card rows: catalog categories as visitors see them; guides, wiring and datasheets share one row
+    var SECTIONS = [
+      { id: 'software',  label: 'Software releases',   types: ['software'] },
+      { id: 'desktop',   label: 'Desktop application', types: ['desktop'] },
+      { id: 'cad',       label: 'CAD',                 types: ['cad'] },
+      { id: 'documents', label: 'Technical documents', types: ['guides', 'wiring', 'datasheets'] }
+    ];
+    window.SECTIONS = SECTIONS;
     var VIEWABLE = { pdf: true, jpg: true, jpeg: true, png: true, gif: true, webp: true, txt: true };
     var DESKTOP_OS = ['WIN_', 'MAC_', 'LINUX_'];  // installer order: Windows, macOS, Linux
     function catalogToManifest(catalog) {
@@ -2603,6 +2615,7 @@
       .catch(function () { return null; })
       .then(function (data) {
         if (data) {
+          MANUALS = data.manuals || {};
           MANIFEST = transformManifest(catalogToManifest(data));
           window.MANIFEST = MANIFEST;  // Store globally for modal functions
           // Re-render products if manifest loaded
@@ -2755,6 +2768,29 @@
 
     /* ── 9. Products ── */
     var DL_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
+    var OPEN_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><polyline points="8 7 17 7 17 16"/></svg>';
+    // Native names of the manual languages, shown as tooltips and to screen readers
+    var LANGUAGE_NAMES = { en: 'English', de: 'Deutsch', fr: 'Français', es: 'Español', pt: 'Português', it: 'Italiano', ar: 'العربية' };
+
+    // Online user manual panel: read online, printable PDF, other languages
+    function manualPanel(m) {
+      var ext = ' target="_blank" rel="noopener"';
+      var langs = Object.keys(m.languages).map(function (code) {
+        var name = LANGUAGE_NAMES[code] || code.toUpperCase();
+        return '<a class="manual-lang" href="' + m.languages[code] + '"' + ext + ' hreflang="' + code +
+               '" lang="' + code + '" title="' + name + '" aria-label="' + m.title + ', ' + name + '">' + code.toUpperCase() + '</a>';
+      }).join('');
+      return '<section class="manual-panel" aria-label="' + m.title + '">' +
+        '<p class="manual-eyebrow">User manual <span>Software ' + m.version + '</span></p>' +
+        '<p class="manual-summary">' + m.summary + '</p>' +
+        '<div class="manual-actions">' +
+        '<a class="manual-read" href="' + m.url + '"' + ext + '>Read online ' + OPEN_ICON + '</a>' +
+        '<a class="manual-pdf" href="' + m.pdf + '"' + ext + '>' + DL_ICON + 'PDF</a>' +
+        '</div>' +
+        '<div class="manual-langs">' + langs + '</div>' +
+        '</section>';
+    }
+
     function renderProducts() {
       var $split = document.querySelector('.products-split');
       if (!$split) return;
@@ -2775,12 +2811,17 @@
           if (MANIFEST && MANIFEST.products && MANIFEST.products[p.id]) {
             var productManifest = MANIFEST.products[p.id];
             // The catalog decides which files exist; content.js lists can be stale and hide files.
-            docTypesHTML = CATEGORIES.map(function (category) {
-              var docTypeData = productManifest.document_types[category.id] || {};
-              var actualCount = docTypeData.count || 0;
-              var href = actualCount > 0 ? '#' + p.id + '_' + category.id : '#';
-              return '<a href="' + href + '" class="doc-type-link" data-product="' + p.id + '" data-type="' + category.id + '">' +
-                     category.label + ' <span class="doc-count">(' + actualCount + ')</span></a>';
+            // Empty sections are left out, as in the product READMEs.
+            docTypesHTML = SECTIONS.map(function (section) {
+              var count = section.types.reduce(function (sum, type) {
+                return sum + ((productManifest.document_types[type] || {}).count || 0);
+              }, 0);
+              if (!count) return '';
+              return '<a href="#' + p.id + '_' + section.id + '" class="doc-type-link" data-product="' + p.id +
+                     '" data-section="' + section.id + '" aria-label="' + section.label + ', ' + count + (count === 1 ? ' file' : ' files') + '">' +
+                     '<span class="doc-type-label">' + section.label + '</span>' +
+                     '<span class="doc-count">' + count + '</span>' +
+                     '<span class="doc-chevron" aria-hidden="true">›</span></a>';
             }).join('');
           } else {
             // Fallback to content.js counts
@@ -2794,6 +2835,7 @@
             '<div class="product-body">' +
             '<h3 class="product-title">' + p.h3 + '</h3>' +
             '<p class="product-blurb">' + p.p + '</p>' +
+            (MANUALS[p.id] ? manualPanel(MANUALS[p.id]) : '') +
             '<div class="doc-types-list">' + docTypesHTML + '</div>' +
             '</div></article>';
         }).join('');
@@ -2835,13 +2877,9 @@
           }
           e.preventDefault();
           var productId = this.getAttribute('data-product');
-          var docType = this.getAttribute('data-type');
-          if (productId && docType && MANIFEST.products[productId]) {
-            var docTypeData = MANIFEST.products[productId].document_types[docType];
-            if (docTypeData && docTypeData.items) {
-              // Show modal with all files
-              showFileListModal(productId, docType, docTypeData);
-            }
+          var sectionId = this.getAttribute('data-section');
+          if (productId && sectionId && MANIFEST.products[productId]) {
+            showFileListModal(productId, sectionId);
           }
         });
       });
@@ -3110,47 +3148,41 @@
   })();
 
   // ─ Modal functions (global scope for onclick handlers) ─
-  function showFileListModal(productId, docType, docTypeData) {
+  var DOC_ICON = '<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>';
+  var DOWNLOAD_ICON = '<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
+
+  // One section of a product: its files, under a subheading per category when the section has several
+  function showFileListModal(productId, sectionId) {
     var modal = document.getElementById('file-list-modal');
     var container = document.getElementById('file-list-container');
-    var title = document.getElementById('modal-title');
-    
     var MANIFEST = window.MANIFEST;
-    if (!MANIFEST || !MANIFEST.products || !MANIFEST.products[productId]) return;
-    
-    var productName = MANIFEST.products[productId].name;
-    title.textContent = productName + ' → ' + ((window.CATEGORY_LABELS || {})[docType] || capitalizeFirst(docType));
-    
-    // Build file list HTML
-    var listHTML = '<ul class="file-list">';
-    
-    if (docTypeData.items && docTypeData.items.length > 0) {
-      docTypeData.items.forEach(function (item) {
-        // New manifest format: name, url, extension, viewable
-        var itemName = item.name || item.title || 'Unknown';
-        var itemUrl = item.url || item.path || '#';
-        var itemSize = item.size ? formatFileSize(item.size) : '';
+    var section = (window.SECTIONS || []).filter(function (s) { return s.id === sectionId; })[0];
+    if (!section || !MANIFEST || !MANIFEST.products || !MANIFEST.products[productId]) return;
 
+    var types = MANIFEST.products[productId].document_types;
+    document.getElementById('modal-eyebrow').textContent = MANIFEST.products[productId].name;
+    document.getElementById('modal-title').textContent = section.label;
+
+    var listHTML = '';
+    section.types.forEach(function (type) {
+      var items = (types[type] || {}).items || [];
+      if (!items.length) return;
+      if (section.types.length > 1) {
+        listHTML += '<h3 class="file-group-title">' + ((window.CATEGORY_LABELS || {})[type] || capitalizeFirst(type)) + '</h3>';
+      }
+      listHTML += '<ul class="file-list" data-type="' + type + '">' + items.map(function (item) {
+        var name = item.name || 'Unknown';
+        var shown = item.extension ? name.slice(0, -(item.extension.length + 1)) : name;
+        var meta = [item.extension.toUpperCase(), item.size ? formatFileSize(item.size) : ''].filter(Boolean).join(' · ');
         // Documents (PDF, images, text) open in a new tab; software and CAD download.
-        var linkAttrs = item.viewable ? 'target="_blank" rel="noopener"' : '';
+        var linkAttrs = item.viewable ? ' target="_blank" rel="noopener"' : '';
+        return '<li class="file-item">' + (item.viewable ? DOC_ICON : DOWNLOAD_ICON) +
+          '<a href="' + item.url + '"' + linkAttrs + ' class="file-link" data-title="' + name + '" title="' + name + '">' + shown + '</a>' +
+          '<span class="file-size">' + meta + '</span></li>';
+      }).join('') + '</ul>';
+    });
+    container.innerHTML = listHTML || '<p class="empty-state">No documents available</p>';
 
-        listHTML += '<li class="file-item">' +
-          '<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>' +
-          '<a href="' + itemUrl + '" ' + linkAttrs + ' class="file-link">' + itemName + '</a>';
-        
-        if (itemSize) {
-          listHTML += '<span class="file-size">(' + itemSize + ')</span>';
-        }
-        
-        listHTML += '</li>';
-      });
-    } else {
-      listHTML += '<li class="empty-state">No documents available</li>';
-    }
-    
-    listHTML += '</ul>';
-    container.innerHTML = listHTML;
-    
     modal.style.display = 'flex';
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -3189,7 +3221,7 @@
   // Close modal when clicking overlay
   document.addEventListener('click', function (e) {
     var modal = document.getElementById('file-list-modal');
-    if (e.target === modal) {
+    if (e.target === modal || e.target.parentNode === modal && e.target.classList.contains('modal-overlay')) {
       closeFileListModal();
     }
   });

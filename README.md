@@ -23,14 +23,15 @@ You can also open your product's page here:
 
 ## What you find here
 
-The website and each product page group the files the same way:
-
+- **User manual (Sentry, Watchkeeper):** use, installation and care. Read it online in English,
+  German, French, Spanish, Portuguese, Italian or Arabic, or download the PDF.
 - **Software releases:** system software updates (`.oscar` files) for your SEA.AI system.
 - **Desktop application:** SEA.AI Desktop for Windows and macOS.
 - **CAD:** 2D drawings (PDF) and 3D models.
-- **Guides:** user guides, installation manuals, and update, integration and configuration guides.
-- **Wiring diagrams:** harness, interconnect, electrical and wiring diagrams.
-- **Datasheets:** product specifications.
+- **Technical documents:**
+  - **Guides:** user guides, installation manuals, and integration and configuration guides.
+  - **Wiring diagrams:** harness, interconnect, electrical and wiring diagrams.
+  - **Datasheets:** product specifications.
 
 Documents (PDF) open in your browser or download. Software and 3D models are on the
 [Releases](../../releases) page, one release per version.
@@ -45,7 +46,8 @@ download is complete and unchanged, compute its checksum and compare it with tha
 
 ## Before you update system software
 
-If your product's Guides include a software update guide, read it first. Software marked
+Read the update steps first: in the user manual (chapter "Update the software") for Sentry and
+Watchkeeper, or in your product's guides. Software marked
 "legacy" is an earlier version: ask SEA.AI support before installing it. If you are unsure which
 version fits your system, contact SEA.AI support.
 
