@@ -13,5 +13,5 @@ __pycache__/
 .env
 .env.*
 
-# Retired documents replaced by the online manuals, kept locally only
+# Retired documents, kept locally only
 archive/

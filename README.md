@@ -24,7 +24,7 @@ You can also open your product's page here:
 ## What you find here
 
 - **User and installation manual (Sentry, Watchkeeper):** one manual for use, installation and care,
-  as a PDF in English, German, French, Spanish, Portuguese, Italian and Arabic.
+  as a PDF in English, French, German, Spanish, Italian, Portuguese and Arabic.
 - **Software releases:** system software updates (`.oscar` files) for your SEA.AI system.
 - **Desktop application:** SEA.AI Desktop for Windows and macOS.
 - **CAD:** 2D drawings (PDF) and 3D models.
