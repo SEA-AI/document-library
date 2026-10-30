@@ -2488,7 +2488,6 @@
   (function () {
     var C = CONTENT;
     var MANIFEST = null;  // Will be loaded async
-    var MANUALS = {};     // Product id -> online user manual, from catalog.json
 
     // Transform manifest data structure for modal compatibility
     function transformManifest(rawManifest) {
@@ -2549,6 +2548,7 @@
     // release assets, which download.
     // Categories in display order (ids as in catalog.json; same order as the product pages).
     var CATEGORIES = [
+      { id: 'manuals',    label: 'User and installation manual' },
       { id: 'software',   label: 'Software releases' },
       { id: 'desktop',    label: 'Desktop application' },
       { id: 'cad',        label: 'CAD' },
@@ -2560,6 +2560,7 @@
     CATEGORIES.forEach(function (c) { window.CATEGORY_LABELS[c.id] = c.label; });
     // Card rows: catalog categories as visitors see them; guides, wiring and datasheets share one row
     var SECTIONS = [
+      { id: 'manuals',   label: 'User and installation manual', types: ['manuals'] },
       { id: 'software',  label: 'Software releases',   types: ['software'] },
       { id: 'desktop',   label: 'Desktop application', types: ['desktop'] },
       { id: 'cad',       label: 'CAD',                 types: ['cad'] },
@@ -2568,18 +2569,22 @@
     window.SECTIONS = SECTIONS;
     var VIEWABLE = { pdf: true, jpg: true, jpeg: true, png: true, gif: true, webp: true, txt: true };
     var DESKTOP_OS = ['WIN_', 'MAC_', 'LINUX_'];  // installer order: Windows, macOS, Linux
+    var LANGUAGES = ['EN', 'FR', 'DE', 'ES', 'IT', 'PT', 'AR'];  // language versions: title ends in ' EN.pdf'
     function catalogToManifest(catalog) {
       var downloads = 'https://github.com/' + catalog.repository + '/releases/download/';
       var manifest = { products: {} };
-      // Current versions before legacy ones, installers by operating system, then by name
+      // Current versions before legacy ones, installers by operating system, then by name and language
       function sortKey(file) {
         var release = catalog.releases[file.release] || {};
         var legacy = (release.title || '').indexOf('(legacy)') >= 0 ? 1 : 0;
         var os = DESKTOP_OS.findIndex(function (p) { return file.title.indexOf(p) === 0; });
-        return [legacy, os < 0 ? DESKTOP_OS.length : os, file.title.toLowerCase()];
+        var m = file.title.match(/^(.*) ([A-Z]{2})(\.[^.]+)$/);
+        var lang = m ? LANGUAGES.indexOf(m[2]) : -1;
+        var name = lang >= 0 ? m[1] + m[3] : file.title;
+        return [legacy, os < 0 ? DESKTOP_OS.length : os, name.toLowerCase(), lang];
       }
       function compare(a, b) {
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < 4; i++) {
           if (a.key[i] < b.key[i]) return -1;
           if (a.key[i] > b.key[i]) return 1;
         }
@@ -2615,7 +2620,6 @@
       .catch(function () { return null; })
       .then(function (data) {
         if (data) {
-          MANUALS = data.manuals || {};
           MANIFEST = transformManifest(catalogToManifest(data));
           window.MANIFEST = MANIFEST;  // Store globally for modal functions
           // Re-render products if manifest loaded
@@ -2768,28 +2772,6 @@
 
     /* ── 9. Products ── */
     var DL_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
-    var OPEN_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><polyline points="8 7 17 7 17 16"/></svg>';
-    // Native names of the manual languages, shown as tooltips and to screen readers
-    var LANGUAGE_NAMES = { en: 'English', de: 'Deutsch', fr: 'Français', es: 'Español', pt: 'Português', it: 'Italiano', ar: 'العربية' };
-
-    // Online user manual panel: read online, printable PDF, other languages
-    function manualPanel(m) {
-      var ext = ' target="_blank" rel="noopener"';
-      var langs = Object.keys(m.languages).map(function (code) {
-        var name = LANGUAGE_NAMES[code] || code.toUpperCase();
-        return '<a class="manual-lang" href="' + m.languages[code] + '"' + ext + ' hreflang="' + code +
-               '" lang="' + code + '" title="' + name + '" aria-label="' + m.title + ', ' + name + '">' + code.toUpperCase() + '</a>';
-      }).join('');
-      return '<section class="manual-panel" aria-label="' + m.title + '">' +
-        '<p class="manual-eyebrow">User manual <span>Software ' + m.version + '</span></p>' +
-        '<p class="manual-summary">' + m.summary + '</p>' +
-        '<div class="manual-actions">' +
-        '<a class="manual-read" href="' + m.url + '"' + ext + '>Read online ' + OPEN_ICON + '</a>' +
-        '<a class="manual-pdf" href="' + m.pdf + '"' + ext + '>' + DL_ICON + 'PDF</a>' +
-        '</div>' +
-        '<div class="manual-langs">' + langs + '</div>' +
-        '</section>';
-    }
 
     function renderProducts() {
       var $split = document.querySelector('.products-split');
@@ -2835,7 +2817,6 @@
             '<div class="product-body">' +
             '<h3 class="product-title">' + p.h3 + '</h3>' +
             '<p class="product-blurb">' + p.p + '</p>' +
-            (MANUALS[p.id] ? manualPanel(MANUALS[p.id]) : '') +
             '<div class="doc-types-list">' + docTypesHTML + '</div>' +
             '</div></article>';
         }).join('');

@@ -8,8 +8,6 @@ Checks:
   - every document link is on the site, opens in a new tab and serves the file at catalog size
   - every software and CAD link downloads the release file at catalog size, without cookies
   - clicking a PDF opens a tab that loads that document
-  - every catalog manual has a panel on its product card whose links match the catalog,
-    open in a new tab and load (the PDF as a PDF)
 
 Usage (from the repository root):
     uv run --with requests --with playwright python tools/check_site.py          # this repo, served as Pages would
@@ -138,28 +136,6 @@ def main() -> int:
         docs = sum(1 for h in checked if h.startswith(site))
         print(f"Files: {sum(checked.values())}/{len(checked)} OK "
               f"({docs} documents on the site, {len(checked) - docs} release downloads)")
-
-        manuals = catalog.get("manuals", {})
-        panels = page.evaluate("""ids => Object.fromEntries(ids.map(id => [id,
-          [...document.querySelectorAll('#' + id + ' .manual-panel a')].map(a =>
-            ({cls: a.className, href: a.href, target: a.target}))]))""", list(manuals))
-        manual_ok = 0
-        for product, manual in manuals.items():
-            shown = panels.get(product, [])
-            want = sorted([manual["url"], manual["pdf"], *manual["languages"].values()])
-            got = sorted(a["href"] for a in shown)
-            bad = [a["href"] for a in shown if a["target"] != "_blank"]
-            for href in sorted(set(got)):
-                resp = requests.get(href, timeout=60, stream=True)
-                is_pdf = "application/pdf" in resp.headers.get("content-type", "")
-                if resp.status_code != 200 or is_pdf != (href == manual["pdf"]):
-                    bad.append(f"{href} HTTP {resp.status_code} {resp.headers.get('content-type')}")
-                resp.close()
-            if got != want or bad:
-                failures.append(f"manual {product}: links {got} != catalog {want}, problems {bad[:3]}")
-            else:
-                manual_ok += 1
-        print(f"Manuals: {manual_ok}/{len(manuals)} panels match the catalog and their links load")
 
         first_pdf = next((l for l in links if l["href"].startswith(site) and l["name"].lower().endswith(".pdf")), None)
         if first_pdf:

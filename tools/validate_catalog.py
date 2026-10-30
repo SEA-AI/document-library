@@ -10,7 +10,6 @@ Checks:
   - every document exists, matches its size and sha256, and is under 100 MB (git limit)
   - every file in a documents folder is listed in the catalog
   - no product lists two files with the same title
-  - every online manual names a declared product, and its English link is its main link
   - with --releases: every release exists on GitHub with an asset labelled with each title,
     of the catalog size and stored under the catalog's asset name (uses GITHUB_TOKEN if set)
 
@@ -124,11 +123,6 @@ def check_catalog(catalog: dict) -> list[str]:
         if count > 1:
             errors.append(f"{product}: {count} files titled '{title}'")
 
-    for product, manual in catalog.get("manuals", {}).items():
-        if product not in catalog["products"]:
-            errors.append(f"manual '{manual['title']}': unknown product '{product}'")
-        if manual["languages"]["en"] != manual["url"]:
-            errors.append(f"manual '{manual['title']}': languages.en should equal url")
     return errors
 
 

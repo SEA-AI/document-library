@@ -54,40 +54,6 @@
       "notes": "System software update package (.oscar), version 4.4-8. For: Watchkeeper."
     }
   },
-  "manuals": {
-    "sentry": {
-      "title": "Sentry user manual",
-      "version": "4.4-4",
-      "summary": "Use, installation and care",
-      "url": "https://sea-ai.github.io/manuals/sentry/",
-      "pdf": "https://sea-ai.github.io/manuals/sentry/sentry-user-manual-4.4-4.pdf",
-      "languages": {
-        "en": "https://sea-ai.github.io/manuals/sentry/",
-        "de": "https://sea-ai.github.io/manuals/sentry/de.html",
-        "fr": "https://sea-ai.github.io/manuals/sentry/fr.html",
-        "es": "https://sea-ai.github.io/manuals/sentry/es.html",
-        "pt": "https://sea-ai.github.io/manuals/sentry/pt.html",
-        "it": "https://sea-ai.github.io/manuals/sentry/it.html",
-        "ar": "https://sea-ai.github.io/manuals/sentry/ar.html"
-      }
-    },
-    "watchkeeper": {
-      "title": "Watchkeeper user manual",
-      "version": "4.4-4",
-      "summary": "Use, installation and care",
-      "url": "https://sea-ai.github.io/manuals/watchkeeper/",
-      "pdf": "https://sea-ai.github.io/manuals/watchkeeper/watchkeeper-user-manual-4.4-4.pdf",
-      "languages": {
-        "en": "https://sea-ai.github.io/manuals/watchkeeper/",
-        "de": "https://sea-ai.github.io/manuals/watchkeeper/de.html",
-        "fr": "https://sea-ai.github.io/manuals/watchkeeper/fr.html",
-        "es": "https://sea-ai.github.io/manuals/watchkeeper/es.html",
-        "pt": "https://sea-ai.github.io/manuals/watchkeeper/pt.html",
-        "it": "https://sea-ai.github.io/manuals/watchkeeper/it.html",
-        "ar": "https://sea-ai.github.io/manuals/watchkeeper/ar.html"
-      }
-    }
-  },
   "files": [
     {
       "title": "Brain Gen 1 Processing Unit.pdf",
@@ -513,6 +479,69 @@
       "sha256": "4827afe1d4648c016f1e1ec7511212bd86a643fa28254565eb37dd461edaca77"
     },
     {
+      "title": "Sentry User and Installation Manual 4.4-4 AR.pdf",
+      "products": {
+        "sentry": "manuals"
+      },
+      "path": "products/sentry/documents/Sentry User and Installation Manual 4.4-4 AR.pdf",
+      "size": 5488858,
+      "sha256": "9aaff7d8b45a9f49e39daaffeefe22c20b5a7a2bf8e5b1b4b75adf92f2d2c239"
+    },
+    {
+      "title": "Sentry User and Installation Manual 4.4-4 DE.pdf",
+      "products": {
+        "sentry": "manuals"
+      },
+      "path": "products/sentry/documents/Sentry User and Installation Manual 4.4-4 DE.pdf",
+      "size": 5351109,
+      "sha256": "d61dbae88882bb367bffb964e8c3d4884aa9e790a76abab3aa9706a3cce775a7"
+    },
+    {
+      "title": "Sentry User and Installation Manual 4.4-4 EN.pdf",
+      "products": {
+        "sentry": "manuals"
+      },
+      "path": "products/sentry/documents/Sentry User and Installation Manual 4.4-4 EN.pdf",
+      "size": 5333709,
+      "sha256": "40fb791a7ac2905edf16a3b4803e89600bf8244b44150c7e5dbab1fd79d902d1"
+    },
+    {
+      "title": "Sentry User and Installation Manual 4.4-4 ES.pdf",
+      "products": {
+        "sentry": "manuals"
+      },
+      "path": "products/sentry/documents/Sentry User and Installation Manual 4.4-4 ES.pdf",
+      "size": 5346645,
+      "sha256": "43f2a9eb1bf375bdb624be9606f341c59db933818bd67dc01898953ac50b5ae0"
+    },
+    {
+      "title": "Sentry User and Installation Manual 4.4-4 FR.pdf",
+      "products": {
+        "sentry": "manuals"
+      },
+      "path": "products/sentry/documents/Sentry User and Installation Manual 4.4-4 FR.pdf",
+      "size": 5350763,
+      "sha256": "dd96f91c88930f527c9422cb45d6729e0363d05197fabdff2c28ba817a286a2a"
+    },
+    {
+      "title": "Sentry User and Installation Manual 4.4-4 IT.pdf",
+      "products": {
+        "sentry": "manuals"
+      },
+      "path": "products/sentry/documents/Sentry User and Installation Manual 4.4-4 IT.pdf",
+      "size": 5344134,
+      "sha256": "5f96884dcf97614b73f697b522d220375dbfaeb34f8745b6fb8f327da123f6ca"
+    },
+    {
+      "title": "Sentry User and Installation Manual 4.4-4 PT.pdf",
+      "products": {
+        "sentry": "manuals"
+      },
+      "path": "products/sentry/documents/Sentry User and Installation Manual 4.4-4 PT.pdf",
+      "size": 5348493,
+      "sha256": "c243b52401d52351d69c0f6914a5a2f9f18e8e332ceea58efff4a78ba6eaf111"
+    },
+    {
       "title": "Specs_Watchkeeper_Motor.pdf",
       "products": {
         "watchkeeper": "datasheets"
@@ -556,6 +585,69 @@
       "path": "products/watchkeeper/documents/Watchkeeper Power Harness A04150.pdf",
       "size": 194088,
       "sha256": "4a6c19898f5a14d7a4a8ded6781dabdf8a4593edd940c1f04c4c0e6bcc7d7d1f"
+    },
+    {
+      "title": "Watchkeeper User and Installation Manual 4.4-4 AR.pdf",
+      "products": {
+        "watchkeeper": "manuals"
+      },
+      "path": "products/watchkeeper/documents/Watchkeeper User and Installation Manual 4.4-4 AR.pdf",
+      "size": 4973078,
+      "sha256": "72bc0c7ca9f5df537f041e9b31c187ad547d146201a6e8dc9e33473bf4212c44"
+    },
+    {
+      "title": "Watchkeeper User and Installation Manual 4.4-4 DE.pdf",
+      "products": {
+        "watchkeeper": "manuals"
+      },
+      "path": "products/watchkeeper/documents/Watchkeeper User and Installation Manual 4.4-4 DE.pdf",
+      "size": 4831573,
+      "sha256": "d46575270480a5f2473c810b272bed3c6c0c74a28afec748aae4e45cb9def913"
+    },
+    {
+      "title": "Watchkeeper User and Installation Manual 4.4-4 EN.pdf",
+      "products": {
+        "watchkeeper": "manuals"
+      },
+      "path": "products/watchkeeper/documents/Watchkeeper User and Installation Manual 4.4-4 EN.pdf",
+      "size": 4816689,
+      "sha256": "ec246e11f0d0ea68c410c586cb24c18f4d0542dd09a1aeb2db5f83d25c5a0d0e"
+    },
+    {
+      "title": "Watchkeeper User and Installation Manual 4.4-4 ES.pdf",
+      "products": {
+        "watchkeeper": "manuals"
+      },
+      "path": "products/watchkeeper/documents/Watchkeeper User and Installation Manual 4.4-4 ES.pdf",
+      "size": 4829186,
+      "sha256": "a3afb3ac0131d9c80bc0e7bd746f25e33dfe7aa65dfc7ef59a8ab1fa7c842291"
+    },
+    {
+      "title": "Watchkeeper User and Installation Manual 4.4-4 FR.pdf",
+      "products": {
+        "watchkeeper": "manuals"
+      },
+      "path": "products/watchkeeper/documents/Watchkeeper User and Installation Manual 4.4-4 FR.pdf",
+      "size": 4832139,
+      "sha256": "130dbcbba42486ebe49a30d310d2afac3e826ed4cef985c9fdce3ecac78c5612"
+    },
+    {
+      "title": "Watchkeeper User and Installation Manual 4.4-4 IT.pdf",
+      "products": {
+        "watchkeeper": "manuals"
+      },
+      "path": "products/watchkeeper/documents/Watchkeeper User and Installation Manual 4.4-4 IT.pdf",
+      "size": 4826713,
+      "sha256": "43e7cfeb4720907841262afe560f68556fb9fc4aaddb712c60a4ea9b6c065050"
+    },
+    {
+      "title": "Watchkeeper User and Installation Manual 4.4-4 PT.pdf",
+      "products": {
+        "watchkeeper": "manuals"
+      },
+      "path": "products/watchkeeper/documents/Watchkeeper User and Installation Manual 4.4-4 PT.pdf",
+      "size": 4829971,
+      "sha256": "73f08c4582cdfbbfee6ec6f32de9c27073e429c5030d62b3a499e4f20345d5d8"
     },
     {
       "title": "Watchkeeper_2D_Drawing.pdf",

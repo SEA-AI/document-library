@@ -40,12 +40,13 @@ var CONTENT = {
         imgAlt: 'SEA.AI Watchkeeper',
         p:     'Compact fixed-mount EO/IR system for navigation safety and close-range detection.',
         docTypes: [
-          { label: 'Software releases',   count: 2 },
-          { label: 'Desktop application', count: 2 },
-          { label: 'CAD',                 count: 3 },
-          { label: 'Guides',              count: 3 },
-          { label: 'Wiring diagrams',     count: 3 },
-          { label: 'Datasheets',          count: 2 }
+          { label: 'User and installation manual', count: 7 },
+          { label: 'Software releases',            count: 2 },
+          { label: 'Desktop application',          count: 2 },
+          { label: 'CAD',                          count: 3 },
+          { label: 'Guides',                       count: 0 },
+          { label: 'Wiring diagrams',              count: 3 },
+          { label: 'Datasheets',                   count: 2 }
         ]
       },
       {
@@ -55,12 +56,13 @@ var CONTENT = {
         imgAlt: 'SEA.AI Sentry',
         p:     'Full-perimeter EO/IR surveillance with AI auto-track and optical zoom capabilities.',
         docTypes: [
-          { label: 'Software releases',   count: 2 },
-          { label: 'Desktop application', count: 2 },
-          { label: 'CAD',                 count: 4 },
-          { label: 'Guides',              count: 6 },
-          { label: 'Wiring diagrams',     count: 4 },
-          { label: 'Datasheets',          count: 1 }
+          { label: 'User and installation manual', count: 7 },
+          { label: 'Software releases',            count: 2 },
+          { label: 'Desktop application',          count: 2 },
+          { label: 'CAD',                          count: 4 },
+          { label: 'Guides',                       count: 2 },
+          { label: 'Wiring diagrams',              count: 4 },
+          { label: 'Datasheets',                   count: 1 }
         ]
       },
       {
@@ -70,12 +72,13 @@ var CONTENT = {
         imgAlt: 'SEA.AI Brain',
         p:     'Advanced analytics and processing platform for real-time operational intelligence.',
         docTypes: [
-          { label: 'Software releases',   count: 1 },
-          { label: 'Desktop application', count: 2 },
-          { label: 'CAD',                 count: 1 },
-          { label: 'Guides',              count: 2 },
-          { label: 'Wiring diagrams',     count: 3 },
-          { label: 'Datasheets',          count: 1 }
+          { label: 'User and installation manual', count: 0 },
+          { label: 'Software releases',            count: 1 },
+          { label: 'Desktop application',          count: 2 },
+          { label: 'CAD',                          count: 1 },
+          { label: 'Guides',                       count: 2 },
+          { label: 'Wiring diagrams',              count: 3 },
+          { label: 'Datasheets',                   count: 1 }
         ]
       },
       {
@@ -85,12 +88,13 @@ var CONTENT = {
         imgAlt: 'SEA.AI Competition',
         p:     'Competitive analysis and benchmarking tools for system evaluation.',
         docTypes: [
-          { label: 'Software releases',   count: 2 },
-          { label: 'Desktop application', count: 2 },
-          { label: 'CAD',                 count: 2 },
-          { label: 'Guides',              count: 3 },
-          { label: 'Wiring diagrams',     count: 6 },
-          { label: 'Datasheets',          count: 0 }
+          { label: 'User and installation manual', count: 0 },
+          { label: 'Software releases',            count: 2 },
+          { label: 'Desktop application',          count: 2 },
+          { label: 'CAD',                          count: 2 },
+          { label: 'Guides',                       count: 3 },
+          { label: 'Wiring diagrams',              count: 6 },
+          { label: 'Datasheets',                   count: 0 }
         ]
       },
       {
@@ -100,12 +104,13 @@ var CONTENT = {
         imgAlt: 'SEA.AI Offshore',
         p:     'Marine and offshore operations platform for extended deployment scenarios.',
         docTypes: [
-          { label: 'Software releases',   count: 1 },
-          { label: 'Desktop application', count: 2 },
-          { label: 'CAD',                 count: 4 },
-          { label: 'Guides',              count: 5 },
-          { label: 'Wiring diagrams',     count: 12 },
-          { label: 'Datasheets',          count: 0 }
+          { label: 'User and installation manual', count: 0 },
+          { label: 'Software releases',            count: 1 },
+          { label: 'Desktop application',          count: 2 },
+          { label: 'CAD',                          count: 4 },
+          { label: 'Guides',                       count: 5 },
+          { label: 'Wiring diagrams',              count: 12 },
+          { label: 'Datasheets',                   count: 0 }
         ]
       }
     ]
