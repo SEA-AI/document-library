@@ -28,30 +28,6 @@
         }
       }
     },
-    "manuals": {
-      "description": "Product id -> its online user manual, published on the SEA.AI manuals site. Linked, not stored here.",
-      "type": "object",
-      "propertyNames": { "pattern": "^[a-z]+$" },
-      "additionalProperties": {
-        "type": "object",
-        "required": ["title", "version", "summary", "url", "pdf", "languages"],
-        "additionalProperties": false,
-        "properties": {
-          "title": { "type": "string", "minLength": 1 },
-          "version": { "description": "Software version the manual describes.", "type": "string", "minLength": 1 },
-          "summary": { "type": "string", "minLength": 1 },
-          "url": { "description": "Online manual, English.", "type": "string", "pattern": "^https://sea-ai\\.github\\.io/manuals/" },
-          "pdf": { "description": "Printable PDF of the manual.", "type": "string", "pattern": "^https://sea-ai\\.github\\.io/manuals/.+\\.pdf$" },
-          "languages": {
-            "description": "Language code (ISO 639-1) -> online manual in that language; must include en.",
-            "type": "object",
-            "required": ["en"],
-            "propertyNames": { "pattern": "^[a-z]{2}$" },
-            "additionalProperties": { "type": "string", "pattern": "^https://sea-ai\\.github\\.io/manuals/" }
-          }
-        }
-      }
-    },
     "files": {
       "type": "array",
       "items": {
@@ -65,10 +41,10 @@
             "pattern": "^[^#?%/\\\\<>\"\\s][^#?%/\\\\<>\"]*[^#?%/\\\\<>\"\\s]$"
           },
           "products": {
-            "description": "Product id -> category on that product's page: software releases, desktop application, CAD (2D drawings, 3D models), guides, wiring diagrams, datasheets.",
+            "description": "Product id -> category on that product's page: user and installation manual, software releases, desktop application, CAD (2D drawings, 3D models), guides, wiring diagrams, datasheets.",
             "type": "object",
             "minProperties": 1,
-            "additionalProperties": { "enum": ["software", "desktop", "cad", "guides", "wiring", "datasheets"] }
+            "additionalProperties": { "enum": ["manuals", "software", "desktop", "cad", "guides", "wiring", "datasheets"] }
           },
           "path": { "description": "Documents: path in this repo.", "type": "string" },
           "release": { "description": "Software and CAD: release tag holding the file.", "type": "string" },

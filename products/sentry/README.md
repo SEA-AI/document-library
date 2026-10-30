@@ -1,11 +1,17 @@
 <!-- Generated from catalog.json by tools/build_readmes.py. Do not edit by hand. -->
 # Sentry
 
-## User manual
+## User and installation manual
 
-[Sentry user manual](https://sea-ai.github.io/manuals/sentry/), software 4.4-4: use, installation and care.
-
-Online in: [EN](https://sea-ai.github.io/manuals/sentry/) · [DE](https://sea-ai.github.io/manuals/sentry/de.html) · [FR](https://sea-ai.github.io/manuals/sentry/fr.html) · [ES](https://sea-ai.github.io/manuals/sentry/es.html) · [PT](https://sea-ai.github.io/manuals/sentry/pt.html) · [IT](https://sea-ai.github.io/manuals/sentry/it.html) · [AR](https://sea-ai.github.io/manuals/sentry/ar.html). [Printable PDF](https://sea-ai.github.io/manuals/sentry/sentry-user-manual-4.4-4.pdf).
+| Document |
+|---|
+| [Sentry User and Installation Manual 4.4-4 EN.pdf](../../products/sentry/documents/Sentry%20User%20and%20Installation%20Manual%204.4-4%20EN.pdf) |
+| [Sentry User and Installation Manual 4.4-4 FR.pdf](../../products/sentry/documents/Sentry%20User%20and%20Installation%20Manual%204.4-4%20FR.pdf) |
+| [Sentry User and Installation Manual 4.4-4 DE.pdf](../../products/sentry/documents/Sentry%20User%20and%20Installation%20Manual%204.4-4%20DE.pdf) |
+| [Sentry User and Installation Manual 4.4-4 ES.pdf](../../products/sentry/documents/Sentry%20User%20and%20Installation%20Manual%204.4-4%20ES.pdf) |
+| [Sentry User and Installation Manual 4.4-4 IT.pdf](../../products/sentry/documents/Sentry%20User%20and%20Installation%20Manual%204.4-4%20IT.pdf) |
+| [Sentry User and Installation Manual 4.4-4 PT.pdf](../../products/sentry/documents/Sentry%20User%20and%20Installation%20Manual%204.4-4%20PT.pdf) |
+| [Sentry User and Installation Manual 4.4-4 AR.pdf](../../products/sentry/documents/Sentry%20User%20and%20Installation%20Manual%204.4-4%20AR.pdf) |
 
 ## Software releases
 

@@ -1,11 +1,17 @@
 <!-- Generated from catalog.json by tools/build_readmes.py. Do not edit by hand. -->
 # Watchkeeper
 
-## User manual
+## User and installation manual
 
-[Watchkeeper user manual](https://sea-ai.github.io/manuals/watchkeeper/), software 4.4-4: use, installation and care.
-
-Online in: [EN](https://sea-ai.github.io/manuals/watchkeeper/) · [DE](https://sea-ai.github.io/manuals/watchkeeper/de.html) · [FR](https://sea-ai.github.io/manuals/watchkeeper/fr.html) · [ES](https://sea-ai.github.io/manuals/watchkeeper/es.html) · [PT](https://sea-ai.github.io/manuals/watchkeeper/pt.html) · [IT](https://sea-ai.github.io/manuals/watchkeeper/it.html) · [AR](https://sea-ai.github.io/manuals/watchkeeper/ar.html). [Printable PDF](https://sea-ai.github.io/manuals/watchkeeper/watchkeeper-user-manual-4.4-4.pdf).
+| Document |
+|---|
+| [Watchkeeper User and Installation Manual 4.4-4 EN.pdf](../../products/watchkeeper/documents/Watchkeeper%20User%20and%20Installation%20Manual%204.4-4%20EN.pdf) |
+| [Watchkeeper User and Installation Manual 4.4-4 FR.pdf](../../products/watchkeeper/documents/Watchkeeper%20User%20and%20Installation%20Manual%204.4-4%20FR.pdf) |
+| [Watchkeeper User and Installation Manual 4.4-4 DE.pdf](../../products/watchkeeper/documents/Watchkeeper%20User%20and%20Installation%20Manual%204.4-4%20DE.pdf) |
+| [Watchkeeper User and Installation Manual 4.4-4 ES.pdf](../../products/watchkeeper/documents/Watchkeeper%20User%20and%20Installation%20Manual%204.4-4%20ES.pdf) |
+| [Watchkeeper User and Installation Manual 4.4-4 IT.pdf](../../products/watchkeeper/documents/Watchkeeper%20User%20and%20Installation%20Manual%204.4-4%20IT.pdf) |
+| [Watchkeeper User and Installation Manual 4.4-4 PT.pdf](../../products/watchkeeper/documents/Watchkeeper%20User%20and%20Installation%20Manual%204.4-4%20PT.pdf) |
+| [Watchkeeper User and Installation Manual 4.4-4 AR.pdf](../../products/watchkeeper/documents/Watchkeeper%20User%20and%20Installation%20Manual%204.4-4%20AR.pdf) |
 
 ## Software releases
 

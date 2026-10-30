@@ -23,8 +23,8 @@ You can also open your product's page here:
 
 ## What you find here
 
-- **User manual (Sentry, Watchkeeper):** use, installation and care. Read it online in English,
-  German, French, Spanish, Portuguese, Italian or Arabic, or download the PDF.
+- **User and installation manual (Sentry, Watchkeeper):** one manual for use, installation and care,
+  as a PDF in English, German, French, Spanish, Portuguese, Italian and Arabic.
 - **Software releases:** system software updates (`.oscar` files) for your SEA.AI system.
 - **Desktop application:** SEA.AI Desktop for Windows and macOS.
 - **CAD:** 2D drawings (PDF) and 3D models.
@@ -46,8 +46,8 @@ download is complete and unchanged, compute its checksum and compare it with tha
 
 ## Before you update system software
 
-Read the update steps first: in the user manual (chapter "Update the software") for Sentry and
-Watchkeeper, or in your product's guides. Software marked
+Read the update steps first: in the user and installation manual (chapter "Update the software")
+for Sentry and Watchkeeper, or in your product's guides. Software marked
 "legacy" is an earlier version: ask SEA.AI support before installing it. If you are unsure which
 version fits your system, contact SEA.AI support.
 

@@ -7,6 +7,7 @@ Usage:
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from urllib.parse import quote
@@ -15,7 +16,10 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 DESKTOP_OS = {"WIN_": "Windows", "MAC_": "macOS", "LINUX_": "Linux"}  # file name prefix -> system
+LANGUAGES = ["EN", "FR", "DE", "ES", "IT", "PT", "AR"]  # language versions: title ends in " EN.pdf"
+LANGUAGE_RE = re.compile(r"^(.*) ([A-Z]{2})(\.[^.]+)$")
 CATEGORIES = {  # page order and headings; the website uses the same ids and labels
+    "manuals": "User and installation manual",
     "software": "Software releases",
     "desktop": "Desktop application",
     "cad": "CAD: 2D drawings and 3D models",
@@ -26,10 +30,13 @@ CATEGORIES = {  # page order and headings; the website uses the same ids and lab
 
 
 def sort_key(catalog: dict, e: dict) -> tuple:
-    """Current versions before legacy ones; desktop installers by operating system; then by title."""
+    """Current versions before legacy ones; desktop installers by operating system; then by title and language."""
     legacy = "(legacy)" in catalog["releases"].get(e.get("release", ""), {}).get("title", "")
     os_rank = next((i for i, prefix in enumerate(DESKTOP_OS) if e["title"].startswith(prefix)), len(DESKTOP_OS))
-    return legacy, os_rank, e["title"].lower()
+    m = LANGUAGE_RE.match(e["title"])
+    if m and m[2] in LANGUAGES:
+        return legacy, os_rank, (m[1] + m[3]).lower(), LANGUAGES.index(m[2])
+    return legacy, os_rank, e["title"].lower(), -1
 
 
 def render(catalog: dict, product: str) -> str:
@@ -46,12 +53,6 @@ def render(catalog: dict, product: str) -> str:
         return f"[{catalog['releases'][e['release']]['title']}]({base}/tag/{e['release']})"
 
     lines = ["<!-- Generated from catalog.json by tools/build_readmes.py. Do not edit by hand. -->", f"# {name}"]
-    manual = catalog.get("manuals", {}).get(product)
-    if manual:
-        languages = " · ".join(f"[{code.upper()}]({url})" for code, url in manual["languages"].items())
-        lines += ["", "## User manual", "",
-                  f"[{manual['title']}]({manual['url']}), software {manual['version']}: {manual['summary'].lower()}.",
-                  "", f"Online in: {languages}. [Printable PDF]({manual['pdf']})."]
     for category, heading in CATEGORIES.items():
         files = sorted((e for e in catalog["files"] if e["products"].get(product) == category),
                        key=lambda e: sort_key(catalog, e))
