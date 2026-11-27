@@ -443,6 +443,15 @@
       "sha256": "2a40fae944fd309f910d51805c2b6c56d19c82f5c35493e76c67744e8395dbcd"
     },
     {
+      "title": "Sentry Installation Manual.pdf",
+      "products": {
+        "sentry": "guides"
+      },
+      "path": "products/sentry/documents/Sentry Installation Manual.pdf",
+      "size": 2776409,
+      "sha256": "45148ff0e149de4bd77c702bc35da0dd3ed47acf3da2d01b674b3eba3c187c60"
+    },
+    {
       "title": "Sentry Interconnect Diagram.pdf",
       "products": {
         "sentry": "wiring"
@@ -567,6 +576,15 @@
       "path": "products/watchkeeper/documents/Watchkeeper Data Harness A04140.pdf",
       "size": 181618,
       "sha256": "f3f7d08129d7e3f5b0303b305e4046f897d977b0c375091b7761185bdd7f22b5"
+    },
+    {
+      "title": "Watchkeeper Installation Manual.pdf",
+      "products": {
+        "watchkeeper": "guides"
+      },
+      "path": "products/watchkeeper/documents/Watchkeeper Installation Manual.pdf",
+      "size": 11075204,
+      "sha256": "8006949dcba7fe346f4ffd5599213dacf5320bb89aec638afce7380c3763b7d3"
     },
     {
       "title": "Watchkeeper Interconnect Diagram.pdf",
