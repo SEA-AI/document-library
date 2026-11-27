@@ -42,6 +42,7 @@
 |---|
 | [SEA.AI and TimeZero Integration Guideline.pdf](../../products/sentry/documents/SEA.AI%20and%20TimeZero%20Integration%20Guideline.pdf) |
 | [Sentry Comissioning Checklist.pdf](../../products/sentry/documents/Sentry%20Comissioning%20Checklist.pdf) |
+| [Sentry Installation Manual.pdf](../../products/sentry/documents/Sentry%20Installation%20Manual.pdf) |
 
 ## Wiring diagrams
 

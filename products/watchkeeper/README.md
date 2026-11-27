@@ -35,6 +35,12 @@
 | [Watchkeeper 3D CAD.zip](https://github.com/SEA-AI/document-library/releases/download/watchkeeper-cad-2026.10/Watchkeeper.3D.CAD.zip) | 3D model |
 | [Watchkeeper_2D_Drawing.pdf](../../products/watchkeeper/documents/Watchkeeper_2D_Drawing.pdf) | 2D drawing |
 
+## Guides
+
+| Document |
+|---|
+| [Watchkeeper Installation Manual.pdf](../../products/watchkeeper/documents/Watchkeeper%20Installation%20Manual.pdf) |
+
 ## Wiring diagrams
 
 | Document |
